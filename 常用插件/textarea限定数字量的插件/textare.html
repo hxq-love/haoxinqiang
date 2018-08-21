@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>编辑框输入文字字数限制</title>
+    <link rel="stylesheet" type="text/css" href="css/walking_in_hz.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+</head>
+
+<body>
+    <div style="background-color: #fff;">
+        <textarea id="tar" onpaste="return false" onchange="c2(this)" onkeyup="return c(this)" oninput="c3(this)" cols="70" style="border:0;width:100%;outline: none"></textarea>
+        <div style="text-align: right">
+            <span class="txts">0</span>/<span>3</span>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    function c(s) {
+        $(".txts").text(s.value.length);
+        if (s.value.length > 3) {
+            s.value = s.value.substr(0, 3);
+
+            $(".txts").text(s.value.length);
+        }
+
+    }
+
+    function c2(s) {
+        $(".txts").text(s.value.length);
+        if (s.value.length > 3) {
+            s.value = s.value.substr(0, 3);
+            $(".txts").text(s.value.length);
+        }
+        return !0;
+    }
+
+    function c3(s) {
+        $(".txts").text(s.value.length);
+
+    }
+    </script>
+</body>
+
+</html>

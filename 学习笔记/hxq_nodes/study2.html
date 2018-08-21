@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>学习笔记2</title>
+    <link rel="stylesheet" type="text/css" href="css/hxq2.css">
+    <script type="text/javascript" src="js/jquery2.1.1/jquery-2.1.1.min.js"></script>
+    <!--  <script type="text/javascript" src="SyntaxHighlighter/shCore.js"></script>
+   <script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.js"></script>
+   <link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.css" /> -->
+   <link rel="stylesheet" type="text/css" href="font_new/iconfont.css">
+    <link href="http://cdn.bootcss.com/SyntaxHighlighter/3.0.83/styles/shCoreDefault.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+    <script src="http://cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="font2/iconfont.css">
+    <script type="text/javascript" src="js/hxq2.js"></script>
+    <script type="text/javascript">
+    SyntaxHighlighter.all();
+    </script>
+    <style>
+    .box_ios {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        right: 0px;
+        width: 100%;
+        overflow-y: auto;
+        bottom: 0;
+    }
+
+    .liebiao {
+        padding-top: 86px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #3271E8;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="note2 guanbi">
+        <p class="node_biaoti">1.鼠标悬浮圆圈时自动宽度伸展成可输入的input框</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+            	 <div style="height: 50px;">
+				    <div class="yuan">
+				        <span class="tubiao">
+				        	<i class="iconfont">&#xe606;</i> 
+				        </span>
+				        <span class="wenbenkuang">
+				        	<input placeholder="请输入名称">
+				        </span>
+				    </div>
+				</div>
+
+
+				css代码：
+				.note2 .node_menu .yuan {
+					  float: right; ------如果不给right，会导致input宽度从右边开始变宽
+					  margin-right: 80%;
+					  display: inline-block;
+					  width: auto;
+					  min-width: 50px;
+					  background-color: red;
+					  height: 50px;
+					  border-radius: 25px;
+					}
+					.note2 .node_menu .yuan .tubiao {
+					  width: 50px;
+					  height: 50px;
+					  position: relative;
+					  float: right;
+					}
+					.note2 .node_menu .yuan .tubiao i {
+					  color: white;
+					  font-weight: bold;
+					  font-size: 20px;
+					  position: absolute;
+					  top: 50%;
+					  transform: translate(-50%, -50%);
+					  left: 50%;
+					}
+					.note2 .node_menu .yuan .wenbenkuang {
+					  width: 0px;
+					  width: auto;
+					  display: inline-block;
+					  float: left;
+					  height: 50px;
+					  line-height: 50px;
+					}
+					.note2 .node_menu .yuan .wenbenkuang input {
+					  background-color: inherit;
+					  border: 0;
+					  outline: none;
+					  width: 0;
+					  font-size: 16px;
+					  color: white;
+					  transition: width 0.3s ease-in-out;
+					}
+					.note2 .node_menu .yuan .wenbenkuang .note2_input {
+					  padding-left: 20px;
+					  width: 120px;
+					}
+					.note2 .node_menu .yuan .wenbenkuang input::-webkit-input-placeholder,
+					.note2 .node_menu .yuan .wenbenkuang textarea::-webkit-input-placeholder {
+					  color: #D6D2D2; ----可以改变placeholder字体颜色
+					}
+				js代码：
+					$(".note2 .node_menu .yuan").hover(function(){
+						$(".note2 .node_menu .yuan .wenbenkuang input").addClass('note2_input');
+					},
+					function(){
+						if($(".note2 .node_menu .yuan .wenbenkuang input").val()==""){
+							$(".note2 .node_menu .yuan .wenbenkuang input").removeClass('note2_input');
+						}
+						
+					});
+			</pre>
+            </p>
+            <div style="height: 50px;">
+                <div class="yuan">
+                    <span class="tubiao">
+        			<i class="iconfont">&#xe606;</i> 
+        		</span>
+                    <span class="wenbenkuang">
+        			<input placeholder="请输入名称">
+        		</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- note3 -->
+    <div class="note3 guanbi">
+        <p class="node_biaoti">2.input框内容发生变化时事件</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				 <div class="kuang">
+		            <input placeholder="请输入内容">
+		            <span class="neirong"></span>
+        		</div>
+
+				css代码：
+				.note3 .kuang {
+					  margin-left: 20px;
+					}
+					.note3 .kuang input {
+					  height: 30px;
+					}
+					.note3 .kuang .neirong {
+					  margin-left: 30px;
+					  color: red;
+					}
+		
+				js代码：
+					$(".note3 .kuang input").bind('input propertychange', function() {
+						var neirong=$(this).val();
+				        $(".note3 .kuang .neirong").text(neirong);
+				          
+				    });
+			</pre>
+            </p>
+            <div class="kuang">
+                <input placeholder="请输入内容">
+                <span class="neirong"></span>
+            </div>
+        </div>
+    </div>
+    <!-- note4 -->
+    <div class="note4 guanbi">
+        <p class="node_biaoti">3.页面鼠标滑轮滚动触发事件</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+            <div class="neirong">
+	            <div style="height:100px;color:white;background-color: black;">这是第一个</div>
+	            <div style="height:150px;color:white;background-color: green;">到顶部是不在上滚动</div>
+	            <div style="color:white;background-color: yellow;">
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                <p>内容：我的天啊，救命啊，么么哒</p>
+	                蒙奇迪路飞
+	            </div>
+        	</div>
+
+				css代码：
+
+				.note4 .neirong {
+					  height: 300px;
+					  width: 200px;
+					  overflow-y: auto;
+					  position: relative;
+					}
+					.note4 .note4_dingwei {
+					  position: absolute!important;
+					  top: 100px;
+					  width: 100%;
+					  height: 150px;
+					  z-index: 20;
+					}
+
+		
+				js代码：
+					
+					  $(".note4 .node_menu .neirong").scroll(function(){
+				    	var gaodu=$(this).scrollTop();
+				    	if(gaodu>=100){
+				    		$(".note4 .node_menu .neirong div:nth-child(2)").addClass('note4_dingwei');
+				    		$(".note4 .node_menu .neirong div:nth-child(2)").css("top",gaodu);
+				    	}
+				    	else{
+				    		console.info("小于");
+				    		$(".note4 .node_menu .neirong div:nth-child(2)").removeClass('note4_dingwei');
+				    	}
+
+				    });
+			</pre>
+            </p>
+            <div class="neirong">
+                <div style="height:100px;color:white;background-color: black;">这是第一个</div>
+                <div style="height:150px;color:white;background-color: green;">到顶部是不在上滚动</div>
+                <div style="color:white;background-color: yellow;">
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    <p>内容：我的天啊，救命啊，么么哒</p>
+                    蒙奇迪路飞
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- note5 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">4.键盘事件demo</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				<div class="wenbenkuang">
+		        	<input placeholder="亲，按enter键可以清空内容">
+		        </div> 
+
+				css代码：
+				.note5 .wenbenkuang {
+					 margin-left: 20px;
+					}
+				.note5 .wenbenkuang input {
+					  height: 30px;
+					  outline: none;
+					}
+
+				
+				js代码：
+				$(".note5 .wenbenkuang input ").keyup(function() {
+			        if (event.keyCode == 13) {
+			            //这里写你要执行的事件;
+			            $(this).val("");
+			        }
+			    });
+
+			    $(document).keydown(function(event) {  ----兼容所有浏览器
+			        if (event.keyCode == 13) {
+			            $(".note5 .wenbenkuang input").each(function() {
+			                //你的要运行的代码
+			                $(".note5 .wenbenkuang input").val("");
+			            });
+			        }
+			    });	
+
+			    代码：
+
+			
+			</pre>
+            </p>
+            <div class="wenbenkuang">
+                <input placeholder="亲，按enter键可以清空内容">
+            </div>
+        </div>
+    </div>
+    <!-- note6 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">5.判断移动设备是否横竖屏demo</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				
+				js代码：
+				
+			  	function hengshuping(){ ---自定义方法名
+				  if(window.orientation==180||window.orientation==0){ 
+				        alert("竖屏状态！")        
+				   } 
+				   if(window.orientation==90||window.orientation==-90){ 
+					        alert("横屏状态！")         
+					    } 
+					 } 
+				  window.onload=hengshuping();
+
+			    代码：
+
+			
+			</pre>
+            </p>
+        </div>
+    </div>
+    <!-- note7 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">6.手机端列表滑动时触发点击事件的问题</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				
+				js代码：
+				
+			  	$("li").on('tap',function(e){  ---列表中的li
+				var $target=$(e.target);
+				$target.addClass('active');
+
+				setTimeout(function(){
+					$target.removeClass('active');
+				}, 150)
+
+				});
+
+			    说明： 需要导入插件zepto.js文件
+
+			
+			</pre>
+            </p>
+        </div>
+    </div>
+    <!-- note8 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">7.移动端列表下拉出界问题</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	<div class="top">里面放头部的内容</div>
+                	<div class="liebiao box_ios">
+                		里面放列表
+                	</div>
+                CSS样式：
+                 .box_ios {
+			        position: absolute;
+			        top: 0;
+			        left: 0px;
+			        right: 0px;
+			        width: 100%;
+			        overflow-y: auto;
+			        bottom: 0;
+			    }
+			    .liebiao {
+    
+				  padding-top: 86px;
+				  overflow-y: auto;
+				  -webkit-overflow-scrolling: touch;
+				  }
+
+				js代码：
+				引用的文件
+				 <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+			    <script type="text/javascript" src="js/scrollfix.js"></script>
+   
+			    var scrollable = $(".liebiao")[0];
+			    new ScrollFix(scrollable);
+			    window.onload = function() {
+			        var ua = navigator.userAgent.toLowerCase();
+			        if (/iphone|ipad|ipod/.test(ua)) {
+			            $(".liebiao").addClass("box_ios");
+			        } else if (/android/.test(ua)) {
+			            $(".liebiao").removeClass("box_ios");
+			        };
+			    };
+			  	
+
+		
+
+			
+			</pre>
+            </p>
+        </div>
+    </div>
+    <!-- note9 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">8.鼠标点击左键和右键事件</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	<div class="note8_btn">
+                		点我
+                	</div>
+                CSS样式：
+                
+
+				js代码：
+				引用的文件
+				 <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+			   
+   
+				$('.note8_btn').mousedown(function(e){ 
+		          if(3 == e.which){ 
+		               alert('这是右键单击事件'); 
+		          }else if(1 == e.which){ 
+		                   alert('这是左键单击事件'); 
+		              } 
+		        })
+			  	
+			</pre>
+            </p>
+            <div class="note8_btn" style="text-align: center;background-color: red;color: white;padding:15px 0">点我</div>
+        </div>
+    </div>
+    <!-- note10 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">9.左侧边栏左右切换效果</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	<div class="note8_btn">
+                		点我
+                	</div>
+                CSS样式：
+                
+
+				js代码：
+			   	引用的文件
+				 <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+			   
+   
+				$('.note8_btn').mousedown(function(e){ 
+		          if(3 == e.which){ 
+		               alert('这是右键单击事件'); 
+		          }else if(1 == e.which){ 
+		                   alert('这是左键单击事件'); 
+		              } 
+		        })
+			  	
+			</pre>
+            </p>
+            <div class="btn9">
+                <ul class="animated" data="2">
+                    <li class="animated fadeInLeft li_show">我是中国人</li>
+                    <li class="animated2 fadeInLeft li_show">我是中国人2</li>
+                    <li class="animated3 fadeInLeft li_show">我是中国人3</li>
+                    <li class="animated4 fadeInLeft li_show">我是中国人4</li>
+                </ul>
+                <div style="" class="box">
+                    <div class="btn" style="position: absolute;top:5px;left:5px;color: white;">点我</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- note11 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">10.ajax JQ的常用方法</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	
+				js代码：
+			      //获取地址栏的参数           
+				    var LocString = String(window.document.location.href);
+
+				    function GetQueryString(str) {
+				        var rs = new RegExp("(^|)" + str + "=([^&]*)(&|$)", "gi").exec(LocString),
+				            tmp;
+				        if (tmp = rs)
+				            return tmp[2];
+				        return "没有这个参数";
+				    }
+				    var id = GetQueryString("id");  //获取字符串
+				    var icons = decodeURI(GetQueryString("icons")); //获取含有特殊字符的字符串
+			   
+		            ajax：方法
+		            $.ajax({
+                    type: 'POST',
+                    url: urls,
+                    dataType: 'jsonp',
+                    success: function(data) {
+
+                        var result = '';
+                        var code = $.parseJSON(data);
+                        nums++;
+                        if (code.hwnews.length > 0) {
+                            for (var i = 0; i < code.hwnews.length; i++) {
+                                result += '<a class="list opacity"  href="e_newdetail.html?pdfid=' + code.hwnews[0].fileurl + '"><div class="list_son flexbox"><div class="icons"><i class="iconfont">&#xe80f;</i></div><div class="content flex_1"><div class="c_name">' + code.hwnews[0].title + '</div><div class="datas">2017-05-12</div> </div></div></a>';
+
+                            }
+                            // 为了测试，延迟1秒加载
+                            setTimeout(function() {
+                                $('.lists').append(result);
+                                // 每次数据加载完，必须重置
+                                me.resetload();
+                            }, 100);
+
+                        } else {
+                            me.lock();
+                            // 无数据
+                            me.noData();
+                        }
+
+                    },
+                    error: function(xhr, type) {
+                        alert("网络好像不给力哦");
+                        /*me.resetload();*/
+                    }
+                });
+			</pre>
+            </p>
+        </div>
+    </div>
+    <!-- note12 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">11.点击按钮添加背景颜色，使用一个css样式通用</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	//给需要点击的按钮添加该样式
+				     .classname:active {
+				        background-image: linear-gradient(rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.1))
+				    }
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note13 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">12.媒介查询</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	//给需要点击的按钮添加该样式
+				    @media screen and (max-width: 413px) and (min-width: 375px){
+						//当屏幕符合以上宽度时
+						.paddings_ {  ----执行这个样式
+						    height: 100%;
+						    padding-bottom: 70px;
+						}
+					}
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note14 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">13.兼容IE8视频播放的插件</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	使用的标签：
+                	<video src="images/vedio.mp4" style="width:100%;height: 200px;" controls preload></video>
+                	引用的js:
+                	<script src="http://api.html5media.info/1.1.6/html5media.min.js"></script>
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note15 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">14.hitchart一些记录</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                1. //控制图标的图例legend不允许切换
+                	给series中加入：
+                	 events: {
+                        legendItemClick: function(event) {
+
+                            return false; //return  true 则表示允许切换
+                        }
+                    }
+
+                 2.去掉水印
+                 跟title等同级
+                  credits: {
+                    enabled: false
+                },
+
+                3.去掉导出图表
+                exporting: {
+			enabled: true
+		}
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note16 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">15.判断该移动端设备是Ios还是安卓</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+               var u = navigator.userAgent,
+               app = navigator.appVersion;
+		        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+		        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+		        if (isAndroid) {
+		           这个是安卓
+		        }
+		        if (isIOS) {
+		           这个是Ios
+		        }
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note17 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">16.判断是否为IE8浏览器</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+             
+         		if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0)) {
+               		IE8浏览器
+            	}
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note18-->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">17.选择器控件</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+             	1.添加的css样式
+             	  * {
+			        margin: 0;
+			        padding: 0;we
+			        box-sizing: border-box;
+			        font-size: 16px;
+			        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			    }
+			    
+			    a {
+			        text-decoration: none;
+			    }
+			    
+			    li {
+			        list-style: none;
+			        cursor: pointer;
+			    }
+			    
+			    input {
+			        border: 1px solid red;
+			        margin: 50px;
+			        padding: 10px;
+			    }
+             	.toolbar .toolbar-inner {
+			        height: 35px;
+			        display: flex;
+			    }
+			    .toolbar .picker-button {
+			        position: absolute;
+			        right: 0;
+			        box-sizing: border-box;
+			        height: 2.2rem;
+			        line-height: 2.2rem;
+			        color: #04BE02;
+			        z-index: 1;
+			        padding: 0 .5rem;
+			    }
+			    
+			    .weui-picker-modal {
+			        width: 100%;
+			        position: absolute;
+			        bottom: 0;
+			        text-align: center;
+			        border-radius: 0;
+			        opacity: .6;
+			        color: #3d4145;
+			        -webkit-transition-duration: .3s;
+			        transition-duration: .3s;
+			        height: 13rem;
+			        background: #EFEFF4;
+			        -webkit-transform: translate3d(0, 100%, 0);
+			        transform: translate3d(0, 100%, 0);
+			        -webkit-transition-property: opacity, -webkit-transform;
+			        transition-property: opacity, -webkit-transform;
+			        transition-property: transform, opacity;
+			        transition-property: transform, opacity, -webkit-transform
+			    }
+			    
+			    .weui-picker-modal.picker-modal-inline {
+			        height: 10.8rem;
+			        opacity: 1;
+			        position: static;
+			        -webkit-transform: translate3d(0, 0, 0);
+			        transform: translate3d(0, 0, 0)
+			    }
+			    
+			    .weui-picker-modal.picker-modal-inline .toolbar {
+			        display: none
+			    }
+			    
+			    .weui-picker-modal.picker-columns-single .picker-items-col {
+			        width: 100%
+			    }
+			    
+			    .weui-picker-modal.weui-picker-modal-visible {
+			        opacity: 1;
+			        -webkit-transform: translate3d(0, 0, 0);
+			        transform: translate3d(0, 0, 0)
+			    }
+			    
+			    .weui-picker-modal .picker-modal-inner {
+			        position: relative;
+			        height: 10.8rem
+			    }
+			    
+			    .weui-picker-modal .picker-columns {
+			        width: 100%;
+			        height: 13rem;
+			        z-index: 11500
+			    }
+			    
+			    .popover .weui-picker-modal .picker-columns,
+			    .weui-picker-modal .picker-columns.picker-modal-inline {
+			        height: 10rem
+			    }
+			    
+			    .weui-picker-modal .popover.popover-picker-columns {
+			        width: 14rem
+			    }
+			    
+			    .weui-picker-modal .picker-items {
+			        display: flex;
+			        -webkit-box-pack: center;
+			        -ms-flex-pack: center;
+			        -webkit-justify-content: center;
+			        justify-content: center;
+			        width: 100%;
+			        padding: 0;
+			        text-align: right;
+			        font-size: 1rem;
+			        font-weight: 400;
+			        -webkit-mask-box-image: -webkit-linear-gradient(bottom, transparent, transparent 5%, #fff 20%, #fff 80%, transparent 95%, transparent);
+			        -webkit-mask-box-image: linear-gradient(to top, transparent, transparent 5%, #fff 20%, #fff 80%, transparent 95%, transparent)
+			    }
+			    
+			    .weui-picker-modal .bar+.picker-items {
+			        height: 10.8rem
+			    }
+			    
+			    .weui-picker-modal .picker-items-col {
+			        overflow: hidden;
+			        position: relative;
+			        max-height: 100%
+			    }
+			    
+			    .weui-picker-modal .picker-items-col.picker-items-col-left {
+			        text-align: left
+			    }
+			    
+			    .weui-picker-modal .picker-items-col.picker-items-col-center {
+			        text-align: center
+			    }
+			    
+			    .weui-picker-modal .picker-items-col.picker-items-col-right {
+			        text-align: right
+			    }
+			    
+			    .weui-picker-modal .picker-items-col.picker-items-col-divider {
+			        color: #3d4145;
+			        display: -webkit-box;
+			        display: -ms-flexbox;
+			        display: -webkit-flex;
+			        display: flex;
+			        -webkit-box-align: center;
+			        -ms-flex-align: center;
+			        -webkit-align-items: center;
+			        align-items: center
+			    }
+			    
+			    .weui-picker-modal .picker-items-col-wrapper {
+			        -webkit-transition: .3s;
+			        transition: .3s;
+			        -webkit-transition-timing-function: ease-out;
+			        transition-timing-function: ease-out
+			    }
+			    
+			    .weui-picker-modal .picker-item {
+			        height: 32px;
+			        line-height: 32px;
+			        padding: 0 10px;
+			        white-space: nowrap;
+			        position: relative;
+			        overflow: hidden;
+			        text-overflow: ellipsis;
+			        color: #9b9b9b;
+			        left: 0;
+			        top: 0;
+			        width: 100%;
+			        box-sizing: border-box;
+			        -webkit-transition: .3s;
+			        transition: .3s
+			    }
+			    
+			    .picker-items-col-absolute .weui-picker-modal .picker-item {
+			        position: absolute
+			    }
+			    
+			    .weui-picker-modal .picker-item.picker-item-far {
+			        pointer-events: none
+			    }
+			    
+			    .weui-picker-modal .picker-item.picker-selected {
+			        color: #3d4145;
+			        -webkit-transform: translate3d(0, 0, 0);
+			        transform: translate3d(0, 0, 0);
+			        -webkit-transform: rotateX(0);
+			        transform: rotateX(0)
+			    }
+			    /* 线 */
+			    
+			    .weui-picker-modal .picker-center-highlight {
+			        height: 32px;
+			        box-sizing: border-box;
+			        position: absolute;
+			        left: 0;
+			        width: 100%;
+			        top: 50%;
+			        margin-top: -16px;
+			        pointer-events: none
+			    }
+			    
+			    .weui-picker-modal .picker-center-highlight:after,
+			    .weui-picker-modal .picker-center-highlight:before {
+			        content: '';
+			        position: absolute;
+			        right: auto;
+			        height: 1px;
+			        background-color: #D9D9D9;
+			        display: block;
+			        z-index: 15;
+			        left: 0;
+			        width: 100%
+			    }
+			    
+			    .weui-picker-modal .picker-center-highlight:before {
+			        top: 0;
+			        bottom: auto;
+			        -webkit-transform-origin: 50% 0;
+			        transform-origin: 50% 0
+			    }
+			    
+			    .weui-picker-modal .picker-center-highlight:after {
+			        bottom: 0;
+			        top: auto;
+			        -webkit-transform-origin: 50% 100%;
+			        transform-origin: 50% 100%
+			    }
+			    
+			    .weui-picker-modal .picker-3d .picker-items {
+			        overflow: hidden;
+			        -webkit-perspective: 1200px;
+			        perspective: 1200px
+			    }
+			    
+			    .toolbar .title {
+			        position: absolute;
+			        display: block;
+			        width: 100%;
+			        padding: 0;
+			        font-size: .85rem;
+			        font-weight: normal;
+			        line-height: 2.2rem;
+			        color: #3d4145;
+			        text-align: center;
+			        white-space: nowrap;
+			    }
+			    
+			    h1.title {
+			        background: #F7F7F8 !important;
+			    }
+			    html代码：
+			    <input type="text" id='picker' placeholder="请选择" />
+         		引用在线的js:
+         		<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    			<script src="http://cdn.bootcss.com/jquery-weui/0.8.2/js/jquery-weui.min.js"></script>
+    			<script type="text/javascript">
+    			
+			    $("#picker").picker({
+			        title: "请选择您的手机",
+			        cols: [{
+			            textAlign: 'center',
+			            values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+			        }]
+			    });
+   
+    			</script>
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note19 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">18.swiper切换选项卡</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                html代码：
+                <div class="page">  ----这个是头部的菜单
+			        <ul>
+			            <li class="li_color">这是一</li>
+			            <li>这是二</li>
+			            <li>这是三</li>
+			        </ul>
+			    </div>
+			    <div class="swiper-container">  -----这个是内容
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide">Slide 1</div>
+			            <div class="swiper-slide">Slide 2</div>
+			            <div class="swiper-slide">Slide 3</div>
+			        </div>
+			    </div>
+             	1.引用的css
+             	<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css">
+				2.引用的JS，需要引用jq
+				<script type="text/javascript" src="js/unit/swiper-3.4.2.min.js"></script>
+				<script type="text/javascript">
+					var mySwiper = new Swiper('.swiper-container', {
+			            direction: 'horizontal',
+			            onSlideChangeStart: function(mySwiper) { 
+			            	左右切换滑动内容，菜单跟对应更换 样式
+			                $($(".page ul li")[mySwiper.activeIndex]).addClass('li_color').siblings('li').removeClass('li_color')
+			            }
+			        })
+			        $("li").bind('click', function() {
+			        	点击菜单式对应的切换内容
+			            var index_ = $(this).index();
+			            mySwiper.slideTo(index_, 800, true); //切换到第一个slide，速度为1秒
+			            $($(".page ul li")[index_]).addClass('li_color').siblings('li').removeClass('li_color')
+			        });
+				</script>
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note20 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">19.swiper图片轮播带分页（缺陷：点击分页后不会再轮播）</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                html代码：
+               <div class="swiper_1">
+		        <div class="swiper-container">
+		            <div class="swiper-wrapper">
+		                <div class="swiper-slide"><img src=""></div>
+		                <a href="plat.html" class="swiper-slide"><img src=""></a>
+		                <div class="swiper-slide"><img src=""></div>
+		                <div class="swiper-slide"><img src=""></div>
+		            </div>
+		           <div class="swiper-pagination"></div>  --这个显示分页
+		        </div>
+    			</div>
+             	1.引用的css
+             	<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css">
+             	需要添加的css要样式:
+             	 .swiper-container {
+				        height: 300px;
+				        width: 100%;
+				        position: relative;
+				    }
+				    
+				    .page ul li {
+				        float: left;
+				        background: #404040;
+				        color: white;
+				        text-align: center;
+				        width: 30px;
+				        border-radius: 0;
+				        height: 30px;
+				        line-height: 30px;
+				        font-size: 10px;
+				        margin-left: 10px;
+				    }
+				    .swiper-slide {
+				        text-align: center;
+				        border: 1px solid red;
+				        box-sizing: border-box;
+				    }
+				    
+				    .swiper-pagination {
+				        text-align: right;
+				    }
+				    
+				    .swiper-pagination-bullet {
+				        background: #7C7A7A;
+				        color: white;
+				        text-align: center;
+				        width: 30px;
+				        border-radius: 0;
+				        height: 30px;
+				        line-height: 30px;
+				        font-size: 10px;
+				        opacity: 1;
+				    }
+				    
+				    .swiper-pagination-bullet:nth-child(5) {
+				        margin-right: 30px!important;
+				    }
+				    .swiper-pagination-bullet-active {
+				        background: #000;
+				    }
+				    
+				    .swiper-slide img {
+				        width: 100%;
+				        height: 100%;
+				    }
+				2.引用的JS，需要引用jq
+				<script type="text/javascript" src="js/unit/swiper-3.4.2.min.js"></script>
+				<script type="text/javascript">
+					var mySwiper = new Swiper(' .swiper-container', {
+			            direction: 'horizontal',
+			             pagination: '.swiper-pagination',/*---绑定分页*/
+			            paginationClickable: true,  /*--轮播*/
+			            autoplay: 1000,
+			             paginationBulletRender: function(mySwiper, index,li_color) {
+			                    return '<span class='+ li_color + '>' + (index + 1) + '</span>';  /*--分页样式*/
+			                }
+			        })
+				</script>
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note21 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">20.移动端点击事件延迟的问题</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+
+                引用fastclick.js
+         		如果使用js:
+         			window.addEventListener(function(){   
+				    FastClick.attach( document.body );  
+				},false ); 
+				如果使用了JQ：
+				$(function() {    
+				    FastClick.attach(document.body);    
+				});
+
+
+				第二种方法：
+				使用zepto.js,使用tap事件也可以解决  
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note22 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">21.移动端input输入内容时调用相应类型的软键盘（例如输入号码，调用只能输入数字的号码软键盘）</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				<input type="tel">  ---输入内容时自动跳出号码键盘
+                <input type="number">  ---输入内容时自动跳出数字键盘
+                <form>---我的手机IOS不加上form键盘不会显示搜索按钮
+					<input type="search">  ---可以让键盘显示出搜索按钮，触发事件
+                </form>
+                键盘使用搜索按钮需要添加的JS：
+                $("input").on('keypress',function(e) {  
+	                var keycode = e.keyCode;  
+	                var searchName = $(this).val();  
+	                if(keycode=='13') {  
+	                    e.preventDefault();    
+	                    //请求搜索接口  
+	                     $(this).val("小强强");-----自定义内容
+	                }  
+         		});  
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note22 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">22.电脑和移动端视频播放</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+					CSS样式：
+					.videos {
+				        width: 80%;
+				        margin: 0 auto;
+				    }
+				     .videos video{
+				        display: block;
+				        width:100%;
+				    }
+				    html代码：
+				    <div class="videos">
+				        <video src="video/1.mp4" poster="images/hf1.jpg" type="video/mp4" controls>
+				            您的浏览器不支持VIDEO播放
+				        </video>
+				    </div>
+				    引入JQ
+			    </pre>
+            </p>
+        </div>
+    </div>
+    <!-- note23 -->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">23.复选框和文本框等重置方法</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				    html代码：
+				    <form action="demo-form.php">   --必须要包在form表单里
+					  Email: <input type="text" name="email"><br>
+					  Pin: <input type="text" name="pin" maxlength="4"><br>
+					  <input type="reset" value="重置">
+
+
+					</form>
+				  
+			    </pre>
+                <form action="demo-form.php">
+                    Email:
+                    <input type="text" name="email">
+                    <br> Pin:
+                    <input type="text" name="pin" maxlength="4">
+                    <br>
+                    <input type="reset" value="重置">
+                    <input type="checkbox">
+                </form>
+            </p>
+        </div>
+    </div>
+    <!-- note24-->
+    <div class="note5 guanbi">
+        <p class="node_biaoti">24.复选按钮和复选框与文本绑定</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				    html代码：
+				    
+			    </pre>
+                <label style="cursor: pointer;">
+                    选中
+                    <input type="checkbox" style="vertical-align: middle;">
+                </label>
+            </p>
+        </div>
+    </div>
+    <!-- note25-->
+    <div class="note25 guanbi">
+        <p class="node_biaoti">25.自定义浏览器的滚动条样式</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				    html代码：
+				    <div class="example">
+				    	<div class="son">子内容</div>
+				    	<div class="son">子内容</div>
+				    	<div class="son">子内容</div>
+				    	<div class="son">子内容</div>
+				    	<div class="son">子内容</div>
+				    	<div cla ss="son">子内容</div>
+				    	<div class="son">子内容</div>
+				    	<div class="son">子内容</div>
+				    	<div class="son">子内容</div>
+				    	<div class="son">子内容</div>
+			    	</div>
+			    	CSS代码：
+			    	.example{
+				        height:200px;
+				        width:400px;
+				        overflow-y: auto;
+				        .son{
+				            padding:7px 0;
+				            text-align: center;
+				            border-bottom: 1px solid #ededed;
+				        }
+				    }
+				    .example::-webkit-scrollbar {   /*整个整个滚动条*/
+				       width: 5px;
+				       height: 8px;
+				       background-color: #AD3608;
+				       cursor: pointer;
+				   }
+
+					 .example::-webkit-scrollbar-track {---/*定义滚动条轨道 内阴影+圆角*/ 
+					       -webkit-box-shadow: inset 0 0 6px rgba(173, 54, 8, 0.5);
+					       background: #fff;
+					   }
+
+					  .example::-webkit-scrollbar-thumb {/*定义滑块 内阴影+圆角*/  
+					       border-radius: 5px;
+					       -webkit-box-shadow: inset 0 0 6px rgba(173, 54, 8, .5);
+					       background-color: rgba(173, 54, 8, 0.7);
+					   }
+
+					  .example::-webkit-scrollbar-thumb:hover { /*悬浮在滑块上的样式*/
+					       border-radius: 3px;
+					       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+					       background-color: rgba(173, 54, 8, 1);
+					   }
+
+			    </pre>
+                <div class="example">
+                    <div class="son">子内容</div>
+                    <div class="son">子内容</div>
+                    <div class="son">子内容</div>
+                    <div class="son">子内容</div>
+                    <div class="son">子内容</div>
+                    <div class="son">子内容</div>
+                    <div class="son">子内容</div>
+                    <div class="son">子内容</div>
+                    <div class="son">子内容</div>
+                    <div class="son">子内容</div>
+                </div>
+            </p>
+        </div>
+    </div>
+    <!-- note26-->
+    <div class="note26 guanbi">
+        <p class="node_biaoti">26.在IE8情况下设置背景图片</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				    html代码：
+				    <div class="example">
+				    	
+			    	</div>
+			    	CSS代码：
+			    	.example{
+				        height:200px;
+				        width:400px;
+				         background:url(../images/xiaoxin.jpg) no-repeat;
+				        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/xiaoxin.jpg', sizingMethod='scale');/*这个兼容IE*/
+				        background-size: 100% 100%;
+				    }
+				    
+					在IE上，如果使用此属性兼容了背景图片的方法，在给该div点击事件时会在IE上无效，需要加上z-index才可以捕捉到该元素
+			    </pre>
+                <div class="example">
+                </div>
+            </p>
+        </div>
+    </div>
+    <!-- note27-->
+    <div class="note27 guanbi">
+        <p class="node_biaoti">27.元素在父级中绝对居中的几种方法</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				    html代码：
+				    第一种方法
+				    <div class="example">
+				    	<div class="box box1">
+				    		<span>这是子级</span>
+				    		<span></span><!-- 需要加入一个空标签，不要用块级标签 -->
+				    	</div>
+			    	</div>
+			    	CSS代码：
+			    	<!-- 全局父级样式 -->
+			    	.box { 
+			            width: 200px;
+			            height: 200px;
+			            margin-left: 50px;
+			            text-align: center;
+			            margin-top: 50px;
+			            border: 1px solid red;
+			        }
+			        .box1 {
+			            .txt {
+			                vertical-align: middle;
+			            }
+			            .none_txt {
+			                display: inline-block;
+			                width: 0px;
+			                height: 100%;
+			                vertical-align: middle;
+			            }
+			        }
+			    </pre>
+                <div class="example">
+                    <div class="box box1">
+                        <span class="txt">这是子级</span>
+                        <span class="none_txt"></span>
+                    </div>
+                </div>
+                <pre class="brush: js;">
+
+				    第二种方法
+				    <div class="example">
+				    	<div class="box box2">
+				    		<span>这是子级</span>
+				    	
+				    	</div>
+			    	</div>
+			    	CSS代码：
+			         .box2 {
+			            position:relative;
+			            .txt {
+			                position:absolute;
+			                top:50%;
+			                left:50%;
+			                transform:translate(-50%,-50%);
+			                background-color: red;
+			                color:white;
+			                
+			            }
+			           
+			        }
+			    </pre>
+                <div class="example">
+                    <div class="box box2">
+                        <span class="txt">这是子级</span>
+                    </div>
+                </div>
+                <pre class="brush: js;">
+
+				    第三种方法
+				    <div class="example">
+				    	<div class="box box3">
+				    		<span>这是子级</span>
+				    	
+				    	</div>
+			    	</div>
+			    	CSS代码：
+			         .box3 {
+			            display:table;
+			            .txt {
+			               display:table-cell;
+			               width:70px;
+			                vertical-align: middle;
+			               
+			                color:white;
+			                
+			            }
+			           
+			        }
+			    </pre>
+                <div class="example">
+                    <div class="box box3">
+                        <span class="txt">这是子级</span>
+                    </div>
+                </div>
+                <pre class="brush: js;">
+
+				    第四种方法
+				     <div class="example">
+	                   	<div class="box box4">
+					    	<div class="txt">子级</div>
+					    
+					    </div>
+	                </div>
+			    	CSS代码：
+			          .box4 {
+			            position: relative;
+			            .txt {
+			                bottom: 0;
+			                left: 0px;
+			                right: 0px;
+			                margin: auto;
+			                position: absolute;
+			                top: 0;
+			                width: 40px;
+			                height: 40px;
+			                background-color: red;
+			                line-height: 40px;
+			                color:white;
+			            }
+			        }
+			    </pre>
+                <div class="example">
+                    <div class="box box4">
+                        <div class="txt">子级</div>
+                    </div>
+                </div>
+                <pre class="brush: js;">
+						使用display:table方法兼容IE8
+				     <div class="example">
+	                   	<div class="box box5">
+					    	<div class="txt">子级</div>
+					    
+					    </div>
+	                </div>
+			    	CSS代码：
+			         .box5 {
+			            display: table;
+			            position: relative;
+			            text-align: center;
+			            .txt {
+			                display: table-cell;
+			                vertical-align: middle;
+			                *position: absolute;
+			                *top: 48%;
+			                *left: 50%;
+			                width: 100%;
+			                margin-left: -50%;
+			                color: red;
+			            }
+			        }
+			    </pre>
+                <div class="example">
+                    <div class="box box5">
+                        <div class="txt">子级</div>
+                    </div>
+                </div>
+            </p>
+        </div>
+    </div>
+    <!-- note28-->
+    <div class="note28 guanbi">
+        <p class="node_biaoti">28.去除在设置inline-block属性后标签产生的间隙问题</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				    html代码：
+				     <div class="example1">
+                        <span>1111</span>
+                        <span>2222</span>
+                        <span>3333</span>
+                    </div>
+			    	CSS代码：
+			    	 .example1,.example2,.example3,.example4{
+			            width:300px;
+			            background-color: red;
+			            border:1px solid green;
+			        }
+			        ..example1,.example2,.example3,.example4{
+			            span{
+			                display:inline-block;
+			                width:100px;
+			                color:blue;
+			                background-color: white;
+			                text-align: center;
+			            }
+			        }
+				    
+					可以看到下方三个标签因为间隙的原因换行了
+			    </pre>
+                <div class="example">
+                    <div class="example1">
+                        <span>1111</span>
+                        <span>2222</span>
+                        <span>3333</span>
+                    </div>
+                </div>
+                 <pre class="brush: js;">
+				    解决方案一：
+				     <div class="example2">
+				     	<span>1111</span><span>2222</span><span>3333</span>
+                    </div>
+                    使用这种方法可以去掉标签之间的间隙空格
+			    	：
+			    </pre>
+                <div class="example">
+                    <div class="example2">
+                    	<span>1111</span><span>2222</span><span>3333</span>
+                    </div>
+                </div>
+                 <pre class="brush: js;">
+				    解决方案二：
+				     <div class="example3">
+				     	<span>1111</span><!--
+                        --><span>2222</span><!--
+                        --><span>3333</span>
+                    </div>
+                    可以使用注释代码的方法去掉标签之间的间隙空格
+			    	
+			    </pre>
+                <div class="example">
+                    <div class="example3">
+                    	<span>1111</span><!--
+                        --><span>2222</span><!--
+                        --><span>3333</span>
+                    </div>
+                </div>
+                 <pre class="brush: js;">
+				    解决方案三：
+				     <div class="example4">
+				     	<span>1111</span>
+                        <span>2222</span>
+                        <span>3333</span>
+                    </div>
+                    
+
+			    	CSS代码：
+			    	这个需要给父级额外加样式：
+			    	 .example4{   /*给父级设置字体大小0*/
+			            font-size: 0;
+			            -webkit-text-size-adjust:none;  /*兼容谷歌*/
+			            span{
+			                font-size: 12px;  /*给自己加需要设置的字体大小*/
+
+			            }
+			        }
+
+			        这个方法的唯一不足的是父级不知道为什么多了一点高度
+			    </pre>
+                <div class="example">
+                    <div class="example4">
+                    	<span>1111</span>
+                        <span>2222</span>
+                        <span>3333</span>
+                    </div>
+                </div>
+            </p>
+        </div>
+    </div>
+        <!-- note29-->
+    <div class="note29 guanbi">
+        <p class="node_biaoti">29.自定义单选按钮和多选框的选中样式</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				    单选按钮html代码：
+				    <span class="one">
+	                   <input type="radio" style="" class="ipt" value="" checked="checked" id="ipt1">
+	                   <label for="ipt1">男</label>
+	                   <input type="radio" style="" class="ipt" value="" id="ipt2">
+	                   <label for="ipt2">女</label>
+				    </span>
+				    css代码：
+				    input[type="radio"] {
+
+				        border: 1px solid #999;
+				        -webkit-appearance: none;
+				        width: 22px;
+				        border-radius: 50%;
+				        height: 22px;
+				        position: relative;
+				        vertical-align: middle;
+				    }
+
+				    label {
+
+				        vertical-align: middle;
+				    }
+
+				    .ipt {
+				        outline:none;
+				         -webkit-appearance: none;
+				        background-color: white;
+				    }
+				    .ipt[type="radio"]:checked {
+				        background-color: white;
+				        border-radius: 50%
+				    }
+
+				    .ipt[type="radio"]:checked::after {
+				        content: "";
+				        background-color: green;
+				        position: absolute;
+				        width: 15px;
+				        height: 15px;
+				        border-radius: 50%;
+				        top: 50%;
+				        left: 50%;
+				        transform: translate(-50%, -50%);
+				    }
+
+					单选按钮的JS：
+					$(".note29 .one input").bind("click",function(){
+				         if($(this).is(':checked')){
+				        
+				            $(this).siblings('input').prop("checked",false)
+				        }else{
+				            $(this).siblings('input').prop("checked",true)
+				        }
+				    });
+
+				    复选框代码：
+				    	 input[type="checkbox"] {
+						    border: 1px solid #999;
+						    -webkit-appearance: none;
+						    width: 22px;
+						    height: 22px;
+						    position: relative;
+						    vertical-align: middle;
+						}
+						.ipt[type="checkbox"]:checked::after {
+						    color: green;
+						    font-family: "iconfont";
+						    content: "\e602";
+						    position: absolute;
+						    top: 50%;
+						    font-size: 22px;
+						    left: 50%;
+						    transform: translate(-50%, -50%);
+						}
+				</pre>
+
+                <div class="example">
+                   <span class="one">
+	                   <input type="radio" style="" class="ipt" value="" checked="checked" id="ipt1">
+	                   <label for="ipt1">男</label>
+	                   <input type="radio" style="" class="ipt" value="" id="ipt2">
+	                   <label for="ipt2">女</label>
+				    </span>
+				    <span class="two">
+					    <input type="checkbox" style="" class="ipt" value="" checked="checked" id="ipt3">
+					    <label for="ipt3">男</label>
+					    <input type="checkbox" style="" class="ipt" value="" id="ipt4">
+					    <label for="ipt4">女</label>
+				    </span>
+                </div>
+            </p>
+        </div>
+    </div>
+     <!-- note30-->
+    <div class="note30 guanbi">
+        <p class="node_biaoti">30.关于onload,ready的一些简单理解</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				    1.首先window.onload=function(){}方法是指页面所有元素加载完成后执行的方法，包括，样式，DOM树结构，图片加载完成，脚本加载完成后才执行的方法。
+				    如果使用document.onload=function(){}，或者再body标签里面写onload()方法，是指整个页面的DOM加载完成时执行的方法。不包括图片加载，样式表，脚本
+
+				    2.JQ中ready()的方法
+				    指页面的DOM结构渲染完成时执行的方法,在JQ中的简写是$(function(){})
+
+				    3.判断页面加载完成时让Loading效果消失
+					
+					document.onreadystatechange = function(){  ----当页面加载状态发生改变的时候执行的方法
+
+					  if(document.readyState=="complete")  ---当页面加载完成时
+					  {
+					     window.open('http://www.aspbc.com'); //
+
+					  }
+
+					}
+
+				</pre>
+
+                
+            </p>
+        </div>
+    </div>
+     <!-- note31-->
+    <div class="note31 guanbi">
+        <p class="node_biaoti">31.关于本地存储和会话存储的使用方法</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+				    1.本地存储将存储到本地浏览器的缓存中，如果不清除缓存，数据就不会过期
+				    使用方法：
+					localStorage.length 获得storage中的个数
+					localStorage.key(n) 获得storage中第n个元素对的键值（第一个元素是0）
+					localStorage.getItem(key)获取键值key对应的值
+					localStorage.key   获取键值key对应的值
+					localStorage.setItem(key, value) 添加数据，键值为key，值为value
+					localStorage.removeItem(key) 移除键值为key的数据
+					localStorage.clear() 清除所有数据
+					
+					2.sessionStorage是一种会话级别的缓存，关闭窗口数据就会清空,并且不能跨浏览器窗口
+					sessionStorage.length获得storage中的个数
+					sessionStorage.key(n)获得storage中第n个元素对的键值（第一个元素是0）
+					sessionStorage.getItem(key)获取键值key对应的值
+					sessionStorage.key 获取键值key对应的值
+					sessionStorage.setItem(key, value)添加数据，键值为key，值为value
+					sessionStorage.removeItem(key)移除键值为key的数据
+					sessionStorage.clear()清除所有数据
+				</pre>
+
+                
+            </p>
+        </div>
+    </div>
+     <!-- note32-->
+    <div class="note31 guanbi">
+        <p class="node_biaoti">32.关于页面底部固定的效果</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	<div class="content">这个div用来放内容</div>
+                	<div class="foot">这个是底部</div>
+
+
+                	CSS代码：
+                	 	html,
+					    body {
+					        height: 100%;
+					      
+					    }
+					    .content {
+					        min-height: 100%;
+					        height: auto !important;
+					        height: 100%;
+					    }
+					    .foot{
+					    	写自定义样式就可以了
+					    }
+				</pre>
+
+                
+            </p>
+        </div>
+    </div>
+	 <!-- note33-->
+    <div class="note33 guanbi">
+        <p class="node_biaoti">33.js中数组大小比较及Array对象的封装</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	<!-- 1.第一种方法： 通过for循环方法
+                	 声明数组：shuzu
+                	 var shuzu=[10,12,14,15,700,1];
+					
+					 声明最大值和最小值变量：
+			         var min_num=shuzu[0],max_num=shuzu[0]; //默认最大值和最小值给数组第一个值
+			         for(var i=0;i<shuzu.length;i++){
+			             if(min_num>shuzu[i]){
+			                 min_num=shuzu[i];   
+			             }
+			             if(max_num<shuzu[i]){
+			                 max_num=shuzu[i];
+			             } 
+			         } -->
+
+			         2.第二种方法：通过max(),min()方法获取值
+			          var shuzu=[10,12,14,15,700,1];
+			          Math.max.apply(null,shuzu);
+			          Math.min.apply(null,shuzu)
+					
+					 3.第三种方法：通过封装Array对象使用max()方法，主要是封装后使用可以节省代码
+					  Array.prototype.max = function(){
+			        
+			           return Math.max.apply(null,this)
+			         };
+			         Array.prototype.min = function(){
+			        
+			           return Math.min.apply(null,this)
+			         };
+			         var shuzu=[10,12,14,15,700,1];
+                	 shuzu.max();//获取最大值
+                	 shuzu.min();//获取最小值
+				</pre>
+
+                
+            </p>
+        </div>
+    </div>
+	 <!-- note34-->
+    <div class="note34 guanbi">
+        <p class="node_biaoti">34.js中数组冒泡排序</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	声明数组：
+                	var examplearr=[8,94,15,88,55,76,100,21,39];
+
+					声明排序的方法：
+			        <!-- function sortarr(arr){
+			        	先把数组全部遍历一遍：
+			            for(var i=0;i<arr.length-1;i++){
+			            	--再次通过遍历让当前数组的值与右边数据进行比较，进行位置替换
+			                for(var j=0;j<arr.length-1-i;j++){ 
+			                	为什么要arr.length-1-i,是因为外层每遍历一次就会有一个数移到最右边，所以要减去i，
+			                	只循环前面没有进行排序的数字。
+			                    if(arr[j]>arr[j+1]){-----判断当前这个数值大于右边的数值
+			                        var nums=arr[j];  ---先获取当前数值
+			                        arr[j]=arr[j+1];  ----将当前的值与右边对换
+			                        arr[j+1]=nums;   ---将右边的值与左边替换
+			                    }
+			                }
+			        			      
+			            }
+			            return arr;  //数组全部遍历完成后返回排序的数组
+			        }
+			        sortarr(examplearr);
+			        console.log(examplearr); -->
+				</pre>
+
+                
+            </p>
+        </div>
+    </div>
+     <!-- note34-->
+    <div class="note35 guanbi">
+        <p class="node_biaoti">35.去掉a标签点击时出现的背景颜色</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	添加如下样式:
+                	-moz-user-select: none; /*火狐*/
+
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+				</pre>
+
+                
+            </p>
+        </div>
+    </div>
+     <!-- note35-->
+    <div class="note35 guanbi">
+        <p class="node_biaoti">36.js给数组排序</p>
+        <div class="node_menu">
+            <p>
+                <pre class="brush: js;">
+                	var student=[23,45,84,86,71,48,13,3];
+                	function bijiao(a,b){
+						return a-b;
+					}
+					student.sort(bijiao);  //升序
+
+
+					对于复杂的数组，指定key值进行排序
+					var student_info=[
+						{"name":"郝新强","age":12},
+						{"name":"王爱文","age":38},
+						{"name":"王梓璇","age":22},
+						{"name":"倪明","age":2},
+					]
+					function bijiaotwo(age){
+						return function(a,b){
+							var a=a[age];
+							var b=b[age];
+							return a-b;
+						}
+					}
+					student_info.sort(bijiaotwo('age')).reverse();  //'age'传入的是key值，reverse()是倒序，也就是实现了降序
+				</pre>
+
+                
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+    	
+    </script>
+
+</body>
+
+</html>

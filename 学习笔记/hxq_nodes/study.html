@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>学习笔记</title>
+    <script type="text/javascript" src="js/jquery2.1.1/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/hxq.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/hxq.css">
+    <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+    <script type="text/javascript" src="SyntaxHighlighter/shCore.js"></script>
+    <script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.js"></script>
+    <link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.css" />
+    <script type="text/javascript">
+    SyntaxHighlighter.all();
+    </script>
+</head>
+
+<body>
+    <div class="note">
+        <p class="biaoti">页面等待加载效果</p>
+        <div class="menu">
+            <p>使用一张静态图片，为图片添加样式即可旋转。
+                <br>
+                <pre class="brush: js;">
+				.img{
+	-webkit-animation: rotation 2s linear infinite;
+} 
+@-webkit-keyframes rotation{
+		from {-webkit-transform: rotate(0deg);}
+		to {-webkit-transform: rotate(360deg);}
+		}
+		
+				</pre>
+            </p>
+            <img src="images/xuanzhuan.png" class="xuanzhuan">
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">当字体比图标小，并且字体与图标只有一个父级，让图片与字体都垂直对齐的方法</p>
+        <div class="menu">
+            <p>对该图片添加向上对齐样式即可实现
+                <br>
+                <pre class="brush: js;">
+				.note_2 .user{
+					 vertical-align: top;
+				}
+			</pre>
+            </p>
+            <p class="p_1"><img src="images/user.png" class="user">文字一</p>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">当字体比图标小，字体有一个单独的父级时，让图片与字体都垂直对齐的方法</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				<div>
+				<i class="iconfont icon">&#xe627;</i>
+				<span>返回</span>
+			</div>
+				css代码
+			  	.zhanghaog uanli .top div i{
+	font-size: 25px;
+	color: white;
+	vertical-align: bottom;
+} 
+.zhanghaoguanli .top div span{
+	display: inline-block;
+	overflow: hidden;
+	font-size: 16px;
+}
+				
+   			
+				</pre>
+            <div class="css_1">
+                <i class="iconfont icon">&#xe627;</i>
+                <span>返回</span>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">使用定位让div在整个页面正中心显示</p>
+        <div class="menu">
+            <p style="overflow: hidden;">使用绝对定位或固定定位，配合transform属性实现
+                <br>
+                <pre class="brush: js;">
+				.名称{
+					width:100px;
+					height: 100px;
+					position: fixed;
+					top: 50%; 
+					left: 50%;
+					background-color: yellow;
+					transform: translate(-50%,-50%); 
+				}
+				</pre>
+            </p>
+            <div class="zhongxin">该div已在页面居中</div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">如何让一个标签在他的父级中垂直居中</p>
+        <div class="menu">
+            <pre class="brush: js;">
+			<div class="fuji">
+				<div class="ziji"></div>----让这个居中
+				<span style="display:inline-block;height:100%;vertical-align:middle;"></span>--空标签，必须是inline-block;
+			</div>
+	
+			CSS样式：
+			.note_4 .fuji{
+				overflow: hidden;
+				border:1px solid green;
+				height: 100px;
+			}
+			 .note_4 .fuji .ziji{
+				overflow: hidden;
+				background-color:yellow;
+				width: 100px;
+				display: inline-block;
+				
+			}
+		</pre>
+            <div class="fuji">
+                <div class="ziji">这个是子级</div>
+                <span style="display:inline-block;height:100%;vertical-align:middle;"></span>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">当一个标签内有许多文字段落时，自定义设置他显示的行数和宽度，超出的部分自动隐藏成“.....”</p>
+        <div class="menu">
+            <pre class="brush: js;">
+			<div class="fuji">
+				这是一个段落，这是一个短路，这是一个111111111111111111111111111111111111111111111111111111
+			</div>
+			不能与数字结合，会空很多就换行了
+			CSS样式：
+			.note_5 .duanluo{
+				 text-overflow: -o-ellipsis-lastline;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    display: -webkit-box;
+			    -webkit-line-clamp: 1;   ----自定义段落显示的行数
+			    -webkit-box-orient: vertical;
+			    width:30%;   ------可自定义宽度
+			    border:1px solid red;
+			               word-wrap:break-word;
+word-break:break-all;
+	}
+		</pre>
+            <div class="duanluo">
+                这是一个段落，这是一个短路，这是一个段落这是
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">让图片或文字使用html标签实现简单的轮播效果</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				<div style="width: 100px;">
+					<marquee class=“huadong” scrollamount="2" direction="up" > <img src="images/user.png">
+					</marquee>
+			 
+				</div>
+			
+				css:样式
+			
+				.note_6 .menu .huadong{
+					 margin-left:25px;
+					 width: 50px;
+					margin-top: 34px;
+					border:1px solid red;
+	
+				}
+				
+			scrollamount="2"   ----数字越大轮播速度越快
+			direction="up"    ----元素轮播的方向
+				
+			</pre>
+            <div style="width: 100px;height: 100px;border:1px solid green">
+                <marquee scrollamount="2" direction="up" class="huadong"> <img src="images/user.png">
+                </marquee>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">用div实现简单的实心三角形、单方向箭头和圆</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				<div class="sanjiaoxing">
+			
+				</div>
+				<div class="jiantou">
+			
+				</div>
+				css:样式
+			
+				.note_7 .menu .sanjiaoxing{  ---三角形
+						width: 0;
+						height: 0;
+						border-bottom:20px solid blue;
+						border-right:20px solid transparent;
+						border-top:20px solid transparent;
+						border-left:20px solid transparent;
+						float: left;
+					}
+					.note_7 .menu .jiantou{ ---方向箭头
+						float: left;
+						width: 20px;
+						height: 20px;
+						border-right:3px solid red;
+						border-top:2px solid red;
+						transform: rotate(45deg);
+						margin-top: 20px;
+						margin-left: 50px;
+					}
+					.note_7 .menu .yuan{ -----圆
+						float: left;
+						width: 20px;
+						height: 20px;
+						border-radius: 50%;
+						background-color: green;
+						margin-top: 20px;
+						margin-left: 50px;
+						}
+				
+				
+			</pre>
+            <div class="sanjiaoxing">
+            </div>
+            <div class="jiantou">
+            </div>
+            <div class="yuan">
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">下拉列表伸展及点击效果</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				 <div class="xiala">
+				 	<p class="biaoti_2 one">菜单列表一</p>
+				 	<div class="xiala_neirong" style="display: block;">
+				 		<p>下拉内容</p>
+				 		<p>下拉内容</p>
+				 		<p>下拉内容</p>
+				 	</div>
+				 </div>
+				 <div class="xiala">
+				 	<p class="biaoti_2">菜单列表二</p>
+				 	<div class="xiala_neirong">
+				 		<p>下拉内容</p>
+				 		<p>下拉内容</p>
+				 		<p>下拉内容</p>
+				 	</div>
+				 </div>
+				 <div class="xiala">
+				 	<p class="biaoti_2">菜单列表三</p>
+				 	<div class="xiala_neirong">
+				 		<p>下拉内容</p>
+				 		<p>下拉内容</p>
+				 		<p>下拉内容</p>
+				 	</div>
+				 </div>
+				css样式  
+			.xiala{
+				width:100%;
+				padding:10px 0;
+				border:1px solid green;
+				overflow: hidden;
+			}
+			.xiala .biaoti_2{
+				padding:10px 0;
+				background:-webkit-linear-gradient(top,rgba(216,252,252,1),rgba(121,121,121,0.7));
+				cursor: pointer;
+				color:red;
+			}
+			.xiala_neirong{
+				width: 100%;
+				overflow: hidden;
+				display: none;
+			}
+			.yanse{
+					background-color: red;
+				}
+
+
+			js代码：
+			$(".one").addClass("yanse"); -----默认第一个下拉列表展开
+			$(".note .biaoti").click(function(){ ---点击标题列
+			$(this).parent("div").siblings("div").children(".menu").css("display","none");--隐藏其他标题列的下拉内容
+			$(this).parent("div").siblings("div").children(".biaoti").removeClass("yanse");--恢复其他标题列的原背景颜色
+			$(this).siblings(".menu").fadeToggle("slow");--展开点击列表下的下拉内容
+			$(this).toggleClass("yanse");--为点击的标题列添加背景颜色效果
+			});
+
+			效果可点击该页面的下拉菜单
+			</pre>
+            <div class="xiala">
+                <p class="biaoti_2 one">菜单列表一</p>
+                <div class="xiala_neirong" style="display: block;">
+                    <p>下拉内容</p>
+                    <p>下拉内容</p>
+                    <p>下拉内容</p>
+                </div>
+            </div>
+            <div class="xiala">
+                <p class="biaoti_2">菜单列表二</p>
+                <div class="xiala_neirong">
+                    <p>下拉内容</p>
+                    <p>下拉内容</p>
+                    <p>下拉内容</p>
+                </div>
+            </div>
+            <div class="xiala">
+                <p class="biaoti_2">菜单列表三</p>
+                <div class="xiala_neirong">
+                    <p>下拉内容</p>
+                    <p>下拉内容</p>
+                    <p>下拉内容</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">手机端页面上下滑动优化效果</p>
+        <div class="menu">
+            <pre class="brush: js;">
+					添加CSS样式
+
+					body{
+					-webkit-overflow-scrolling: touch;
+					}      
+				</pre>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">页面左侧菜单栏伸缩效果</p>
+        <div class="menu">
+            <pre class="brush: js;">
+					
+					<div class="fujiyemian">--父级页面
+					<div class="fujiyemian_left"></div>--子页面左边的
+					<div class="fujiyemian_right"></div>--子页面右边的
+					<div class="qiehuan" flag="0">切换</div>---脱离文档流的切换按钮  flag自定义属性，用户判断切换状态
+
+					添加CSS样式
+
+					.fujiyemian{
+							width: 100%;
+								height: 400px;     --------设置父级为relative定位
+								position: relative;
+						}
+						.fujiyemian .fujiyemian_left{   
+							float: left;
+							width: 30%;             --------左边子页面给宽度和浮动
+							height: 400px;
+							background-color: red
+						}
+						.fujiyemian .fujiyemian_right{
+							float: left;
+							width: 70%;				---------右边的子页面给宽度和浮动
+							height: 400px;
+							background-color: green;
+						}
+						.fujiyemian .qiehuan{      ------------脱离文档流的切换按钮
+							background-color: white;
+							position: absolute;--固定定位
+							width: 50px;
+							text-align: center;
+							right: 70%;  ------初始位置
+							height: 40px;
+							line-height: 40px;
+							top:180px;
+							cursor: pointer;
+						}
+						.qiehuan_left{    -----点击切换后，按钮距离页面左边距离为0
+							left:0px;
+						}
+
+
+						js代码：
+						$(".fujiyemian .qiehuan").click(function(){  --0--按钮的点击事件
+							var flg=$(".fujiyemian .qiehuan").attr("flag");   -----获取按钮自定义属性
+							switch(flg)
+							{
+								case "0":  ---处于初始页面时
+								$(this).addClass("qiehuan_left"); ---按钮靠页面左边缘
+								$(this).siblings(".fujiyemian_left").css("display","none");---左子页面隐藏
+								$(this).siblings(".fujiyemian_right").css("width","100%");---右子页面宽度100%；
+								$(this).attr("flag","1"); --更换按钮状态
+								break;
+
+								case "1":  -----恢复页面
+									
+								$(this).removeClass("qiehuan_left"); ---恢复按钮原位置，距离左边30%
+								$(".fujiyemian_left").css("display","block");--左子页面显示
+								$(this).siblings(".fujiyemian_right").css("width","70%");--右子页面恢复原70%宽度
+								$(this).attr("flag","0");  ---重新给予按钮状态
+								
+							}
+	})
+
+				</div>
+					 
+				</pre>
+            <div class="fujiyemian">
+                <div class="fujiyemian_left"></div>
+                <div class="fujiyemian_right"></div>
+                <div class="qiehuan" flag="0">切换</div>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">input框placeholder属性</p>
+        <div class="menu">
+            <pre class="brush: js;">
+					<input type="text" placeholder="输入内容自动清空">
+
+				
+					 
+				</pre>
+            <input type="text" placeholder="输入内容自动清空">
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">手机端禁止长按复制 给input赋属性会导致无法输入内容</p>
+        <div class="menu">
+            <pre class="brush: js;">
+					-webkit-user-select: none;
+					-webkit-touch-callout: none;
+
+				
+					 
+				</pre>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">手机泡沫事件</p>
+        <div class="menu">
+            <pre class="brush: js;">
+					<div class="btn">按钮</div>
+					<div class="fuji">
+						<div class="ziji">返回   ------
+							<input type="text">
+						</div>
+					</div>
+
+					CSS样式:
+					.btn{
+						width: 50px;
+						height: 30px;
+						line-height: 30px;
+						text-align: center;
+						background-color: red;
+						cursor: pointer;
+					}
+					.fuji_2{
+						position: fixed;
+						bottom:0px;
+						top:0px;
+						width: 100%;
+						background: rgba(0,0,0,0.8);
+						display: none;
+					}
+			         .ziji{
+			         	 width:100px;
+					    height: 100px;
+					    position: fixed;
+					    top: 50%;
+					    left: 50%;
+					    background-color: yellow;
+					    transform: translate(-50%,-50%); 
+					    cursor: pointer;
+			         }   
+
+			         Js代码:
+			         	$(".btn").click(function(){
+							$(".fuji_2").show();
+						});
+						$(".fuji_2").click(function(){
+								$(".fuji_2").hide();
+							});
+						$(".ziji").click(function(event){ -------给子级添加JS代码
+							    event.stopPropagation(); 
+							}); 
+       						
+				</pre>
+            <div class="btn">按钮</div>
+            <div class="fuji_2">
+                <div class="ziji">
+                    <input type="text" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">切换classy样式</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				 <div>点击切换样式</div>
+
+					CSS样式:
+					.qiehuan{
+						width: 30px;
+						height: 30px;
+						line-height: 30px;
+						background-color: red;
+						cursor: pointer;
+					}
+			   		.qiehuan_2{
+			   			background-color:yellow;
+			   		}
+
+			         Js代码:
+			         		$(".qiehuan").click(function(){
+							$(this).toggleClass("qiehuan_2");
+						});
+       						
+				</pre>
+            <div class="qiehuan">点击切换样式</div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">获取索引值</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				<div class="jiedian">
+					<ul>
+						<li>第一个节点</li>
+						<li>第二个节点</li>
+						<li>第三个</li>
+					</ul>
+				</div>
+
+			         Js代码:
+			         		$(".jiedian ul li").click(function(){
+								var zhi=$(this).index();
+								alert("这个的索引是"+zhi);
+							})
+       						
+				</pre>
+            <div class="jiedian">
+                <ul>
+                    <li>第一个节点</li>
+                    <li>第二个节点</li>
+                    <li>第三个</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">flex弹性盒子布局</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				 <div class="fuji_3">
+					<div>
+					<img src="images/xiaoxin.jpg" >
+					</div>
+					<div>fdfd</div>
+					<div class="flexbox_item"> --要给第二个元素设置flex: 1;
+						第二个
+					</div>
+					<div>
+						<i class="iconfont icon">&#xe608;</i>
+					</div>
+
+					css代码：
+					.fuji_3{
+						display: -webkit-box;
+					    display: -webkit-flex;
+					    -webkit-box-align: center;
+					    -webkit-align-items: center;
+					    display: flex;
+					    align-items: center;---用来垂直居中
+						border:1px solid green;
+
+						align-items:stretch;----这个是用来等高
+							}
+					.fuji_3 .flexbox_item{
+						-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */  
+					    -moz-box-flex: 1;         /* OLD - Firefox 19- */  
+					    -webkit-flex: 1;          /* Chrome */  
+					    -ms-flex: 1;              /* IE 10 */  
+					    flex: 1; 
+
+							}
+					让两个div内容高度不一致的让其等高的方法：
+					给弹性盒子添加这个样式：
+					align-items:stretch;
+				</div>
+       						
+				 </pre>
+            <div class="fuji_3">
+                <div>
+                    <img src="images/xiaoxin.jpg">
+                </div>
+                <div>fdfd</div>
+                <div class="flexbox_item">
+                    第二个
+                </div>
+                <div>
+                    <i class="iconfont icon">&#xe608;</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">对于图片基线原因导致会多出高度问题</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				<div class="tupian">
+					<img src="images/xiaoxin.jpg" >
+					<span></span> --第二种方法加一个空标签
+				</div>
+				css代码
+			    .tupian{
+					/* font-size: 0px;-----第一种方法父级设置这个样式 */
+					border:1px solid red;
+				}
+				.tupian img{
+					vertical-align: bottom;第二种方法
+				}
+   
+       						
+				</pre>
+            <div class="tupian">
+                <img src="images/xiaoxin.jpg">
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">如何获取倒数几个元素</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				<div class="yuansu">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				css代码
+				.yuansu div{
+					float: left;
+					width: 33%;
+					height: 50px;
+					border:1px solid green;
+				}
+			   .yuansu div:last-child{
+					background-color: red;-----获取最后一个页面
+				}
+				.yuansu div:nth-last-child(2){
+					background-color: yellow; ------获取倒数第二个页面
+				}
+   			
+				</pre>
+            <div class="yuansu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">Swicth开关按钮</p>
+        <div class="menu">
+            <pre class="brush: js;">
+					<div style="height: 50px;" class="huadong_kaiguan">
+					<input id="checked" type="checkbox" class="switch"/>
+	            	<label for="checked" class="lb_1"></label>
+				</div>
+				<div style="height: 100px;margin-top: 20px;" class="huadong_kaiguan">
+					<input id="checked2" type="checkbox" class="switch" checked="checked" />
+	            	<label for="checked2" class="lb_1"></label>
+				</div>
+	            CSS代码：
+
+	.huadong_kaiguan .switch{
+       opacity: 0;
+       height: 0px;
+       width: 0px;
+    }
+    .huadong_kaiguan .lb_1{
+        position:relative;
+        display: inline-block;
+        border-radius: 22px;
+        height: 28px;
+        cursor: pointer;
+        width: 51px;
+       -webkit-user-select: none; 
+    }
+   .huadong_kaiguan .lb_1:before{
+        content: '';
+        display: block;
+       border-radius: 22px;
+        height: 30px;
+        background-color: white;
+        -webkit-transform: scale(1, 1);
+        -webkit-transition: all 0.3s ease;
+        box-sizing: border-box;
+          border:1px solid #E1E1E1;
+    }
+    .huadong_kaiguan .lb_1:after{
+        content: '';
+        position: absolute;
+        top: 3px;
+        left:2px;
+        width: 26px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.08); 
+        -webkit-transition: all 0.3s ease;
+    }
+
+	.huadong_kaiguan .switch:checked~.lb_1:before{
+		 border:1px solid #E1E1E1;
+        background-color:#4ED768;
+        height: 30px;
+    }  
+    .huadong_kaiguan .switch:checked~.lb_1:after{
+        -webkit-transform: translateX(21px);
+        top: 3px;
+		height: 24px;
+    }
+   			
+				</pre>
+            <div style="height: 50px;" class="huadong_kaiguan">
+                <input id="checked" type="checkbox" class="switch" />
+                <label for="checked" class="lb_1"></label>
+            </div>
+            <div style="height: 100px;margin-top: 20px;" class="huadong_kaiguan">
+                <input id="checked2" type="checkbox" class="switch" checked="checked" />
+                <label for="checked2" class="lb_1"></label>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">当文本与数字结合是，内容过多时显示"....."</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				<div class="shenglue">
+					这个是一个很大的订单E32432423432432423424324234
+				</div>
+				css代码
+				.shenglue{
+				   	text-overflow: -o-ellipsis-lastline;
+					    overflow: hidden;
+					    text-overflow: ellipsis;
+					    display: -webkit-box;
+					    -webkit-line-clamp: 2; 
+					    -webkit-box-orient: vertical; 
+					     word-wrap:break-word;
+						word-break:break-all;
+							border:1px solid red;
+				}
+   			
+				</pre>
+            <div class="shenglue">
+                这个是一个很大的订单E32432423432432423424324234ssssssssssssssssssssssssssss111111111111111111111111111
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">支付宝switch开关</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				<div class="zhifubao_ipt">
+					<input id="checked3" type="checkbox" class="switchs">
+                	 <label for="checked3" class="lb_1"></label>
+				</div>
+				<div class="zhifubao_ipt"> ---默认打开
+					<input id="checked4" type="checkbox" class="switchs" checked="checkbox">
+                	 <label for="checked4" class="lb_1"></label>
+				</div>
+				css代码
+			.zhifubao_ipt .switchs{
+			    opacity: 0;
+			    height: 0px;
+			    width: 0px;
+			 }
+			.zhifubao_ipt .lb_1,.lb_2{
+			    position:relative;
+			     display: inline-block;
+			     border-radius: 22px;
+			     height: 20px;
+			     cursor: pointer;
+			     width: 66px;
+			    -webkit-user-select: none;
+			 }
+			.zhifubao_ipt label:before{
+			    content: '';
+			     display: block;
+			     height: 22px;
+			     background-color: #A7AAA6;
+			     -webkit-transform: scale(1, 1);
+			     -webkit-transition: all 0.3s ease;
+			     box-sizing: border-box;
+			      border-radius: 3px; 
+			 }
+			.zhifubao_ipt label:after{
+			     content: '';
+			     position: absolute;
+			     top: 2px;
+			     left:2px;
+			     width: 29px;
+			     height: 18px;
+			     background-color: white;
+			     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.08); 
+			     -webkit-transition: all 0.3s ease;
+			     border-radius: 3px; 
+			 }
+
+			 .zhifubao_ipt .switchs:checked~label:after{
+			    -webkit-transform: translateX(32px);
+			     top: 2px;
+			    left: 3px;
+			 }
+			  
+			.zhifubao_ipt .switchs:checked~label:before{
+			      background-color:#4ED768;
+			 }  
+   			
+				</pre>
+            <div class="zhifubao_ipt">
+                <input id="checked3" type="checkbox" class="switchs">
+                <label for="checked3" class="lb_1"></label>
+            </div>
+            <div class="zhifubao_ipt">
+                <input id="checked4" type="checkbox" class="switchs" checked="checkbox">
+                <label for="checked4" class="lb_1"></label>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">当表格中文本与数字结合是，内容过多时显示"....."</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				<div class="biaoge_shenglue">
+					<table>
+					 	<tr>
+					 		<td>qqqqqqqqqqqqq</td>
+					 		<td>中文中文中文</td>
+					 		<td>13123131321321aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+					 	</tr>
+					 </table>
+				</div>
+				css代码
+				.shenglue tr td{
+				   		float: left;----不加这一句会导致各列独占一行
+				 		width: 300px;
+				 		text-overflow: -o-ellipsis-lastline;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 1; 
+						-webkit-box-orient: vertical; 
+						word-wrap:break-word;
+						word-break:break-all;
+				}
+   			
+				</pre>
+            <div class="biaoge_shenglue">
+                <table border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>qqqqqqqqqqqqq</td>
+                        <td>中文中文中文</td>
+                        <td>13123131321321aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">手机端有弹出框时，背景页面仍然能上下滑动浏览的解决办法</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				
+   				$("button").click(function(){  ---点击会出现弹框的事件
+				$("#aa").css("display","block"); ---弹框背景出现
+				  $("body").bind("touchmove", function(e) { ---阻止原页面可以上下滑动
+	                e.preventDefault();
+	            })
+		});
+			  $(".tuichu").bind("click", function(e) { ---弹框页面消失
+	            e.stopPropagation();
+	            $("#aa").css("display", "none");
+	            $("body").unbind("touchmove"); ---让原页面恢复上下浏览
+	        });
+
+	           --如果遮罩层内容也要滑动的话，可以使用以下方法
+	             在遮罩层弹出时：
+	             
+			</pre>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">手机端有弹出框时，点击弹框关闭按钮后，会导致原页面input框获取焦点的解决办法</p>
+        <div class="menu">
+            <pre class="brush: js;">
+			  $("弹框按钮").bind("click", function() { ---将点击事件touchstart换成click
+	            $("#aa").css("display", "none");
+	     		可引用fastclick插件，在前面添加
+	     		FastClick.attach(document.body); ---可优化手机端关闭弹框的延迟，让关闭更快一些
+	        });
+			</pre>
+        </div>
+    </div>
+    <div class="note note_01">
+        <p class="biaoti">css等待加载动画效果</p>
+        <div class="menu">
+            <pre class="brush: js;">
+				 <div>音波上下滚动效果</div>
+				 <div class="loading">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				css代码：
+				 .loading{
+	            width: 80px;
+	            height: 40px;
+	            margin-top:20px;
+	            margin-left: 20px;
+	        }
+				.loading span{
+					display: inline-block;
+		            width: 8px;
+		            margin-top: 30px;
+		            height: 10px;
+		            border-radius: 4px;
+		            background: lightgreen;
+		            -webkit-animation: load 1.3s 4s ease infinite;
+
+				}
+			 @-webkit-keyframes load{
+	            0%,100%{
+	                height: 10px;
+	                background: lightgreen;
+	            }
+	            50%{
+	                height: 40px;
+	                margin-top: 0px; 
+	                background: lightblue;
+	            }
+	        }
+	          .loading span:nth-child(1){
+	            -webkit-animation-delay:0s;
+	        }
+	        .loading span:nth-child(2){
+	            -webkit-animation-delay:0.13s;
+	        }
+	        .loading span:nth-child(3){
+	            -webkit-animation-delay:0.26s;
+	        }
+	        .loading span:nth-child(4){
+	            -webkit-animation-delay:0.39s;
+	        }
+	        .loading span:nth-child(5){
+	            -webkit-animation-delay:0.52s;
+	        }
+			</pre>
+            <!-- 音波上下滚动效果 -->
+            <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <pre class="brush: js;">
+				 <div style="margin-top: 20px;">
+				 <p>方块动态进度条</p>
+				 <div class="fangkuai">
+			        <span></span>
+			        <span></span>
+			        <span></span>
+			        <span></span>
+			        <span></span>
+				</div>
+			     </div>
+				css代码：
+				 .fangkuai{
+				     width: 150px;
+				     height: 15px;
+				     margin-left: 20px;
+				     margin-top:20px;
+				     text-align: center;
+				 }
+				 .fangkuai span{
+				     display: inline-block;
+				     width: 15px;
+				     height: 100%;
+				     margin-right: 5px;
+				     background: lightgreen;
+				     -webkit-animation: fang 1.04s ease infinite;
+				 }
+				 .fangkuai span:last-child{
+				     margin-right: 0px; 
+				 }
+				 @-webkit-keyframes fang{
+				     0%{
+				         opacity: 1;
+				         -webkit-transform: scale(1.2);
+				     }
+				     100%{
+				         opacity: 0.2;
+				         -webkit-transform: scale(0.2);
+				     }
+				 }
+				 .fangkuai span:nth-child(1){
+				     -webkit-animation-delay:0.13s;
+				 }
+				 .fangkuai span:nth-child(2){
+				     -webkit-animation-delay:0.26s;
+				 }
+				 .fangkuai span:nth-child(3){
+				     -webkit-animation-delay:0.39s;
+				 }
+				 .fangkuai span:nth-child(4){
+				     -webkit-animation-delay:0.52s;
+				 }
+				 .fangkuai span:nth-child(5){
+				     -webkit-animation-delay:0.65s;
+				 } 
+			</pre>
+            <div style="margin-top: 20px;">
+                <div class="fangkuai">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!-- 直线进度条 -->
+            <pre class="brush: js;">
+				<div style="margin-top: 20px;">
+				<p>直线进度条</p>
+				<div class="zhixian">
+			        <span></span> 
+				</div>
+				</div> 
+
+				css代码：
+				.zhixian{
+             width: 150px;
+            height: 8px;
+            border-radius: 4px;
+            margin: 0 auto;
+            margin-left: 20px;
+            margin-top:20px;
+            position: relative;
+            background: #DDF8F8;
+            overflow: hidden;
+        }
+        .zhixian span{
+            display:block;
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+            background: #05FFD9;
+            -webkit-animation: changePosition 2s linear infinite;
+        }
+       @-webkit-keyframes changePosition{
+            0%{
+                -webkit-transform: translate(-150px);
+            }
+            100%{
+                -webkit-transform: translate(0px);
+           }
+
+		}
+			</pre>
+            <div style="margin-top: 20px;">
+                <p>直线进度条</p>
+                <div class="zhixian">
+                    <span></span>
+                </div>
+            </div>
+            <!-- 	等待加载旋转 -->
+            <pre class="brush: js;">
+				<div style="margin-top: 20px;">
+					<p>等待加载旋转</p>
+					<div class="yuanquan">
+				        <span></span> 
+				        <span></span>
+				        <span></span>
+				        <span></span>
+				        <span></span>
+				        <span></span>
+				        <span></span>
+				        <span></span>
+					</div>
+				</div>
+				css代码：
+			 .yuanquan{
+       	width: 100px;
+       	height: 100px;
+       	position: relative;
+       	margin-left: 20px;
+       
+       }
+		.yuanquan span{
+		width: 30px;
+		height: 10px;
+		position: absolute;
+		border-radius:0 5px 5px 0;
+        background: lightgreen;
+        position: absolute;
+         -webkit-animation:yuan 1.04s ease infinite; 
+		}
+
+      @-webkit-keyframes yuan{
+         0%{
+             opacity: 1;
+         }
+         100%{
+             opacity: 0.2;
+         }
+     } 
+        .yuanquan span:nth-child(1){
+            left: 0px;
+            top:50%;
+            transform: rotate(180deg);
+           /*   -webkit-animation-delay:0.13s; */
+        }
+        .yuanquan span:nth-child(2){
+          left: 5px;
+            top: 20px;
+            transform: rotate(-135deg);
+           -webkit-animation-delay:0.26s;
+        }
+         .yuanquan span:nth-child(3){
+             left: 45px;
+            top: 10px;
+            transform: rotate(-90deg);
+            margin-left: -10px;
+            -webkit-animation-delay:0.39s;
+        }
+            .yuanquan span:nth-child(4){
+             top: 20px;
+            right:5px;
+            transform: rotate(-45deg);
+           -webkit-animation-delay:0.52s;
+        }
+         .yuanquan span:nth-child(5){
+            right: 0px;
+            top:50%;
+            -webkit-animation-delay:0.65s;
+        }
+         .yuanquan span:nth-child(6){
+             right: 5px;
+            bottom: 10px;
+            transform: rotate(45deg);
+            -webkit-animation-delay:0.78s;
+        }
+        .yuanquan span:nth-child(7){
+             left: 45px;
+            bottom: 0px;
+            transform: rotate(90deg);
+            margin-left: -10px;
+            -webkit-animation-delay:0.91s;
+        }
+        .yuanquan span:nth-child(8){
+            bottom: 10px;
+            left:5px;
+            transform: rotate(135deg);
+            -webkit-animation-delay:1.04s;
+        }
+			</pre>
+            <div style="margin-top: 20px;">
+                <p>等待加载旋转</p>
+                <div class="yuanquan">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!-- 小圈等待加载旋转 -->
+            <pre class="brush: js;">
+				<div style="margin-top: 20px;">
+		        <p>小圈等待加载旋转</p>
+		        <div class="xiaoquan">
+		            <div><span></span></div>
+		            <div><span></span></div>
+		            <div><span></span></div>
+		            <div><span></span></div>
+		        </div>
+    			 </div>
+				css代码：
+					    .xiaoquan{
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        .xiaoquan div{
+            width: 100%;
+            height: 100%;
+            position: absolute; 
+            -webkit-animation: xiaoquana 1.5s linear infinite;  
+        }
+        .xiaoquan div span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: lightgreen;
+            position: absolute;
+            left: 50%;
+            margin-top: -10px;
+            margin-left: -10px;
+        }
+        @-webkit-keyframes xiaoquana{
+            0%{
+                -webkit-transform: rotate(0deg);
+            }
+            10%{
+                -webkit-transform: rotate(45deg);
+            }
+            50%{
+                opacity: 1;
+                -webkit-transform: rotate(160deg);
+            }
+            62%{
+                opacity: 0;
+            }
+            65%{
+                opacity: 0;
+                -webkit-transform: rotate(200deg);
+            }
+            90%{
+                -webkit-transform: rotate(340deg);
+            }
+            100%{
+                -webkit-transform: rotate(360deg);
+            }
+
+        }
+        .xiaoquan div:nth-child(1){
+            -webkit-animation-delay:0.2s;
+        }
+        .xiaoquan div:nth-child(2){
+            -webkit-animation-delay:0.4s;
+        }
+        .xiaoquan div:nth-child(3){
+            -webkit-animation-delay:0.6s;
+        }
+        .xiaoquan div:nth-child(4){
+            -webkit-animation-delay:0.8s;
+        }
+			</pre>
+            <div style="margin-top: 20px;">
+                <p>小圈等待加载旋转</p>
+                <div class="xiaoquan">
+                    <div><span></span></div>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p class="biaoti">从两边延伸变成直线</p>
+        <div class="menu">
+            <pre class="brush: js;">
+			<div class="fuji">
+				<div class="ziji"></div>----让这个居中
+				<span style="display:inline-block;height:100%;vertical-align:middle;"></span>--空标签，必须是inline-block;
+			</div>
+	
+			CSS样式：
+			.note_4 .fuji{
+				overflow: hidden;
+				border:1px solid green;
+				height: 100px;
+			}
+			 .note_4 .fuji .ziji{
+				overflow: hidden;
+				background-color:yellow;
+				width: 100px;
+				display: inline-block;
+				
+			}
+		</pre>
+            <div class="fuji">
+                <div class="ziji">这个是子级</div>
+                <span style="display:inline-block;height:100%;vertical-align:middle;"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

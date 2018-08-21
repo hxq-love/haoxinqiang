@@ -1,0 +1,674 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+body{
+	font-family: '微软雅黑'
+}
+.xuanzhuan{
+	-webkit-animation: rotation 2s linear infinite;
+}
+
+@-webkit-keyframes rotation{
+		from {-webkit-transform: rotate(0deg);}
+		to {-webkit-transform: rotate(360deg);}
+		}
+
+.biaoti{
+	padding:10px 0;
+	background:-webkit-linear-gradient(top,rgba(216,252,252,1),rgba(121,121,121,0.7));
+	cursor: pointer;
+	color:red;
+}
+.note{
+	overflow: hidden;
+}
+.note .menu{
+	width: 100%;
+	overflow: hidden;
+	display: none;
+}
+/* 笔记二 */
+.note .menu{
+
+	display: none;
+}
+.note .user{
+	 vertical-align: top;
+}
+
+.note .p_1{
+	font-size: 13px;
+}
+/* 笔记三 */
+/* .note_3{
+	overflow: hidden;
+} */
+.note .menu{
+	display: none;
+}
+.note  .zhongxin{
+	width:100px;
+	height: 100px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background-color: yellow;
+	transform: translate(-50%,-50%); 
+}
+/* 笔记四 */
+.note_4{
+	overflow: hidden;
+}
+.note .fuji{
+	overflow: hidden;
+	border:1px solid green;
+	height: 100px;
+}
+.note_4 .menu{
+	display: none;
+}
+ .note .fuji .ziji{
+	overflow: hidden;
+	background-color:yellow;
+	width: 100px;
+	display: inline-block;
+	
+}
+
+/* 笔记五 */
+.note_5{
+	overflow: hidden;
+}
+.note .duanluo{
+	 	text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical; 
+     word-wrap:break-word;
+	word-break:break-all;
+    width:30%;
+    border:1px solid red;
+             
+}
+.note_5 .menu{
+	display: none;
+}
+
+
+/* 笔记六*/
+.note_6{
+	overflow: hidden;
+}
+.note .menu .huadong{
+	 margin-left:25px;
+	 width: 50px;
+	margin-top: 34px;
+	border:1px solid red;
+
+}
+
+
+/* 笔记七*/
+/* .note{
+	overflow: hidden;
+} */
+.note .menu .sanjiaoxing{
+	width: 0;
+	height: 0;
+	border-bottom:20px solid blue;
+	border-right:20px solid transparent;
+	border-top:20px solid transparent;
+	border-left:20px solid transparent;
+	float: left;
+}
+.note .menu .jiantou{
+	float: left;
+	width: 20px;
+	height: 20px;
+	border-right:3px solid red;
+	border-top:2px solid red;
+	transform: rotate(45deg);
+	margin-top: 20px;
+	margin-left: 50px;
+}
+.note .menu .yuan{
+	float: left;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: green;
+	margin-top: 20px;
+	margin-left: 50px;
+	}
+.note .menu{
+	display: none;
+}
+
+	.xiala{
+				width: 50%;
+				margin:0 auto;
+				overflow: hidden;
+			}
+			.xiala .biaoti_2{
+				padding:10px 0;
+				background:-webkit-linear-gradient(top,rgba(216,252,252,1),rgba(121,121,121,0.7));
+				cursor: pointer;
+				color:red;
+			}
+			.xiala_neirong{
+				width: 100%;
+				overflow: hidden;
+				display: none;
+			}
+.yanse{
+	background-color: red!important;
+
+}
+
+.fujiyemian{
+	width: 100%;
+		height: 400px;
+		position: relative;
+}
+.fujiyemian .fujiyemian_left{
+	float: left;
+	width: 30%;
+	height: 400px;
+	background-color: red
+}
+.fujiyemian .fujiyemian_right{
+	float: left;
+	width: 70%;
+	height: 400px;
+	background-color: green;
+}
+.fujiyemian .qiehuan{
+	background-color: white;
+	position: absolute;
+	width: 50px;
+	text-align: center;
+	right: 70%;
+	height: 40px;
+	line-height: 40px;
+	top:180px;
+	cursor: pointer;
+}
+.qiehuan_left{
+	left:0px;
+}
+
+
+.btn{
+			width: 50px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			background-color: red;
+			cursor: pointer;
+		}
+		.fuji_2{
+			position: fixed;
+			bottom:0px;
+			top:0px;
+			width: 100%;
+			background: rgba(0,0,0,0.8);
+			display: none;
+		}
+         .ziji{
+         	 width:100px;
+		    height: 100px;
+		    position: fixed;
+		    top: 50%;
+		    left: 50%;
+		    background-color: yellow;
+		    transform: translate(-50%,-50%); 
+		    cursor: pointer;
+         }   
+.qiehuan{
+	height: 30px;
+	line-height: 30px;
+	background-color: red;
+	cursor: pointer;
+}        
+.qiehuan_2{
+	background-color: yellow;
+}
+
+
+.fuji_3{
+	display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    display: flex;
+    align-items: center;
+	border:1px solid green;
+		}
+.fuji_3 .flexbox_item{
+	-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */  
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */  
+    -webkit-flex: 1;          /* Chrome */  
+    -ms-flex: 1;              /* IE 10 */  
+    flex: 1; 
+
+		}
+.tupian{
+	/* font-size: 0px;-----第一种方法父级设置这个样式 */
+	border:1px solid red;
+}
+.tupian img{
+	vertical-align: bottom;
+}
+.yuansu div{
+	float: left;
+	width: 33%;
+	height: 50px;
+	border:1px solid green;
+}
+.yuansu div:last-child{
+	background-color: red;
+}
+.yuansu div:nth-last-child(2){
+	background-color: yellow;
+}
+.css_1{
+	overflow: hidden;
+	border:1px solid green;
+}
+.css_1 i{
+	font-size: 25px;
+	color: red;
+	vertical-align: bottom;
+} 
+.css_1 span{
+	display: inline-block;
+	overflow: hidden;
+	font-size: 14px;
+}
+/* 按钮 */
+.huadong_kaiguan .switch{
+       opacity: 0;
+       height: 0px;
+       width: 0px;
+    }
+    .huadong_kaiguan .lb_1{
+        position:relative;
+        display: inline-block;
+        border-radius: 22px;
+        height: 28px;
+        cursor: pointer;
+        width: 51px;
+       -webkit-user-select: none; 
+    }
+   .huadong_kaiguan .lb_1:before{
+        content: '';
+        display: block;
+       border-radius: 22px;
+        height: 30px;
+        background-color: white;
+        -webkit-transform: scale(1, 1);
+        -webkit-transition: all 0.3s ease;
+        box-sizing: border-box;
+          border:1px solid #E1E1E1;
+    }
+    .huadong_kaiguan .lb_1:after{
+        content: '';
+        position: absolute;
+        top: 3px;
+        left:2px;
+        width: 26px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.08); 
+        -webkit-transition: all 0.3s ease;
+    }
+
+	.huadong_kaiguan .switch:checked~.lb_1:before{
+		 border:1px solid #E1E1E1;
+        background-color:#4ED768;
+        height: 30px;
+    }  
+    .huadong_kaiguan .switch:checked~.lb_1:after{
+        -webkit-transform: translateX(21px);
+        top: 3px;
+		height: 24px;
+    }
+
+
+    .shenglue{
+    	width: 30%;
+    		text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical; 
+     word-wrap:break-word;
+	word-break:break-all;
+		border:1px solid red;
+    }
+
+    /* 支付宝开关 */
+  .zhifubao_ipt .switchs{
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+ }
+.zhifubao_ipt .lb_1,.lb_2{
+    position:relative;
+     display: inline-block;
+     border-radius: 22px;
+     height: 20px;
+     cursor: pointer;
+     width: 66px;
+    -webkit-user-select: none;
+ }
+.zhifubao_ipt label:before{
+    content: '';
+     display: block;
+     height: 22px;
+     background-color: #A7AAA6;
+     -webkit-transform: scale(1, 1);
+     -webkit-transition: all 0.3s ease;
+     box-sizing: border-box;
+      border-radius: 3px; 
+ }
+.zhifubao_ipt label:after{
+     content: '';
+     position: absolute;
+     top: 2px;
+     left:2px;
+     width: 29px;
+     height: 18px;
+     background-color: white;
+     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.08); 
+     -webkit-transition: all 0.3s ease;
+     border-radius: 3px; 
+ }
+
+ .zhifubao_ipt .switchs:checked~label:after{
+    -webkit-transform: translateX(32px);
+     top: 2px;
+    left: 3px;
+ }
+  
+.zhifubao_ipt .switchs:checked~label:before{
+      background-color:#4ED768;
+ }  
+
+
+ .biaoge_shenglue tr td{
+ 		float: left;
+ 		width: 300px;
+ 		text-overflow: -o-ellipsis-lastline;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 1; 
+		-webkit-box-orient: vertical; 
+		word-wrap:break-word;
+		word-break:break-all;
+ }
+
+ 
+/* css加载动态效果 */
+.note_01 .loading{
+            width: 80px;
+            height: 40px;
+            margin-top:20px;
+            margin-left: 20px;
+        }
+.note_01 .loading span{
+			display: inline-block;
+            width: 8px;
+            margin-top: 30px;
+            height: 10px;
+            border-radius: 4px;
+            background: lightgreen;
+            -webkit-animation: load 1.3s 4s ease infinite;
+
+		}
+ @-webkit-keyframes load{
+            0%,100%{
+                height: 10px;
+                background: lightgreen;
+            }
+            50%{
+                height: 40px;
+                margin-top: 0px; 
+                background: lightblue;
+            }
+        }
+.note_01 .loading span:nth-child(1){
+            -webkit-animation-delay:0s;
+        }
+        .loading span:nth-child(2){
+            -webkit-animation-delay:0.13s;
+        }
+        .loading span:nth-child(3){
+            -webkit-animation-delay:0.26s;
+        }
+        .loading span:nth-child(4){
+            -webkit-animation-delay:0.39s;
+        }
+        .loading span:nth-child(5){
+            -webkit-animation-delay:0.52s;
+        }
+
+        /* 方块动态进度条 */
+.note_01 .fangkuai{
+     width: 150px;
+     height: 15px;
+     margin-left: 20px;
+     margin-top:20px;
+     text-align: center;
+ }
+.note_01 .fangkuai span{
+     display: inline-block;
+     width: 15px;
+     height: 100%;
+     margin-right: 5px;
+     background: lightgreen;
+     -webkit-animation: fang 1.04s ease infinite;
+ }
+.note_01 .fangkuai span:last-child{
+     margin-right: 0px; 
+ }
+ @-webkit-keyframes fang{
+     0%{
+         opacity: 1;
+         -webkit-transform: scale(1.2);
+     }
+     100%{
+         opacity: 0.2;
+         -webkit-transform: scale(0.2);
+     }
+ }
+.note_01 .fangkuai span:nth-child(1){
+     -webkit-animation-delay:0.13s;
+ }
+.note_01 .fangkuai span:nth-child(2){
+     -webkit-animation-delay:0.26s;
+ }
+.note_01 .fangkuai span:nth-child(3){
+     -webkit-animation-delay:0.39s;
+ }
+.note_01 .fangkuai span:nth-child(4){
+     -webkit-animation-delay:0.52s;
+ }
+.note_01 .fangkuai span:nth-child(5){
+     -webkit-animation-delay:0.65s;
+ } 
+
+
+ /* 直线进度条 */
+.note_01 .zhixian{
+             width: 150px;
+            height: 8px;
+            border-radius: 4px;
+            margin: 0 auto;
+            margin-left: 20px;
+            margin-top:20px;
+            position: relative;
+            background: #DDF8F8;
+            overflow: hidden;
+        }
+.note_01 .zhixian span{
+            display:block;
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+            background: #05FFD9;
+            -webkit-animation: changePosition 2s linear infinite;
+        }
+       @-webkit-keyframes changePosition{
+            0%{
+                -webkit-transform: translate(-150px);
+            }
+            100%{
+                -webkit-transform: translate(0px);
+           }
+
+		}
+       /*  圆圈等待加载效果 */
+.note_01 .yuanquan{
+       	width: 100px;
+       	height: 100px;
+       	position: relative;
+       	margin-left: 20px;
+       
+       }
+.note_01 .yuanquan span{
+		width: 30px;
+		height: 10px;
+		position: absolute;
+		border-radius:0 5px 5px 0;
+        background: lightgreen;
+        position: absolute;
+         -webkit-animation:yuan 1.04s ease infinite; 
+		}
+
+      @-webkit-keyframes yuan{
+         0%{
+             opacity: 1;
+         }
+         100%{
+             opacity: 0.2;
+         }
+     } 
+ .note_01 .yuanquan span:nth-child(1){
+            left: 0px;
+            top:50%;
+            transform: rotate(180deg);
+           /*   -webkit-animation-delay:0.13s; */
+        }
+.note_01 .yuanquan span:nth-child(2){
+          left: 5px;
+            top: 20px;
+            transform: rotate(-135deg);
+           -webkit-animation-delay:0.26s;
+        }
+.note_01 .yuanquan span:nth-child(3){
+             left: 45px;
+            top: 10px;
+            transform: rotate(-90deg);
+            margin-left: -10px;
+            -webkit-animation-delay:0.39s;
+        }
+.note_01 .yuanquan span:nth-child(4){
+             top: 20px;
+            right:5px;
+            transform: rotate(-45deg);
+           -webkit-animation-delay:0.52s;
+        }
+ .note_01 .yuanquan span:nth-child(5){
+            right: 0px;
+            top:50%;
+            -webkit-animation-delay:0.65s;
+        }
+.note_01 .yuanquan span:nth-child(6){
+             right: 5px;
+            bottom: 10px;
+            transform: rotate(45deg);
+            -webkit-animation-delay:0.78s;
+        }
+.note_01 .yuanquan span:nth-child(7){
+             left: 45px;
+            bottom: 0px;
+            transform: rotate(90deg);
+            margin-left: -10px;
+            -webkit-animation-delay:0.91s;
+        }
+.note_01 .yuanquan span:nth-child(8){
+            bottom: 10px;
+            left:5px;
+            transform: rotate(135deg);
+            -webkit-animation-delay:1.04s;
+        }
+
+
+        /* 小圆圈等待加载 */
+.note_01 .xiaoquan{
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+.note_01 .xiaoquan div{
+            width: 100%;
+            height: 100%;
+            position: absolute; 
+            -webkit-animation: xiaoquana 1.5s linear infinite;  
+        }
+.note_01 .xiaoquan div span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: lightgreen;
+            position: absolute;
+            left: 50%;
+            margin-top: -10px;
+            margin-left: -10px;
+        }
+        @-webkit-keyframes xiaoquana{
+            0%{
+                -webkit-transform: rotate(0deg);
+            }
+            10%{
+                -webkit-transform: rotate(45deg);
+            }
+            50%{
+                opacity: 1;
+                -webkit-transform: rotate(160deg);
+            }
+            62%{
+                opacity: 0;
+            }
+            65%{
+                opacity: 0;
+                -webkit-transform: rotate(200deg);
+            }
+            90%{
+                -webkit-transform: rotate(340deg);
+            }
+            100%{
+                -webkit-transform: rotate(360deg);
+            }
+
+        }
+.note_01 .xiaoquan div:nth-child(1){
+            -webkit-animation-delay:0.2s;
+        }
+.note_01 .xiaoquan div:nth-child(2){
+            -webkit-animation-delay:0.4s;
+        }
+.note_01 .xiaoquan div:nth-child(3){
+            -webkit-animation-delay:0.6s;
+        }
+.note_01 .xiaoquan div:nth-child(4){
+            -webkit-animation-delay:0.8s;
+        }

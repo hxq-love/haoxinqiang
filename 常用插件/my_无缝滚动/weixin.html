@@ -1,0 +1,148 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片无缝滚动</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <style type="text/css">
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .weixin .boxs {
+        overflow: hidden;
+        margin: 10px;
+        width: 500px;
+        padding: 0 5px;
+        border: 1px solid red;
+    }
+
+    .weixin .boxs .boxs_fu {
+        padding: 10px 0;
+        float: left;
+        height: 70px;
+    }
+
+    .weixin .boxs .boxs_fu .son_box1 {
+        height: 70px;
+        float: left;
+    }
+
+    .weixin .boxs .boxs_fu .son_box1 .img_list {
+        width: 170px;
+        margin: 0 10px;
+        float: left;
+        text-align: center;
+    }
+
+    .weixin .boxs .boxs_fu .son_box1 img {
+        width: 100%;
+        height: 70px;
+    }
+
+    .weixin .boxs .boxs_fu .son_box2 {
+        height: 70px;
+        float: left;
+    }
+
+    .weixin .boxs .boxs_fu .son_box2 .img_list {
+        width: 170px;
+        margin: 0 10px;
+        text-align: center;
+        float: left;
+    }
+
+    .weixin .boxs .boxs_fu .son_box2 .img_list img {
+        width: 100%;
+        height: 70px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="weixin">
+        <div class="boxs">
+            <div class="boxs_fu">
+                <div class="son_box1">
+                    <div class="img_list">
+                        <img src="images/hf1.jpg">
+                    </div>
+                    <div class="img_list">
+                        <img src="images/hf2.jpg">
+                    </div>
+                    <div class="img_list">
+                        <img src="images/hf3.jpg">
+                    </div>
+                    <div class="img_list">
+                        <img src="images/hf4.jpg">
+                    </div>
+                    <div class="img_list">
+                        <img src="images/hf6.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/hxq.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        //     var Imgslid = {
+        //         times:20,
+        //         sLeft:0,
+        //         boxs_width:0,
+        //         init: function() {
+
+        //             var setImgs;
+        //             this.boxs_width = $(".boxs").width();
+        //             var son_box1_length = $(".son_box1 .img_list").length;
+        //             var son_box_width = this.boxs_width / son_box1_length;
+        //             $(".boxs_fu").append('<div class="son_box2"></div>');
+        //             $(".son_box2").html($(".son_box1").html());
+
+        //             $(".boxs_fu").css("width",($(".img_list").outerWidth()*8+160)+"px");
+        //             this.boxs_width = $(".son_box1").outerWidth();
+        //             //$(".img_list").css("width", son_box_width + "px");
+        //             this.methond();
+        //         },
+        //         methond: function() {
+        //             var this_=this;
+        //             function imgSetval() {
+        //                 setImgs = setInterval(function() {
+        //                     if (this_.sLeft >= this_.boxs_width) {
+        //                         this_.sLeft = 0;
+        //                     }
+        //                     $(".boxs").scrollLeft(this_.sLeft);
+        //                     this_.sLeft = this_.sLeft + 1;
+        //                 }, this_.times);
+        //             };
+        //             imgSetval();
+        //             $(".boxs img").hover(function() {
+        //                 clearInterval(setImgs);
+        //             }, function() {
+        //                 imgSetval();
+        //             });
+
+        //         }
+
+
+        //     }
+        //     Imgslid.init();
+
+        $(".boxs").tooltip({
+            "times": 20,
+            "width": 170,
+            "margin": 10
+        });
+    })
+
+
+
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/dropload.css">
+    <style type="text/css">
+    body {
+        background: white;
+    }
+
+    .top {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .mescroll {
+        position: fixed;
+        top: 44px;
+        bottom: 0;
+        height: auto;
+    }
+    /*展示上拉加载的数据列表*/
+
+    .data-list li {
+        position: relative;
+        padding: 10px 8px 10px 120px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .data-list .pd-img {
+        position: absolute;
+        left: 18px;
+        top: 18px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .data-list .pd-name {
+        font-size: 16px;
+        line-height: 20px;
+        height: 40px;
+        overflow: hidden;
+    }
+
+    .data-list .pd-price {
+        margin-top: 8px;
+        color: red;
+    }
+
+    .data-list .pd-sold {
+        font-size: 12px;
+        margin-top: 8px;
+        color: gray;
+    }
+
+    .opacity {
+        -webkit-animation: opacity 0.3s linear;
+        animation: opacity 0.3s linear;
+    }
+
+    @-webkit-keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="hxq">
+        <div class="top">
+            这是标题
+        </div>
+        <div class="content">
+            <ul class="lists data-list">
+                <!--  <li>
+                   <img class="pd-img" src="images/pd1.jpg" />
+                   <p class="pd-name">商品标题商品标题商品标题商品标题商品标题商品</p>
+                   <p class="pd-price">200.00 元</p>
+                   <p class="pd-sold">已售50件</p>
+               </li> -->
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/dropload.min.js"></script>
+    <script type="text/javascript">
+    var num = 4;
+    var winH = $(window).outerHeight() - 41;
+    $(function() {
+      var drops=$('.content').dropload({
+            scrollArea: window,
+            domUp: {
+                domClass: 'dropload-up',
+                domRefresh: '<div class="dropload-refresh">↓下拉刷新</div>',
+                domUpdate: '<div class="dropload-update">↑释放更新</div>',
+                domLoad: '<div class="dropload-load"><span class="loading"></span>加载中</div>'
+            },
+            domDown: {
+                domClass: 'dropload-down',
+                domRefresh: '<div class="dropload-refresh">↑上拉加载更多</div>',
+                domLoad: '<div class="dropload-load"><span class="loading"></span>加载中</div>',
+                domNoData: '<div class="dropload-noData">暂无数据</div>'
+            },
+            loadUpFn: function(me) {
+
+                // $.ajax({
+                //     type: 'GET',
+                //     url: 'js/more.json',
+                //     dataType: 'json',
+                //     success: function(data) {
+                //         var result = '';
+                //         for (var i = 0; i < 6; i++) {
+                //             result += ' <li>' +
+                //                 '<img class="pd-img" src="images/pd1.jpg" />' +
+                //                 '<p class="pd-name">商品标题商品标题商品标题商品标题商品标题商品</p>' +
+                //                 '<p class="pd-price">200.00 元</p>' +
+                //                 '<p class="pd-sold">已售50件</p>' +
+                //                 '</li>'
+                //         }
+                //         $(".lists").html(result)
+                //         // 每次数据加载完，必须重置
+                //         me.resetload();
+                //         var listH=$(".lists").outerHeight();
+                //         me.noData(false);
+                //         num=4;
+                //          if(listH<=winH){
+                //             // alert("无更多数据")
+                //            $(".dropload-down").hide();
+                //            me.lock('down')
+                //         }else{
+                //             $(".dropload-down").show();
+                //             $(".dropload-down .dropload-noData").hide();
+                //             $(".dropload-down .dropload-refresh").show();
+                //             me.unlock();
+
+                //         }
+                //         // 重置索引值，重新拼接more.json数据
+
+
+
+
+                //     },
+                //     error: function(xhr, type) {
+
+                //         // 即使加载出错，也得重置
+                //         me.resetload();
+                //     }
+                // });
+                $('.lists').html("");
+                me.resetload();
+                $(".dropload-down").hide();
+                me.noData(false);
+                me.unlock();
+                num = 4;
+                this.loadDownFn(me);
+            },
+            loadDownFn: function(me) {
+
+                $.ajax({
+                    type: 'GET',
+                    url: 'js/more.json',
+                    dataType: 'json',
+                    success: function(data) {
+
+                        if (num < 7) {
+                            var result = '';
+                            for (var i = 0; i < 3; i++) {
+                                result += ' <li>' +
+                                    '<img class="pd-img" src="images/pd1.jpg" />' +
+                                    '<p class="pd-name">商品标题商品标题商品标题商品标题商品标题商品</p>' +
+                                    '<p class="pd-price">200.00 元</p>' +
+                                    '<p class="pd-sold">已售50件</p>' +
+                                    '</li>'
+                            }
+                            setTimeout(function() {
+                                $(".dropload-down").show();
+                                $('.lists').append(result);
+                                // 每次数据加载完，必须重置
+                                me.resetload();
+                                num++;
+                            }, 500);
+
+                        } else {
+                            me.noData(true);
+                            me.resetload();
+                            me.lock('down');
+
+                        }
+
+
+                    }
+                });
+            }
+        });
+
+        function hxq() {
+            var result = ""
+            for (var i = 0; i < 3; i++) {
+                result += ' <li>' +
+                    '<img class="pd-img" src="images/pd1.jpg" />' +
+                    '<p class="pd-name">商品标题商品标题商品标题商品标题商品标题商品</p>' +
+                    '<p class="pd-price">200.00 元</p>' +
+                    '<p class="pd-sold">已售50件</p>' +
+                    '</li>'
+            }
+            $(".lists").append(result)
+        }
+
+
+        $(".content").ajaxError(function() {
+            console.info("报错了！！")
+        });
+    });
+    </script>
+</body>
+
+</html>
