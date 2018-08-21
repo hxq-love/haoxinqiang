@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>表格测试</title>
+    <style type="text/css">
+     /*   .box span{
+            width:15px;height:23px; display:inline-block; background: url(js/number.png) no-repeat;  text-indent:-999em}
+        }*/
+        .box{
+            
+            height: 21px;
+            overflow: hidden;
+        }
+        .box>div{
+            display: inline-block;
+           position: relative; 
+        }
+    </style>
+</head>
+
+<body>
+     
+
+
+   
+<div id="demo1" class="box">
+   
+</div>
+
+
+<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript">
+
+var H=$(".box").outerHeight();
+var html='<div><div>0</div>'+
+        '<div>1</div>'+
+        '<div>2</div>'+
+        '<div>3</div>'+
+        '<div>4</div>'+
+        '<div>5</div>'+
+        '<div>6</div>'+
+        '<div>7</div>'+
+        '<div>8</div>'+
+        '<div>9</div></div>'
+
+
+function gundong(item,num){
+    var item=$(item);
+    var numLength=num.length;
+  
+    var numArray=num.split("");
+
+    for(var i=0;i<numLength;i++){
+        item.append(html);
+    }
+    for(var i=0;i<numLength;i++){
+        var index_num=numArray[i];
+        var topH=H*i;
+        switch (index_num) {
+            case "0":
+                // statements_1
+                item.children('div').eq(i).animate({top:topH},500);
+                break;
+             case "1":
+                // statements_1
+                item.children('div').eq(i).animate({top:"-"+topH},500);
+                break;
+             case "2":
+                // statements_1
+                item.children('div').eq(i).animate({top:"-"+topH},500);
+                break;
+             case "3":
+                // statements_1
+                item.children('div').eq(i).animate({top:"-"+topH},500);
+                break;
+              case "4":
+                // statements_1
+                item.children('div').eq(i).animate({top:"-"+topH},500);
+                break;
+             case "5":
+                // statements_1
+                item.children('div').eq(i).animate({top:"-"+topH},500);
+                break;
+             case "6":
+                // statements_1
+                item.children('div').eq(i).animate({top:"-"+topH},500);
+                break;
+             case "7":
+                // statements_1
+                item.children('div').eq(i).animate({top:"-"+topH},500);
+                break;
+             case "8":
+                // statements_1
+                item.children('div').eq(i).animate({top:"-"+topH},500);
+                break;
+             case "9":
+                // statements_1
+                item.children('div').eq(i).animate({top:"-"+topH},500);
+                break;
+            default:
+                // statements_def
+                break;
+        }
+    }
+
+}
+
+//$(".box>div").animate({top:"-42px"},500);
+gundong("#demo1","8921")
+</script>
+
+</body>
+
+</html>
