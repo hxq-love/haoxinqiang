@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>test_2</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../css/fivefu_phone.css">
+    <link rel="stylesheet" href="../js/swiper.min.css" />
+    <style>
+    #name1,
+    #name2,
+    #name3 {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid tomato;
+    }
+    </style>
+</head>
+
+<body ontouchstart>
+    <div class="h_20px"></div>
+    <!-- 拍照的调用 -->
+    <p class="form_title">多媒体拍照1</p>
+    <div class="take_photo" id="photo_1"></div>
+    <!-- 图片放大预览 依赖swiper.css、swiper.js和img_zoom.js-->
+    <div class="h_15px"></div>
+    <p class="form_title">图片放大预览</p>
+    <div class="form_list mar_b_15 line img_box">
+        <div class="form_icon_85 img_zoom">
+            <img src="../images/example_img.png">
+        </div>
+        <div class="form_icon_85 img_zoom">
+            <img src="../images/news_img.png">
+        </div>
+        <div class="form_icon_85 img_zoom">
+            <img src="../images/user_photo_default.png">
+        </div>
+    </div>
+    <!-- 图片轮播 -->
+    <p class="form_title">图片轮播</p>
+    <div class="swiper_box">
+        <div class="swiper_1 swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!-- 下拉选择 -->
+    <div id="name1">一列选择</div>
+    <div id="name2">两列选择</div>
+    <div id="name3">三列选择</div>
+    <!-- 弹框的调用 -->
+    <div class="h_30px"></div>
+    <div class="p_15">
+        <p class="form_title">弹框的调用</p>
+        <a class="btn primary" id="btn_1">无标题的弹框</a>
+        <div class="h_15px"></div>
+        <a class="btn primary" id="btn_2">有标题</a>
+        <div class="h_15px"></div>
+        <a class="btn primary" id="btn_3">有标题、提示、不做操作</a>
+        <div class="h_15px"></div>
+        <a class="btn primary" id="btn_4">无标题、提示、不做操作</a>
+    </div>
+    <div class="h_30px"></div>
+    <div class="p_15">
+        <p class="form_title">toast的调用</p>
+        <div class="flexbox">
+            <a class="btn primary2 mar_l_5" id="btn_5">1-出现</a>
+            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+            <a class="btn warn" id="btn_5a">1-隐藏</a>
+        </div>
+        <div class="flexbox">
+            <a class="btn primary2 mar_l_5" id="btn_6">2-出现</a>
+            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+            <a class="btn warn" id="btn_6a">2-隐藏</a>
+        </div>
+        <div class="flexbox">
+            <a class="btn primary2 mar_l_5" id="btn_7">3-出现</a>
+            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+            <a class="btn warn" id="btn_7a">3-隐藏</a>
+        </div>
+        <a class="btn primary2" id="btn_8">自动关闭</a>
+    </div>
+
+    <!-- tab切换 -->
+    <div class="tab_wrap">
+    <div class="tab tab_1">
+        <a class="tab_active">标签1</a>
+        <a>标签2标签2</a>
+        <a>标签3</a>
+    </div>
+    <div class="tab_content">
+        <div style="display: block;">tab选项卡 tab_1</div>
+        <div style="display: none;">22222222</div>
+        <div style="display: none;">33333333</div>
+    </div>
+</div>
+ 
+<div class="tab_wrap">
+    <div class="tab tab_2">
+        <a class="tab_active">标签1</a>
+        <a>标签2</a>
+        <a>标签3</a>
+    </div>
+    <div class="tab_content">
+        <div style="display: block;">tab选项卡 tab_2</div>
+        <div style="display: none;">22222222</div>
+        <div style="display: none;">33333333</div>
+    </div>
+</div>
+<script src="../js/require.js" data-main="js/demo" defer async="true"></script>
+</body>
+
+</html>

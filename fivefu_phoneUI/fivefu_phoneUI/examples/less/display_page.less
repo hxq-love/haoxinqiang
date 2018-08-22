@@ -1,0 +1,537 @@
+@import "../../less/reset.less";
+.ifra_1 {
+    width: 100%;
+    height: 569px;
+    overflow-y: auto;
+}
+.f_20 {
+    font-size: 20px;
+}
+
+@c_blue: #0ae;
+
+.gutter .line {
+    display: none !important;
+    background: red !important;
+}
+
+.syntaxhighlighter {
+    background-color: #EDF6FF !important;
+    border: 1px dotted #0099cc;
+    width: 100% !important;
+    margin: 10px 0 !important;
+    padding: 2% !important;
+    overflow-y: auto;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.syntaxhighlighter .line.alt2 {
+    background-color: #EDF6FF !important;
+}
+
+.syntaxhighlighter .line.alt1 {
+    background-color: #EDF6FF !important;
+}
+
+.syntaxhighlighter table td.code .line {
+    padding: 3px .5em !important;
+}
+
+.syntaxhighlighter .toolbar {
+    display: none;
+}
+
+.code {
+    font-family: Menlo, Monaco, Consolas, "Andale Mono ", "lucida console ", "Courier New ", monospace;
+}
+
+.syntaxhighlighter table td.code .line {
+    &:before {
+        display: none;
+    }
+    &:after {
+        display: none;
+    }
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+table{
+    border-collapse: collapse;
+}
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+.body_fivefu_phone {
+    background: #fff;
+}
+
+@blue: #0F8EE9;
+@c_888: #888888;
+@c_fff: #fff;
+.mar_b_15 {
+    margin-bottom: 15px;
+}
+
+.f_15 {
+    font-size: 15px;
+}
+
+.border_red {
+    border: 1px solid red;
+}
+
+.common_inner {
+    min-width: 1160px;
+    width: 90%;
+    margin: 0 auto; // border: 1px solid red;
+}
+
+.elli {
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.elli2 {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.iconfont {
+    font-style: normal;
+    font-size: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+.hide {
+    display: none;
+}
+
+.fivefu_phone {
+    .tbl_1{
+        width: 100%;
+        td{
+            padding: 10px;
+            border: 1px solid #ddd;
+            // text-align: center;
+             color: #444;
+        }
+        td[colspan="4"]{
+            font-size:18px;
+            color:#fff;
+            // text-align: center;
+// background-image: linear-gradient(90deg, #38D3B8 0%, #52CF86 100%);
+background-image: linear-gradient(-280deg, #2372FA 0%, #20E7FF 100%, #20E7FF 100%);
+        }
+        .title_tr{
+
+            font-weight: bold;
+            background: #f7f7f7;
+
+            td{
+                white-space:nowrap;
+                color: #000;
+            }
+        }
+    }
+    .download_box {
+        .title {
+            color: red;
+            margin-bottom: 20px;
+        }
+        .btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+    }
+
+    >.top {
+        height: 65px;
+        border-top: 3px solid @blue;
+        .inner {
+            .common_inner;
+            display: table;
+            >.logo {
+                display: table-cell;
+                vertical-align: middle;
+                img {
+                    height: 25px;
+                }
+            }
+            >.overview_msg {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: right;
+                padding-right: 20px;
+                width: 100%;
+                .red {
+                    color: #FF1844;
+                    .f_15;
+                }
+                .last_update {
+                    .f_15;
+                    color: @c_888;
+                    margin-top: 5px;
+                }
+            }
+            >.logo_fu {
+                display: table-cell;
+                img {
+                    height: 60px;
+                }
+            }
+        }
+    }
+    >.banner {
+        height: 190px;
+        background: @blue;
+        color: @c_fff;
+        overflow: hidden;
+        .mar_b_15;
+        .inner {
+            .common_inner;
+            display: table;
+            >.left {
+                display: table-cell;
+                vertical-align: middle;
+                padding-right: 40px;
+                .p_1 {
+                    .elli;
+                    font-size: 30px;
+                    margin-bottom: 15px;
+                }
+                .p_2 {
+                    .elli2;
+                    color: rgba(255, 255, 255, .8);
+                    line-height: 1.8;
+                }
+            }
+            >.right {
+                img {
+                    height: 190px;
+                }
+            }
+        }
+    }
+    >.main_content {
+        .inner {
+            .common_inner;
+            display: table;
+            >.left_list {
+                width: 190px;
+                display: table-cell;
+                vertical-align: top;
+                .ul_list {
+                    width: 190px;
+                    margin: 0 auto;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+                    li {
+                        // background: #f9f9f9;
+                        font-size: 14px;
+                        line-height: 30px;
+                        margin-bottom: 8px;
+                        cursor: pointer;
+                        padding-right: 15px;
+                        text-align: right;
+                        &:hover {
+                            background:#ccc;
+                            color: #000;
+                            .iconfont {
+                                color: #000;
+                            }
+                        }
+                        .iconfont {
+                            font-size: 20px;
+                            color: @blue;
+                            margin-right: 5px;
+                            vertical-align: middle;
+                        }
+                    }
+                    .active {
+                        background:#eee;
+                        color: #000;
+                        border-radius: 0;
+                        .iconfont {
+                            color: #000;
+                        }
+                    }
+                    .left_list_title:first-child{
+                        margin-top:0;
+                        margin-bottom: 0;
+                    }
+                    .left_list_title {
+                        color: #fff; 
+                        padding:5px 10px;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        background-image: linear-gradient(-133deg, #4D8BFF 0%, #FF6985 100%);
+                    }
+                }
+            }
+            >.middle_content {
+                display: table-cell;
+                vertical-align: top;
+                padding: 0 15px 15px 15px;
+            }
+            >.right_display {
+                display: table-cell;
+                vertical-align: top;
+                width: 320px;
+                .phone_box {
+                    background: #f5f5f5;
+                    width: 320px;
+                    min-height: 569px;
+                    border: 3px solid #333;
+                }
+            }
+        }
+    }
+}
+
+.title {
+    display: table;
+    .mar_b_15;
+    >div:first-child {
+        font-size: 28px;
+        font-family: STFangsong;
+        font-weight: bold;
+        display: table-cell;
+        white-space: nowrap;
+        color: #006CB9;
+    }
+    >div:last-child {
+        display: table-cell;
+        width: 100%;
+        vertical-align: middle;
+        .h_2px {
+            height: 2px;
+            background: rgba(15, 142, 233, .3);
+        }
+    }
+}
+
+.tips {
+    background: #F7F7F7;
+    border-left: 5px solid #76C450;
+    padding: 10px 15px;
+    color: #666;
+    .mar_b_15;
+    p {
+        line-height: 1.8;
+    }
+}
+
+// 关于具体展示部分的样式
+.fivefu_phone {
+    .flexbox_box {
+        .flexbox_item {
+            border: 1px solid rgba(0, 0, 0, .2);
+            background: rgba(0, 0, 0, .1);
+        }
+    }
+    .text-align-box {
+        >div {
+            border: 1px solid rgba(0, 0, 0, .2);
+            background: rgba(0, 0, 0, .1);
+            margin: 10px 0;
+            padding: 10px;
+        }
+    }
+    .color_box {
+        .color_box_ul {
+            .flexbox_box;
+            flex-wrap: wrap;
+            overflow: hidden;
+            li {
+                width: 33.3333333%;
+                float: left;
+                text-align: center;
+                margin-bottom: 10px;
+                a {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 15px;
+                    border: 1px solid rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+        .bg_c_fff {
+            background: @c_fff;
+        }
+        .bg_c_000 {
+            background: @c_000;
+        }
+        .bg_c_222 {
+            background: @c_222;
+        }
+        .bg_c_333 {
+            background: #333;
+        }
+        .bg_c_666 {
+            background: #666;
+        }
+        .bg_c_888 {
+            background: #888;
+        }
+        .bg_c_ccc {
+            background: #ccc;
+        }
+        .bg_c_f7f7f7 {
+            background: @c_f7f7f7;
+        }
+        .bg_c_blue {
+            background: @c_blue;
+        }
+        .bg_c_blue2 {
+            background: @c_blue2;
+        }
+        .bg_c_blue3 {
+            background: @c_blue3;
+        }
+        .bg_c_blue4 {
+            background: @c_blue4;
+        }
+        .bg_c_blue5 {
+            background: @c_blue5;
+        }
+        .bg_c_orange {
+            background: @c_orange;
+        }
+        .bg_c_orange2 {
+            background: @c_orange2;
+        }
+        .bg_c_orange3 {
+            background: @c_orange3;
+        }
+        .bg_green {
+            background: @green;
+        }
+        .bg_c_green {
+            background: @c_green;
+        }
+        .bg_c_green2 {
+            background: @c_green2;
+        }
+        .bg_c_red {
+            background: @c_red;
+        }
+        .bg_c_red2 {
+            background: @c_red2;
+        }
+        .bg_c_red3 {
+            background: @c_red3;
+        }
+        .bg_line_bottom {
+            background: @line_bottom;
+        }
+        .bg_form_active {
+            background: @form_active;
+        }
+        .bg_body_bg_1 {
+            background: @body_bg_1;
+        }
+        .bg_body_bg_2 {
+            background: @body_bg_2;
+        }
+        .bg_c_c9c9c9 {
+            background: @c_c9c9c9;
+        }
+        .bg_c_white_30 {
+            background: @c_white_30;
+        }
+    }
+    .elli_box {
+        >.elli {
+            border: 1px solid rgba(0, 0, 0, .2);
+            margin: 10px;
+        }
+        >.elli2 {
+            .elli;
+        }
+    }
+    .liubai_h_box {
+        p {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+        >div {
+            margin: 10px 0;
+            background: @c_blue;
+        }
+    }
+
+    .f_clear {
+        background: yellow;
+        border: 1px solid red;
+    }
+    .f_left {
+        background: pink;
+    }
+    .f_right {
+        background: lightblue;
+    }
+    .w_70px {
+        width: 70px;
+    }
+    .liubai_m_box {
+        p {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+        div {
+            height: 20px;
+            background: @c_blue;
+        }
+    }
+    .tick_box {
+        .p_15;
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.6);
+    }
+    .font-num2 {
+        font-size: 30px;
+    }
+    .btns_box {
+        padding: 15px;
+        .btn {
+            margin-bottom: 10px;
+        }
+        .btn_plain {
+            .btn;
+        }
+    }
+    .popup_box {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 30px;
+        .tit {
+            padding: 10px;
+            color: #fff;
+        }
+    }
+    .toast_box {
+        padding: 30px;
+        .toast {
+            // margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,146 @@
+.btn[disabled] {
+    cursor: not-allowed;
+    opacity: .5;
+    &:active {
+        color: rgba(255, 255, 255, .6);
+        background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
+    }
+    &:hover {
+        color: rgba(255, 255, 255, 1);
+        background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    }
+}
+
+.btn[disabled].sub {
+    &:hover {
+        color: rgba(0, 0, 0, .9);
+    }
+}
+
+.btn_plain[disabled] {
+    opacity: .5;
+    cursor: not-allowed;
+    &:hover {
+        opacity: .5;
+    }
+    &:active {
+        opacity: .5;
+        box-shadow: none;
+    }
+}
+
+.btn_common {
+    text-align: center;
+    border-radius: 3px;
+    outline: 0;
+    display: inline-block;
+    width: 100%;
+    padding: 8px 15px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.btn {
+    color: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+    .btn_common;
+    &:active {
+        color: rgba(255, 255, 255, .6);
+        background-image: linear-gradient( rgba(0, 0, 0, .08), rgba(0, 0, 0, .09));
+    }
+}
+
+.btn_small {
+    color: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+    .btn_common;
+    display: inline-block;
+    width: auto;
+    border-radius: 2px;
+    .f_14;
+    padding: 5px 20px;
+    &:active {
+        color: rgba(255, 255, 255, .6);
+        background-image: linear-gradient( rgba(0, 0, 0, .08), rgba(0, 0, 0, .09));
+    }
+}
+
+.btn_plain {
+    border: 1px solid currentcolor;
+    .btn_common;
+    &:active {
+        opacity: .6;
+    }
+}
+
+.btn_plain_small {
+    color: #fff;
+    .btn_common;
+    display: inline-block;
+    width: auto;
+    border-radius: 2px;
+    .f_14;
+    padding: 5px 20px;
+    &:active {
+        opacity: .6;
+    }
+}
+
+// 主按钮
+.btn.primary {
+    background-color: @c_blue;
+}
+
+// 绿色主按钮
+.btn.primary2 {
+    background-color: @green;
+}
+
+.btn.primary3 {
+    background-color: @c_blue2;
+}
+
+// 次要按钮
+.btn.sub {
+    color: #000;
+    background-color: @c_f7f7f7;
+}
+
+// 警告按钮
+.btn.warn {
+    background-color: @c_red2;
+}
+
+.green {
+    color: @green;
+}
+
+.red {
+    color: @c_red2;
+}
+
+.blue {
+    color: @c_blue;
+}
+
+.blue2 {
+    color: @c_blue5;
+}
+
+.lightgray {
+    color: #666;
+}
+
+.orange {
+    color: @c_orange2;
+}
+
+.orange_bg {
+    background: @c_orange2;
+}
+
+.blue_bg {
+    background: @c_blue;
+}

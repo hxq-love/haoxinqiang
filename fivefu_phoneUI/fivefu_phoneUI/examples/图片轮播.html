@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>图片轮播</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../css/fivefu_phone.css">
+    <link rel="stylesheet" type="text/css" href="../js/swiper.min.css">
+</head>
+
+<body>
+    <div class="swiper_box">
+        <div class="swiper_1 swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!-- <script src="../js/jquery.min.js"></script> -->
+    <script src="../js/require.js" data-main="../js/fivefu"></script>
+    <script>
+    require(["../js/jquery.min", "../js/swiper.min"], function(jq, Swiper) {
+        var mySwiper = new Swiper('.swiper_box .swiper-container', {
+            autoplay: 5000, //可选选项，自动滑动
+            pagination: '.swiper-pagination',
+            loop: true
+        });
+        $(".swiper_box").css({
+            "position": "relative",
+            "z-index": "0"
+        });
+        $(".swiper_box .swiper-container").css({
+            "background": "pink"
+        });
+        // 幻灯片高度自适应 手机上默认高度这里设置为200，以200为基准，适应不同屏幕大小，防止图片变形
+        var slideW = $(".swiper_box .swiper-container").outerWidth();
+        $(".swiper_box .swiper-container").css("height", slideW * 200 / 375 + "px");
+    });
+    </script>
+</body>
+
+</html>

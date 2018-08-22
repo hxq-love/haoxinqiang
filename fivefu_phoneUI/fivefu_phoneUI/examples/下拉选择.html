@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>下拉选择</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../css/fivefu_phone.css">
+   <!--  <link rel="stylesheet" type="text/css" href="../js/swiper.min.css"> -->
+    <style>
+    /*   #name1,
+    #name2,
+    #name3 {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid tomato;
+    } */
+    </style>
+</head>
+
+<body>
+    <!-- 下拉选择 -->
+    <div class="h_20px"></div>
+    <p class="form_title">带下拉的</p>
+    <div class="line">
+        <div class="form_list line_bottom_15 form_active">
+            <div class="form_label">
+                一列下拉
+            </div>
+            <div class="picker_box" id="name1">
+                请选择
+            </div>
+            <div class="arrow_box">
+                <i class="icon_arrow"></i>
+            </div>
+        </div>
+        <div class="form_list line_bottom_15 form_active">
+            <div class="form_label">
+                两列
+            </div>
+            <div class="picker_box" id="name2">
+                请选择
+            </div>
+            <div class="arrow_box">
+                <i class="icon_arrow"></i>
+            </div>
+        </div>
+        <div class="form_list form_active">
+            <div class="form_label">
+                三列
+            </div>
+            <div class="picker_box" id="name3">
+                请选择
+            </div>
+            <div class="arrow_box">
+                <i class="icon_arrow"></i>
+            </div>
+        </div>
+    </div>
+    <script src="../js/require.js" data-main="../js/fivefu"></script>
+    <script>
+    require(["../js/jquery.min", "../js/picker.min"], function(jq, Picker) {
+        // picker的调用
+        function picker_1(dom) {
+            var data1 = [{
+                text: '垃圾收集器不规范',
+                value: 1
+            }, {
+                text: '垃圾满溢',
+                value: 2
+            }, {
+                text: '分类正确率',
+                value: 3
+            }];
+            var picker = new Picker({
+                data: [data1],
+                selectedIndex: [2],
+                title: '上报分类'
+            });
+            picker.on('picker.select', function(selectedVal, selectedIndex) {
+                $(dom).text(data1[selectedIndex[0]].text);
+            });
+            $(dom).bind("click select", function() {
+                picker.show();
+            });
+            // console.log(picker.selectedIndex + "--------")
+        }
+
+        function picker_2(dom) {
+            var data1 = [{
+                text: '上城区',
+                value: 1
+            }, {
+                text: '下城区',
+                value: 2
+            }, {
+                text: '江干区',
+                value: 3
+            }, {
+                text: '拱墅区',
+                value: 4
+            }, {
+                text: '西湖区',
+                value: 5
+            }, {
+                text: '滨江区',
+                value: 6
+            }, {
+                text: '萧山区',
+                value: 7
+            }, {
+                text: '萧山区',
+                value: 8
+            }, {
+                text: '余杭区',
+                value: 9
+            }];
+
+            var data2 = [{
+                    text: '北山街道',
+                    value: 1
+                },
+                {
+                    text: '西溪街道',
+                    value: 2
+                },
+                {
+                    text: '翠苑街道',
+                    value: 3
+                },
+                {
+                    text: '古荡街道',
+                    value: 4
+                },
+                {
+                    text: '西湖街道',
+                    value: 5
+                },
+                {
+                    text: '留下街道',
+                    value: 6
+                },
+                {
+                    text: '转塘街道',
+                    value: 7
+                },
+                {
+                    text: '蒋村街道',
+                    value: 8
+                }
+            ];
+            var picker = new Picker({
+                data: [data1, data2],
+                selectedIndex: [4, 0],
+                title: '请选择 行政区域、小区'
+            });
+
+            picker.on('picker.select', function(selectedVal, selectedIndex) {
+                $(dom).text(data1[selectedIndex[0]].text + ' ' + data2[selectedIndex[1]].text)
+            })
+
+            $(dom).bind("click", function() {
+                picker.show();
+            })
+        }
+
+        function picker_3(dom) {
+            var data1 = [{
+                text: '小美',
+                value: 1
+            }, {
+                text: '猪猪',
+                value: 2
+            }];
+
+            var data2 = [{
+                    text: '张三',
+                    value: 1
+                },
+                {
+                    text: '李四',
+                    value: 2
+                },
+                {
+                    text: '王五',
+                    value: 3
+                },
+                {
+                    text: '赵六',
+                    value: 4
+                },
+                {
+                    text: '吴七',
+                    value: 5
+                },
+                {
+                    text: '陈八',
+                    value: 6
+                },
+                {
+                    text: '杜九',
+                    value: 7
+                },
+                {
+                    text: '黄十',
+                    value: 8
+                },
+                {
+                    text: '呵呵',
+                    value: 9
+                },
+                {
+                    text: '哈哈',
+                    value: 10
+                },
+                {
+                    text: '嘿嘿',
+                    value: 11
+                },
+                {
+                    text: '啦啦',
+                    value: 12
+                }
+            ];
+
+            var data3 = [{
+                    text: '开心',
+                    value: 1
+                }, {
+                    text: '生气',
+                    value: 2
+                },
+                {
+                    text: '搞笑',
+                    value: 3
+                }, {
+                    text: '难过',
+                    value: 4
+                }
+            ];
+
+            var picker = new Picker({
+                data: [data1, data2, data3],
+                selectedIndex: [0, 0, 0],
+                title: '我们都是小学生'
+            });
+
+            picker.on('picker.select', function(selectedVal, selectedIndex) {
+                $(dom).text(data1[selectedIndex[0]].text + ' ' + data2[selectedIndex[1]].text + ' ' + data3[selectedIndex[2]].text)
+            })
+
+            $(dom).bind("click", function() {
+                picker.show();
+            })
+
+        }
+        picker_1("#name1");
+        picker_2("#name2");
+        picker_3("#name3");
+    });
+    </script>
+</body>
+
+</html>

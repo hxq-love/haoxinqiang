@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>toast调用</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../css/fivefu_phone.css">
+    <link rel="stylesheet" type="text/css" href="../js/swiper.min.css">
+</head>
+
+<body>
+    <div class="p_15">
+        <p class="form_title">toast的调用</p>
+        <div class="flexbox">
+            <a class="btn primary2 mar_l_5" id="btn_5">1-出现</a>
+            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+            <a class="btn warn" id="btn_5a">1-隐藏</a>
+        </div>
+        <div class="flexbox">
+            <a class="btn primary2 mar_l_5" id="btn_6">2-出现</a>
+            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+            <a class="btn warn" id="btn_6a">2-隐藏</a>
+        </div>
+        <div class="flexbox">
+            <a class="btn primary2 mar_l_5" id="btn_7">3-出现</a>
+            <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+            <a class="btn warn" id="btn_7a">3-隐藏</a>
+        </div>
+        <a class="btn primary2" id="btn_8">自动关闭</a>
+    </div>
+    <script src="../js/require.js" data-main="../js/fivefu"></script>
+    <script>
+    require(["../js/popup"], function(p) {
+        $("#btn_5").bind("click", function() {
+            p.toast({
+                dom: "#toast_1",
+                options: {
+                    txt: "加载中1",
+                    type: 1,
+                    selfClose: true
+                }
+            });
+        });
+        $("#btn_5a").bind("click", function() {
+            p.toastHide("#toast_1");
+        });
+        $("#btn_6").bind("click", function() {
+            p.toast({
+                dom: "#toast_2",
+                options: {
+                    txt: "加载中2",
+                    type: 2,
+                    selfClose: true
+                }
+            });
+        });
+        $("#btn_6a").bind("click", function() {
+            p.toastHide("#toast_2");
+        });
+        $("#btn_7").bind("click", function() {
+            p.toast({
+                dom: "#toast_3",
+                options: {
+                    txt: "已完成",
+                    type: 3,
+                    selfClose: true
+                }
+            });
+        });
+        $("#btn_7a").bind("click", function() {
+            p.toastHide("#toast_3");
+        });
+        // 自动关闭
+        $("#btn_8").bind("click", function() {
+            p.toast({
+                dom: "#toast_1",
+                options: {
+                    txt: "已完成",
+                    type: 1,
+                    selfClose: false,
+                    time: 2000
+                }
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>

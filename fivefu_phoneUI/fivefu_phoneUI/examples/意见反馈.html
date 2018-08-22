@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>意见反馈</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../css/fivefu_phone.css">
+</head>
+
+<body ontouchstart>
+    <div class="feedback_page">
+        <div class="h_20px"></div>
+        <p class="form_title">反馈类型</p>
+        <div class="line">
+            <div class="form_list">
+                <ul class="ul_1">
+                    <li><a>界面不美观</a></li>
+                    <li><a>功能不好用</a></li>
+                    <li><a>反应速度慢</a></li>
+                    <li><a>积分统计有误</a></li>
+                    <li><a>事件处理不及时</a></li>
+                    <li class="active"><a>其他类型</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="h_15px"></div>
+        <p class="form_title">反馈内容</p>
+        <div class="line">
+            <div class="form_list">
+                <div class="textarea_box">
+                    <textarea rows="4" placeholder="欢迎提出宝贵的意见和建议"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="p_15">
+            <a class="btn primary">提交反馈</a>
+        </div>
+    </div>
+    <script src="../js/require.js" data-main="../js/fivefu"></script>
+    <script>
+    require(["../js/jquery.min"], function(jq) {
+        $(".feedback_page .ul_1>li").each(function() {
+            $(this).bind("click", function() {
+                $(this).addClass("active").siblings("li").removeClass('active');
+            });
+        })
+    });
+    </script>
+</body>
+
+</html>

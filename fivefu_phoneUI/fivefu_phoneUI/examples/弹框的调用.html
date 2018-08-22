@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>弹框调用</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../css/fivefu_phone.css">
+    <link rel="stylesheet" type="text/css" href="../js/swiper.min.css">
+</head>
+
+<body>
+    <!-- 弹框的调用 -->
+    <div class="p_15">
+        <p class="form_title">弹框的调用</p>
+        <a class="btn primary" id="btn_1">无标题的弹框</a>
+        <div class="h_15px"></div>
+        <a class="btn primary" id="btn_2">有标题</a>
+        <div class="h_15px"></div>
+        <a class="btn primary" id="btn_3">有标题、提示、不做操作</a>
+        <div class="h_15px"></div>
+        <a class="btn primary" id="btn_4">无标题、提示、不做操作</a>
+    </div>
+    <script src="../js/require.js" data-main="../js/fivefu"></script>
+    <script>
+    require(["../js/popup"], function(p) {
+        $("#btn_1").bind("click", function() {
+            p.dialogue({
+                dom: "#popup_1",
+                cancel: function(dom) {
+                    alert("取消1");
+                    p.dialogueHide(dom);
+                },
+                confirm: function(dom) {
+                    alert("确定1");
+                    p.dialogueHide(dom);
+                },
+                options: {
+                    content: "说明当前状态、提示用户解决方案，最好不要超过两行。", //弹框内容
+                    cancelT: "取消1", //取消 文字设置
+                    confirmT: "确定1", //确认 文字设置
+                    titleHide: true, //标题隐藏
+                }
+            });
+        });
+        $("#btn_2").bind("click", function() {
+            p.dialogue({
+                dom: "#popup_1",
+                cancel: function(dom) {
+                    alert("取消2");
+                    p.dialogueHide(dom);
+                },
+                confirm: function(dom) {
+                    alert("确定2");
+                    p.dialogueHide(dom);
+                },
+                options: {
+                    title: "有标题的弹框", //弹框标题
+                    content: "说明当前状态、提示用户解决方案，最好不要超过两行。", //弹框内容
+                    cancelT: "取消2", //取消 文字设置
+                    confirmT: "确定2", //确认 文字设置
+                    titleHide: false, //标题隐藏
+                }
+            });
+        });
+        $("#btn_3").bind("click", function() {
+            p.dialogue({
+                dom: "#popup_1",
+                confirm: function(dom) {
+                    alert("确定3的执行");
+                    p.dialogueHide(dom);
+                },
+                options: {
+                    title: "有标题、不做操作", //弹框标题
+                    content: "说明当前状态、提示用户解决方案，最好不要超过两行。", //弹框内容
+                    confirmT: "确定3", //确认 文字设置
+                    titleHide: false, //标题隐藏
+                    btnNum: 1 //只显示一个按钮
+                }
+            });
+        });
+        $("#btn_4").bind("click", function() {
+            p.dialogue({
+                dom: "#popup_1",
+                confirm: function(dom) {
+                    alert("确定4的执行");
+                    p.dialogueHide(dom);
+                },
+                options: {
+                    content: "说明当前状态、提示用户解决方案，最好不要超过两行。", //弹框内容
+                    confirmT: "确定4", //确认 文字设置
+                    titleHide: true, //标题隐藏
+                    btnNum: 1 //只显示一个按钮
+                }
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>

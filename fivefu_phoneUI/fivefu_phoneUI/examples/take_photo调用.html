@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>相机调用</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../css/fivefu_phone.css">
+</head>
+
+<body>
+    <div class="h_20px"></div>
+    <!-- 拍照的调用 -->
+    <p class="form_title">多媒体拍照1</p>
+    <div class="line">
+        <div class="take_photo" id="photo_1"></div>
+    </div>
+    <script src="../js/require.js" data-main="../js/fivefu"></script>
+    <script>
+    require(["../js/take_photo"], function(photo) {
+        photo.takePhoto("#photo_1", 3);
+    });
+    </script>
+</body>
+
+</html>

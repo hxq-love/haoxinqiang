@@ -1,0 +1,4600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>fivefu_phone规范</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="examples/css/display_page.css">
+    <!-- 代码着色插件引用开始 -->
+    <script src="examples/SyntaxHighlighter/shCore.min.js"></script>
+    <script src="examples/SyntaxHighlighter/shBrushJScript.min.js"></script>
+    <link href="examples/SyntaxHighlighter/shCoreDefault.min.css" />
+    <script type="text/javascript">
+    SyntaxHighlighter.all();
+    </script>
+    <!-- 代码着色插件引用结束 -->
+    <link rel="stylesheet" type="text/css" href="css/fivefu_phone.css">
+    <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="css/font_family.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body class="body_fivefu_phone">
+    <div class="fivefu_phone">
+        <div class="top">
+            <div class="inner">
+                <div class="logo">
+                    <img src="examples/images/logo.png" />
+                </div>
+                <div class="overview_msg">
+                    <p class="red ">Edit by Jenny（曲珍）</p>
+                    <p class="last_update ">最近更新：2018-07-17 10：59</p>
+                </div>
+                <div class="logo_fu">
+                    <img src="examples/images/logo_img.png" />
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="inner">
+                <div class="left">
+                    <p class="p_1">力求寻找一种更简洁、高效的UI规范</p>
+                    <p class="p_2">希望在以后的日子里，大家在使用的时候可以多提出一些实际 的问题，使这个UI规范更加的易用
+                    </p>
+                </div>
+                <div class="right">
+                    <img src="examples/images/banner_img.png">
+                </div>
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="inner">
+                <div class="left_list">
+                    <ul class="ul_list">
+                        <p class="left_list_title">基础样式</p>
+                        <li class="active shiyongqian">
+                            写在使用前
+                        </li>
+                        <li class="fudong">
+                            关于浮动
+                        </li>
+                        <li class="flex_buju">
+                            flex弹性布局
+                        </li>
+                        <li class="text_align">
+                            关于对齐
+                        </li>
+                        <li class="fontsize">
+                            字体大小
+                        </li>
+                        <li class="color">
+                            颜色相关
+                        </li>
+                        <li class="shenglue">
+                            省略号
+                        </li>
+                        <li class="liubai_h">
+                            上下留白(高度)
+                        </li>
+                        <li class="liubai_m">
+                            左右留白(margin)
+                        </li>
+                        <li class="btns">
+                            按钮
+                        </li>
+                        <li class="jiazaizhong">
+                            加载中
+                        </li>
+                        <li class="kaiguan">
+                            switch开关
+                        </li>
+                        <li class="tubiao">
+                            常用图标
+                        </li>
+                        <li class="yemianjieguo">
+                            page_result
+                        </li>
+                        <li class="jiugongge">
+                            九宫格
+                        </li>
+                        <li class="special_font">
+                            特殊字体
+                        </li>
+                        <li class="common_list1">
+                            列表-带说明的列表项
+                        </li>
+                        <li class="common_list2">
+                            列表-用户头像
+                        </li>
+                        <li class="common_list3">
+                            列表-常用1
+                        </li>
+                        <li class="common_list4">
+                            列表-常用2
+                        </li>
+                        <li class="common_list5">
+                            列表-常用3(聊天)
+                        </li>
+                        <li class="common_list6">
+                            列表-常用4(新闻)
+                        </li>
+                        <li class="common_list7">
+                            列表-常用5(消息)
+                        </li>
+                        <li class="formbiaodan">
+                            form表单
+                        </li>
+                        <p class="left_list_title">JS相关组件</p>
+                        <li class="tabqiehuan">
+                            tab
+                        </li>
+                        <li class="paizhao">
+                            调用相机
+                        </li>
+                        <li class="imgyulan">
+                            图片放大预览
+                        </li>
+                        <li class="lunbotu">
+                            图片轮播、幻灯片
+                        </li>
+                        <li class="formxiala">
+                            下拉选择-form
+                        </li>
+                        <li class="tankuang">
+                            弹框
+                        </li>
+                        <li class="tankuangdiaoyong">
+                            弹框调用
+                        </li>
+                        <li class="toastt">
+                            toast
+                        </li>
+                        <li class="toastdiaoyong">
+                            toast调用
+                        </li>
+                        <p class="left_list_title">常用页面</p>
+                        <li class="xinwenxiangqing">
+                            新闻详情
+                        </li>
+                        <li class="yijianfankui">
+                            意见反馈页面
+                        </li>
+                        <li class="liucheng">
+                            流程process
+                        </li>
+                        <li class="baocuo_404">
+                            报错页面404
+                        </li>
+                        <li class="baocuo_500">
+                            报错页面500
+                        </li>
+                        <li class="modify_password">
+                            修改密码
+                        </li>
+                        <p class="left_list_title">常用文件下载</p>
+                        <li class="wenjian_download">
+                            文件下载
+                        </li>
+                    </ul>
+                </div>
+                <div class="middle_content">
+                    <div id="pre_box">
+                    </div>
+                </div>
+                <div class="right_display">
+                    <div class="phone_box">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 页面加载的具体内容开始 -->
+    <div class="hide">
+        <!-- 浮动开始 -->
+        <div class="fudong_content_1">
+            <div class="title">
+                <div>
+                    关于浮动
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="f_left">
+                    左浮动
+                </div>
+                <div class="f_right">
+                    右侧浮动
+                </div>
+
+                .f_left {
+                    float: left;
+                }
+                .f_right {
+                    float: right;
+                }
+            </pre>
+        </div>
+        <div class="fudong_content_2">
+            <div class="f_clear mar_b_15 ">
+                <div class="f_left">
+                    左浮动
+                </div>
+                <div class="f_right">
+                    右侧浮动
+                </div>
+            </div>
+        </div>
+        <!-- 浮动结束 -->
+        <!-- flex布局 开始-->
+        <div class="flex_buju_content_1">
+            <div class="title">
+                <div>
+                    Flex弹性布局
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <!-- 2列 -->
+                <div class="flexbox">
+                    <div class="flexbox_item">2列</div>
+                    <div class="flexbox_item">2列</div>
+                </div>
+
+                <!-- 3列 -->
+                <div class="flexbox">
+                    <div class="flexbox_item">3列</div>
+                    <div class="flexbox_item">3列</div>
+                    <div class="flexbox_item">3列</div>
+                </div>
+
+                <!-- 一列固定宽度 一列自适应-->
+                <div class="flexbox">
+                    <div class="w_70px">
+                        70px
+                    </div>
+                    <div class="flexbox_item">
+                        auto
+                    </div>
+                </div>
+
+                <!-- 3列布局  省略号 -->
+                <div class="flexbox">
+                    <div class="flexbox_item">3列</div>
+                    <div class="flexbox_item elli">文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多</div>
+                    <div class="flexbox_item">3列</div>
+                </div>
+
+                .flexbox {
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    -webkit-box-align: center;
+                    -webkit-align-items: center;
+                }
+
+                .flexbox_item {
+                    -webkit-box-flex: 1;
+                    -webkit-flex: 1; 
+                    min-width: 20px;
+                }
+
+                // 超出宽度显示省略号
+                .elli {
+                    width: auto;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                .elli2 {
+                    text-overflow: -o-ellipsis-lastline;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+
+            </pre>
+        </div>
+        <div class="flex_buju_content_2">
+            <div class="flexbox_box">
+                <!-- 2列 -->
+                <div class="flexbox mar_b_15">
+                    <div class="flexbox_item">2列</div>
+                    <div class="flexbox_item">2列</div>
+                </div>
+                <!-- 3列 -->
+                <div class="flexbox mar_b_15">
+                    <div class="flexbox_item">3列</div>
+                    <div class="flexbox_item">3列</div>
+                    <div class="flexbox_item">3列</div>
+                </div>
+                <!-- 一列固定宽度 一列自适应-->
+                <div class="flexbox mar_b_15">
+                    <div class="w_70px">
+                        70px
+                    </div>
+                    <div class="flexbox_item">
+                        auto
+                    </div>
+                </div>
+                <!-- 3列布局  省略号 -->
+                <div class="flexbox mar_b_15">
+                    <div class="flexbox_item">3列</div>
+                    <div class="flexbox_item elli">文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多</div>
+                    <div class="flexbox_item">3列</div>
+                </div>
+            </div>
+        </div>
+        <!-- flex布局 结束-->
+        <!-- text_align -->
+        <!-- 关于居中 开始 -->
+        <div class="text_align_content_1">
+            <div class="title">
+                <div>
+                    关于对齐 text_align
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="t_left">文字左对齐</div>
+                <div class="t_center">文字居中对齐</div>
+                <div class="t_right">文字右对齐</div>
+
+                .t_left {
+                    text-align: left;
+                }
+
+                .t_center {
+                    text-align: center;
+                }
+
+                .t_right {
+                    text-align: right;
+                }
+            </pre>
+        </div>
+        <div class="text_align_content_2">
+            <div class="text-align-box">
+                <div class="t_left">文字左对齐</div>
+                <div class="t_center">文字居中对齐</div>
+                <div class="t_right">文字右对齐</div>
+            </div>
+        </div>
+        <!-- 关于居中 结束 -->
+        <!-- 字体大小 开始 -->
+        <div class="fontsize_content_1">
+            <div class="title">
+                <div>
+                    字体大小
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <p class="f_20">f_20 我是20px的字体</p>
+                <p class="f_18">f_18 我是18px的字体</p>
+                <p class="f_17">f_17 我是17px的字体</p>
+                <p class="f_16">f_16 我是16px的字体</p>
+                <p class="f_14">f_14 我是14px的字体</p>
+                <p class="f_13">f_13 我是13px的字体</p>
+                <p class="f_12">f_12 我是12px的字体</p>
+
+                .f_20 {
+                    font-size: 20px;
+                }
+                ……………………
+            </pre>
+        </div>
+        <div class="fontsize_content_2">
+            <p class="f_20">f_20 我是20px的字体</p>
+            <p class="f_18">f_18 我是18px的字体</p>
+            <p class="f_17">f_17 我是17px的字体</p>
+            <p class="f_16">f_16 我是16px的字体</p>
+            <p class="f_14">f_14 我是14px的字体</p>
+            <p class="f_13">f_13 我是13px的字体</p>
+            <p class="f_12">f_12 我是12px的字体</p>
+        </div>
+        <!-- 字体大小 结束 -->
+        <!-- 颜色 开始 -->
+        <div class="color_content_1">
+            <div class="title">
+                <div>
+                    颜色相关
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                这里只是列举了一些比较常用的颜色，其他的颜色在这里不做说明
+                <p class="c_333">c_333字体颜色</p>
+                <p class="c_666">c_666字体颜色</p>
+                <p class="c_888">c_888字体颜色</p>
+                <p class="c_ccc">c_ccc字体颜色</p>
+                <p class="c_blue">c_blue字体颜色</p>
+                <p class="c_orange">c_orange字体颜色</p>
+                <p class="c_green">c_green字体颜色</p>
+                <p class="c_red">c_red字体颜色</p>
+                <p class="boder_bg">boder_bg 边框色</p>
+
+                .c_333 {
+                    color: @c_333;
+                }
+
+                .c_666 {
+                    color: @c_666;
+                }
+
+                .c_888 {
+                    color: @c_888;
+                }
+
+                .c_ccc {
+                    color: @c_ccc;
+                }
+
+                .c_blue {
+                    color: @c_blue;
+                }
+
+                .c_blue2 {
+                    color: @c_blue2;
+                }
+
+                .c_orange {
+                    color: @c_orange3;
+                }
+
+                .c_green {
+                    color: @c_green;
+                }
+
+                .c_red {
+                    color: @c_red;
+                }
+
+                .white_bg {
+                    background: @c_fff;
+                }
+
+                .boder_bg {
+                    border: 1px solid #D9D9D9;
+                }
+            </pre>
+        </div>
+        <div class="color_content_2">
+            <p class="c_333">c_333字体颜色</p>
+            <p class="c_666">c_666字体颜色</p>
+            <p class="c_888">c_888字体颜色</p>
+            <p class="c_ccc">c_ccc字体颜色</p>
+            <p class="c_blue">c_blue字体颜色</p>
+            <p class="c_orange">c_orange字体颜色</p>
+            <p class="c_green">c_green字体颜色</p>
+            <p class="c_red">c_red字体颜色</p>
+            <p class="boder_bg">boder_bg 边框色</p>
+            <div class="color_box">
+                <div class="h_30px"></div>
+                <ul class="color_box_ul">
+                    <li>
+                        <a class="bg_c_fff"></a>
+                        <p>@c_fff</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_000"></a>
+                        <p>@c_000</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_222"></a>
+                        <p>@c_222</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_333"></a>
+                        <p>@c_333</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_666"></a>
+                        <p>@c_666</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_888"></a>
+                        <p>@c_888</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_ccc"></a>
+                        <p>@c_ccc</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_f7f7f7"></a>
+                        <p>@c_f7f7f7</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_blue"></a>
+                        <p>@c_blue</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_blue2"></a>
+                        <p>@c_blue2</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_blue3"></a>
+                        <p>@c_blue3</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_blue4"></a>
+                        <p>@c_blue4</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_blue5"></a>
+                        <p>@c_blue5</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_orange"></a>
+                        <p>@c_orange</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_orange2"></a>
+                        <p>@c_orange2</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_orange3"></a>
+                        <p>@c_orange3</p>
+                    </li>
+                    <li>
+                        <a class="bg_green"></a>
+                        <p>@green</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_green"></a>
+                        <p>@c_green</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_green2"></a>
+                        <p>@c_green2</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_red"></a>
+                        <p>@c_red</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_red2"></a>
+                        <p>@c_red2</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_red3"></a>
+                        <p>@c_red3</p>
+                    </li>
+                    <li>
+                        <a class="bg_line_bottom"></a>
+                        <p>@line_bottom</p>
+                    </li>
+                    <li>
+                        <a class="bg_form_active"></a>
+                        <p>@form_active</p>
+                    </li>
+                    <li>
+                        <a class="bg_body_bg_1"></a>
+                        <p>@body_bg_1</p>
+                    </li>
+                    <li>
+                        <a class="bg_body_bg_2"></a>
+                        <p>@body_bg_2</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_c9c9c9"></a>
+                        <p>@c_c9c9c9</p>
+                    </li>
+                    <li>
+                        <a class="bg_c_white_30"></a>
+                        <p>@c_white_30</p>
+                    </li>
+                </ul>
+                <div class="h_30px"></div>
+            </div>
+        </div>
+        <!-- 颜色 结束 -->
+        <!-- 省略号 开始 -->
+        <div class="shenglue_content_1">
+            <div class="title">
+                <div>
+                    超出宽度显示省略号
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <p class="elli">elli根据父元素宽度截取 文字单行自动截取文字单行自动截取文字单行自动截取文字单行自动截取文字单行自动截取</p>
+                <p class="elli2">elli根据父元素宽度截取 超过两行变成省略号超过两行变成省略号超过两行变成省略号超过两行变成省略号</p>
+                <p class="elli" style="width:200px;">限制宽度200px 文字单行截取文字单行截取文字单行截取文字单行截取文字单行截取</p>
+                <p class="elli" style="width:150px;">限制宽度150px 文字单行截取文字单行截取文字单行截取文字单行截取文字单行截取</p>
+
+                .elli {
+                    width: auto;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                .elli2 {
+                    text-overflow: -o-ellipsis-lastline;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+
+
+            </pre>
+        </div>
+        <div class="shenglue_content_2">
+            <div class="elli_box">
+                <p class="elli">elli根据父元素宽度截取 文字单行自动截取文字单行自动截取文字单行自动截取文字单行自动截取文字单行自动截取</p>
+                <p class="elli2">elli根据父元素宽度截取 超过两行变成省略号超过两行变成省略号超过两行变成省略号超过两行变成省略号</p>
+                <p class="elli" style="width:200px;">限制宽度200px 文字单行截取文字单行截取文字单行截取文字单行截取文字单行截取</p>
+                <p class="elli" style="width:150px;">限制宽度150px 文字单行截取文字单行截取文字单行截取文字单行截取文字单行截取</p>
+            </div>
+        </div>
+        <!-- 省略号 结束 -->
+        <!-- 上下留白 开始 -->
+        <div class="liubai_h_content_1">
+            <div class="title">
+                <div>
+                    （高度）上下留白
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="h_5px"></div>
+                <div class="h_10px"></div>
+                <div class="h_15px"></div>
+                <div class="h_20px"></div>
+                <div class="h_25px"></div>
+                <div class="h_30px"></div>
+                <div class="h_35px"></div>
+                <div class="h_40px"></div>
+                <div class="h_45px"></div>
+                <div class="h_50px"></div>
+                <div class="h_4px"></div>
+                <div class="h_8px"></div>
+                <div class="h_12px"></div>
+                <div class="h_16px"></div>
+                <div class="h_24px"></div>
+                <div class="h_28px"></div>
+                <div class="h_32px"></div>
+                <div class="h_36px"></div>
+                <div class="h_50px"></div>
+                <div class="h_48px"></div>
+
+                .h_5px {
+                    height: 5px;
+                }
+
+                .h_10px {
+                    height: 10px;
+                }
+
+                .h_15px {
+                    height: 15px;
+                }
+
+                ………………
+            </pre>
+        </div>
+        <div class="liubai_h_content_2">
+            <div class="liubai_h_box">
+                <p>h_5px</p>
+                <div class="h_5px"></div>
+                <p>h_10px</p>
+                <div class="h_10px"></div>
+                <p>h_15px</p>
+                <div class="h_15px"></div>
+                <p>h_20px</p>
+                <div class="h_20px"></div>
+                <p>h_25px</p>
+                <div class="h_25px"></div>
+                <p>h_30px</p>
+                <div class="h_30px"></div>
+                <p>h_35px</p>
+                <div class="h_35px"></div>
+                <p>h_40px</p>
+                <div class="h_40px"></div>
+                <p>h_45px</p>
+                <div class="h_45px"></div>
+                <p>h_50px</p>
+                <div class="h_50px"></div>
+                <p>h_4px</p>
+                <div class="h_4px"></div>
+                <p>h_8px</p>
+                <div class="h_8px"></div>
+                <p>h_12px</p>
+                <div class="h_12px"></div>
+                <p>h_16px</p>
+                <div class="h_16px"></div>
+                <p>h_24px</p>
+                <div class="h_24px"></div>
+                <p>h_28px</p>
+                <div class="h_28px"></div>
+                <p>h_32px</p>
+                <div class="h_32px"></div>
+                <p>h_36px</p>
+                <div class="h_36px"></div>
+                <p>h_44px</p>
+                <div class="h_50px"></div>
+                <p>h_48px</p>
+                <div class="h_48px"></div>
+            </div>
+        </div>
+        <!-- 上下留白 结束 -->
+        <!-- 左右留白 开始 -->
+        <div class="liubai_m_content_1">
+            <div class="title">
+                <div>
+                    左右留白(margin)
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="blank_10"></div>
+                <div class="blank_15"></div>
+                <div class="blank_20"></div>
+                <div class="blank_25"></div>
+                <div class="blank_30"></div>
+                <div class="blank_8"></div>
+                <div class="blank_12"></div>
+                <div class="blank_16"></div>
+                <div class="blank_24"></div>
+                <div class="blank_28"></div>
+                <div class="blank_32"></div>
+
+                .blank_10 {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+
+                .blank_15 {
+                    margin-left: 15px;
+                    margin-right: 15px;
+                }
+
+                .blank_20 {
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+                ………………
+            </pre>
+        </div>
+        <div class="liubai_m_content_2">
+            <div class="liubai_m_box">
+                <p>blank_10</p>
+                <div class="blank_10"></div>
+                <p>blank_15</p>
+                <div class="blank_15"></div>
+                <p>blank_20</p>
+                <div class="blank_20"></div>
+                <p>blank_25</p>
+                <div class="blank_25"></div>
+                <p>blank_30</p>
+                <div class="blank_30"></div>
+                <p>blank_8</p>
+                <div class="blank_8"></div>
+                <p>blank_12</p>
+                <div class="blank_12"></div>
+                <p>blank_16</p>
+                <div class="blank_16"></div>
+                <p>blank_24</p>
+                <div class="blank_24"></div>
+                <p>blank_28</p>
+                <div class="blank_28"></div>
+                <p>blank_32</p>
+                <div class="blank_32"></div>
+            </div>
+        </div>
+        <!-- 左右留白 结束 -->
+        <!-- 按钮 开始 -->
+        <div class="btns_content_1">
+            <div class="title">
+                <div>
+                    按钮 btns
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在btn.less中</p>
+                <p>依赖reset.less 中的颜色模块</p>
+            </div>
+            <div class="t_right">
+                <a class="btn warn btn_small" href="less/btn.less" download>btn.less下载</a>
+            </div>
+            <pre class="brush:js;">
+                <a class="btn primary">主要按钮</a>
+                <a class="btn sub">次要</a>
+                <a class="btn primary2">主要按钮2</a>
+                <a class="btn primary3">主要按钮3</a>
+                <a class="btn warn">警告按钮</a>
+                <a class="btn orange_bg">橙色</a>
+                <a class="btn_plain green">绿色按钮</a>
+                <a class="btn_plain red">红色按钮</a>
+                <a class="btn_plain blue">蓝色按钮</a>
+                <a class="btn_plain blue2">蓝色按钮2</a>
+                <a class="btn_plain lightgray">灰色按钮</a>
+                <a class="btn_plain orange">橙色按钮</a>
+                
+
+                <p>禁用状态</p>
+                <a class="btn primary" disabled>主要按钮</a>
+                <a class="btn sub" disabled>次要</a>
+                <a class="btn primary2" disabled>主要按钮2</a>
+                <a class="btn primary3" disabled>主要按钮3</a>
+                <a class="btn warn" disabled>警告按钮</a>
+                <a class="btn orange_bg" disabled>橙色</a>
+                <a class="btn_plain green" disabled>绿色按钮</a>
+                <a class="btn_plain red" disabled>红色按钮</a>
+                <a class="btn_plain blue" disabled>蓝色按钮</a>
+                <a class="btn_plain blue2" disabled>蓝色按钮2</a>
+                <a class="btn_plain lightgray" disabled>灰色按钮</a>
+                <a class="btn_plain orange" disabled>橙色按钮</a>
+
+
+                <p>辅助小按钮</p>
+                <a class="btn primary btn_small">主要按钮</a>
+                <a class="btn sub btn_small">次要</a>
+                <a class="btn primary2 btn_small">主要按钮2</a>
+                <a class="btn primary3 btn_small">主要按钮3</a>
+                <a class="btn warn btn_small">警告按钮</a>
+                <a class="btn orange_bg btn_small">橙色</a>
+                <a class="btn_plain green btn_plain_small">绿色按钮</a>
+                <a class="btn_plain red btn_plain_small">红色按钮</a>
+                <a class="btn_plain blue btn_plain_small">蓝色按钮</a>
+                <a class="btn_plain blue2 btn_plain_small">蓝色按钮2</a>
+                <a class="btn_plain lightgray btn_plain_small">灰色按钮</a>
+                <a class="btn_plain orange btn_plain_small">橙色按钮</a>
+
+                <p class="title">加载中</p>
+                <a class="btn primary">
+                    <div class="loading-indicator white">
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                    </div>
+                    加载中
+                </a>
+                <div class="loading-indicator blue">
+                    <div class="loading-item"></div>
+                    <div class="loading-item"></div>
+                    <div class="loading-item"></div>
+                </div>
+                <p>加载中1</p>
+                <i class="loading-gray"></i>
+                <p>加载中2</p>
+            </pre>
+            <pre class="brush:js;">
+                .btn[disabled] {
+                    cursor: not-allowed;
+                    opacity: .5;
+                    &:active {
+                        color: rgba(255, 255, 255, .6);
+                        background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+                        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
+                    }
+                    &:hover {
+                        color: rgba(255, 255, 255, 1);
+                        background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+                    }
+                }
+
+                .btn[disabled].sub {
+                    &:hover {
+                        color: rgba(0, 0, 0, .9);
+                    }
+                }
+
+                .btn_plain[disabled] {
+                    opacity: .5;
+                    cursor: not-allowed;
+                    &:hover {
+                        opacity: .5;
+                    }
+                    &:active {
+                        opacity: .5;
+                        box-shadow: none;
+                    }
+                }
+
+                .btn_common {
+                    text-align: center;
+                    border-radius: 3px;
+                    outline: 0;
+                    display: inline-block;
+                    width: 100%;
+                    padding: 8px 15px;
+                    text-align: center;
+                    border-radius: 5px;
+                    font-size: 17px;
+                }
+
+                .btn {
+                    color: #fff;
+                    border: 1px solid rgba(0, 0, 0, .1);
+                    .btn_common;
+                    &:active {
+                        color: rgba(255, 255, 255, .6);
+                        background-image: linear-gradient( rgba(0, 0, 0, .08), rgba(0, 0, 0, .09));
+                    }
+                }
+
+                .btn_small {
+                    color: #fff;
+                    border: 1px solid rgba(0, 0, 0, .1);
+                    .btn_common;
+                    display: inline-block;
+                    width: auto;
+                    border-radius: 2px;
+                    .f_14;
+                    padding: 5px 20px;
+                    &:active {
+                        color: rgba(255, 255, 255, .6);
+                        background-image: linear-gradient( rgba(0, 0, 0, .08), rgba(0, 0, 0, .09));
+                    }
+                }
+
+                .btn_plain {
+                    border: 1px solid currentcolor;
+                    .btn_common;
+                    &:active {
+                        opacity: .6;
+                    }
+                }
+
+                .btn_plain_small {
+                    color: #fff;
+                    .btn_common;
+                    display: inline-block;
+                    width: auto;
+                    border-radius: 2px;
+                    .f_14;
+                    padding: 5px 20px;
+                    &:active {
+                        opacity: .6;
+                    }
+                }
+
+                // 主按钮
+                .btn.primary {
+                    background-color: @c_blue;
+                }
+
+                // 绿色主按钮
+                .btn.primary2 {
+                    background-color: @green;
+                }
+
+                .btn.primary3 {
+                    background-color: @c_blue2;
+                }
+
+                // 次要按钮
+                .btn.sub {
+                    color: #000;
+                    background-color: @c_f7f7f7;
+                }
+
+                // 警告按钮
+                .btn.warn {
+                    background-color: @c_red2;
+                }
+
+                .green {
+                    color: @green;
+                }
+
+                .red {
+                    color: @c_red2;
+                }
+
+                .blue {
+                    color: @c_blue;
+                }
+
+                .blue2 {
+                    color: @c_blue5;
+                }
+
+                .lightgray {
+                    color: #666;
+                }
+
+                .orange {
+                    color: @c_orange2;
+                }
+
+                .orange_bg {
+                    background: @c_orange2;
+                }
+
+                .blue_bg {
+                    background: @c_blue;
+                }
+            </pre>
+        </div>
+        <div class="btns_content_2">
+            <div class="btns_box">
+                <a class="btn primary">主要按钮</a>
+                <a class="btn sub">次要</a>
+                <a class="btn primary2">主要按钮2</a>
+                <a class="btn primary3">主要按钮3</a>
+                <a class="btn warn">警告按钮</a>
+                <a class="btn orange_bg">橙色</a>
+                <a class="btn_plain green">绿色按钮</a>
+                <a class="btn_plain red">红色按钮</a>
+                <a class="btn_plain blue">蓝色按钮</a>
+                <a class="btn_plain blue2">蓝色按钮2</a>
+                <a class="btn_plain lightgray">灰色按钮</a>
+                <a class="btn_plain orange">橙色按钮</a>
+                <br>
+                <p>禁用状态</p>
+                <a class="btn primary" disabled>主要按钮</a>
+                <a class="btn sub" disabled>次要</a>
+                <a class="btn primary2" disabled>主要按钮2</a>
+                <a class="btn primary3" disabled>主要按钮3</a>
+                <a class="btn warn" disabled>警告按钮</a>
+                <a class="btn orange_bg" disabled>橙色</a>
+                <a class="btn_plain green" disabled>绿色按钮</a>
+                <a class="btn_plain red" disabled>红色按钮</a>
+                <a class="btn_plain blue" disabled>蓝色按钮</a>
+                <a class="btn_plain blue2" disabled>蓝色按钮2</a>
+                <a class="btn_plain lightgray" disabled>灰色按钮</a>
+                <a class="btn_plain orange" disabled>橙色按钮</a>
+                <p>辅助小按钮</p>
+                <a class="btn primary btn_small">主要按钮</a>
+                <a class="btn sub btn_small">次要</a>
+                <a class="btn primary2 btn_small">主要按钮2</a>
+                <a class="btn primary3 btn_small">主要按钮3</a>
+                <a class="btn warn btn_small">警告按钮</a>
+                <a class="btn orange_bg btn_small">橙色</a>
+                <a class="btn_plain green btn_plain_small">绿色按钮</a>
+                <a class="btn_plain red btn_plain_small">红色按钮</a>
+                <a class="btn_plain blue btn_plain_small">蓝色按钮</a>
+                <a class="btn_plain blue2 btn_plain_small">蓝色按钮2</a>
+                <a class="btn_plain lightgray btn_plain_small">灰色按钮</a>
+                <a class="btn_plain orange btn_plain_small">橙色按钮</a>
+                <!-- 加载中 -->
+                <p class="title">加载中</p>
+                <a class="btn primary">
+                    <div class="loading-indicator white">
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                    </div>
+                    加载中
+                </a>
+                <div class="loading-indicator blue">
+                    <div class="loading-item"></div>
+                    <div class="loading-item"></div>
+                    <div class="loading-item"></div>
+                </div>
+                <p>加载中1</p>
+                <i class="loading-gray"></i>
+                <p>加载中2</p>
+            </div>
+        </div>
+        <!-- 按钮结束 -->
+        <!-- 加载中开始 -->
+        <div class="jiazaizhong_content_1">
+            <div class="title">
+                <div>
+                    加载中
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+                <p>依赖 my_animate.less</p>
+            </div>
+            <div class="t_right">
+                <a class="btn warn btn_small" href="less/my_animate.less" download>my_animate.less 下载</a>
+            </div>
+            <pre class="brush:js;">
+                <a class="btn primary">
+                    <div class="loading-indicator white">
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                    </div>
+                    加载中
+                </a>
+
+                <!-- 加载中1 -->
+                <div class="loading-indicator blue">
+                    <div class="loading-item"></div>
+                    <div class="loading-item"></div>
+                    <div class="loading-item"></div>
+                </div>
+
+                <!-- 加载中2 -->
+                <i class="loading-gray"></i>
+            </pre>
+            <pre class="brush:js;">
+            .loading-indicator {
+                display: inline-block;
+                font-size: 0;
+                .loading-item {
+                    -webkit-animation-delay: -2.2s;
+                    animation-delay: -2.2s;
+                    display: inline-block;
+                    position: relative;
+                    -webkit-transform: scale(0);
+                    opacity: 0;
+                    -webkit-animation: loadingScaleColorBoth .766s cubic-bezier(.42, 0, .58, 1) infinite alternate;
+                    animation: loadingScaleColorBoth .766s cubic-bezier(.42, 0, .58, 1) infinite alternate;
+                    width: 10px;
+                    height: 10px;
+                    &:before {
+                        content: ' ';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        margin-left: -6.38px;
+                        margin-top: -9.56px;
+                        width: 12.75px;
+                        height: 19.13px;
+                        -webkit-transform: skew(-.46rad) scale(.5);
+                        -webkit-transform-origin: center center;
+                        border-radius: 1px 2px 2px 3px; 
+                    }
+                    &:nth-child(1) {
+                        -webkit-animation-delay: -2.2s;
+                        animation-delay: -2.2s;
+                    }
+                    &:nth-child(2) {
+                        -webkit-animation-delay: -1.966s;
+                        animation-delay: -1.966s;
+                    }
+                    &:nth-child(3) {
+                        -webkit-animation-delay: -1.666s;
+                        animation-delay: -1.666s;
+                    }
+                }
+            }
+
+            .loading-indicator.white {
+                .loading-item {
+                    &:before {
+                        background: #fff !important;
+                    }
+                }
+            }
+
+            .loading-indicator.blue {
+                .loading-item {
+                    &:before {
+                        background: @c_blue !important;
+                    }
+                }
+            }
+
+            .loading-gray {
+                width: 38px;
+                height: 38px;
+                vertical-align: middle;
+                display: inline-block;
+                -webkit-animation: loading 1s steps(12, end) infinite;
+                animation: loading 1s steps(12, end) infinite;
+                background: transparent url("../images/loading.svg") no-repeat;
+                background-size: 100%;
+            }
+
+
+            // 加载中1
+            @-webkit-keyframes loadingScaleColorBoth {
+                0% {
+                    -webkit-transform: scale(0);
+                    opacity: 0
+                }
+                34.7826087% {
+                    -webkit-transform: scale(.12);
+                    opacity: .001
+                }
+                100% {
+                    -webkit-transform: scale(1);
+                    opacity: 1
+                }
+            }
+
+            // 加载中2
+            @-webkit-keyframes loading {
+                0% {
+                    transform: rotate3d(0, 0, 1, 0deg);
+                }
+
+                100% {
+                    transform: rotate3d(0, 0, 1, 360deg);
+                }
+            }
+
+            @keyframes loading {
+                0% {
+                    transform: rotate3d(0, 0, 1, 0deg);
+                }
+
+                100% {
+                    transform: rotate3d(0, 0, 1, 360deg);
+                }
+            }
+            </pre>
+        </div>
+        <div class="jiazaizhong_content_2">
+            <div class="p_15">
+                <a class="btn primary">
+                    <div class="loading-indicator white">
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                    </div>
+                    加载中
+                </a>
+                <div class="h_30px"></div>
+                <div class="loading-indicator blue">
+                    <div class="loading-item"></div>
+                    <div class="loading-item"></div>
+                    <div class="loading-item"></div>
+                </div>
+                <p>加载中1</p>
+                <div class="h_30px"></div>
+                <i class="loading-gray"></i>
+                <p>加载中2</p>
+            </div>
+        </div>
+        <!-- 加载中结束 -->
+        <!-- switch开关 开始 -->
+        <div class="kaiguan_content_1">
+            <div class="title">
+                <div>
+                    switch开关
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="switch">
+                    <input type="checkbox">
+                    <label></label>
+                </div>
+
+               
+            </pre>
+            <pre class="brush:js;">
+                .switch {
+                    width: 50px;
+                    height: 30px;
+                    position: relative;
+                    display: inline-block;
+                    >input {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 50px;
+                        height: 30px;
+                        opacity: 0;
+                        z-index: 3;
+                    }
+
+                    >label {
+                        display: inline-block;
+                        width: 50px;
+                        height: 30px;
+                        border-radius: 25px;
+                        background: @c_ccc;
+                        position: relative;
+                        -webkit-transition: all .1s ease-in 0s;
+                        &:before {
+                            content: '';
+                            display: inline-block;
+                            position: absolute;
+                            top: 2px;
+                            width: 26px;
+                            height: 26px;
+                            border-radius: 50%;
+                            background: @c_fff;
+                            -webkit-transform: translateX(2px);
+                            -webkit-transition: all .1s ease-in 0s;
+                        }
+                    }
+                    >input:checked+label {
+                        display: inline-block;
+                        width: 50px;
+                        height: 30px;
+                        border-radius: 25px;
+                        background: @c_green;
+                        position: relative;
+                    }
+                    >input:checked+label:before {
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        top: 2px;
+                        width: 26px;
+                        height: 26px;
+                        border-radius: 50%;
+                        background: @c_fff;
+                        -webkit-transform: translateX(22px);
+                        -webkit-transition: all .1s ease-in 0s;
+                    }
+                }
+            </pre>
+        </div>
+        <div class="kaiguan_content_2">
+            <div class="p_15">
+                <div class="switch">
+                    <input type="checkbox">
+                    <label></label>
+                </div>
+            </div>
+        </div>
+        <!-- switch开关 结束 -->
+        <!-- 报错页面404 开始 -->
+        <div class="baocuo_404_content_1">
+            <div class="title">
+                <div>
+                    报错页面404
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>样式集成在other_pages.less中</p>
+            </div>
+            <div class="t_right">
+                <a class="btn warn btn_small" href="images/error_500.png" download>error_500.png 下载</a>
+                <a class="btn warn btn_small" href="images/error_404.png" download>error_404.png 下载</a>
+            </div>
+            <pre class="brush:js;">
+                <div class="error_page">
+                    <div class="h_30px"> </div>
+                    <div class="error_img">
+                        img src="../images/error_404.png"
+                    </div>
+                    <p class="error_title">出错啦</p>
+                    <p class="error_tips">出错了！ 请稍后重试！</p>
+                    <a class="btn error_btn">返回首页</a>
+                </div>
+            </pre>
+            <pre class="brush:js;">
+                .error_page {
+                    .error_img {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .error_title {
+                        .t_center;
+                        .f_20;
+                        .mar_b_15;
+                        color: @c_000;
+                        font-weight: bold;
+                        margin-top: -30px;
+                    }
+                    .error_tips {
+                        .t_center;
+                        color: @c_666;
+                    }
+                    .error_btn {
+                        .t_center;
+                        white-space: nowrap;
+                        display: block;
+                        width: 30%;
+                        margin: 15px auto;
+                        border-radius: 22px;
+                        background: @c_blue5;
+                        color: @c_fff;
+                    }
+                }
+            </pre>
+        </div>
+        <div class="baocuo_404_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/报错页面404.html"></iframe>
+        </div>
+        <!-- 报错页面404 结束 -->
+        <!-- 报错页面500 开始 -->
+        <div class="baocuo_500_content_1">
+            <div class="title">
+                <div>
+                    报错页面500
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>样式集成在other_pages.less中</p>
+            </div>
+            <div class="t_right">
+                <a class="btn warn btn_small" href="images/error_500.png" download>error_500.png 下载</a>
+                <a class="btn warn btn_small" href="images/error_404.png" download>error_404.png 下载</a>
+            </div>
+            <pre class="brush:js;">
+                <div class="error_page">
+                    <div class="h_30px"> </div>
+                    <div class="error_img">
+                        img src="../images/error_500.png"
+                    </div>
+                    <p class="error_title">出错啦</p>
+                    <p class="error_tips">出错了！ 请稍后重试！</p>
+                    <a class="btn error_btn">返回首页</a>
+                </div>
+            </pre>
+            <pre class="brush:js;">
+                .error_page {
+                    .error_img {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .error_title {
+                        .t_center;
+                        .f_20;
+                        .mar_b_15;
+                        color: @c_000;
+                        font-weight: bold;
+                        margin-top: -30px;
+                    }
+                    .error_tips {
+                        .t_center;
+                        color: @c_666;
+                    }
+                    .error_btn {
+                        .t_center;
+                        white-space: nowrap;
+                        display: block;
+                        width: 30%;
+                        margin: 15px auto;
+                        border-radius: 22px;
+                        background: @c_blue5;
+                        color: @c_fff;
+                    }
+                }
+            </pre>
+        </div>
+        <div class="baocuo_500_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/报错页面500.html"></iframe>
+        </div>
+        <!-- 报错页面500 结束 -->
+        <!-- 图标 开始 -->
+        <div class="tubiao_content_1">
+            <div class="title">
+                <div>
+                    常用图标
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <div class="t_right">
+                <a class="btn warn btn_small" href="images/common_icons.png" download>common_icons.png 下载</a>
+            </div>
+            <pre class="brush:js;">
+                <i class="icon_msg icon_success"></i>
+                <i class="icon_msg icon_tips"></i>
+                <i class="icon_msg icon_wait"></i>
+                <i class="icon_msg icon_warn"></i>
+                <i class="icon_msg icon_tips2"></i>
+                <i class="icon_tick"></i>
+            </pre>
+            <pre class="brush:js;">
+                .icon_msg {
+                    display: inline-block;
+                    width: 65px;
+                    height: 65px;
+                    background: url("../images/common_icons.png") no-repeat;
+                    background-size: 65px auto !important;
+                    overflow: hidden;
+                }
+
+                .icon_success {
+                    background-position: 0 0 !important;
+                }
+
+                .icon_tips {
+                    background-position: 0px -83px !important;
+                }
+
+                .icon_wait {
+                    background-position: 0px -171px !important;
+                }
+
+                .icon_warn {
+                    background-position: 0px -250px !important;
+                }
+
+                .icon_tips2 {
+                    background-position: 0px -332px !important;
+                }
+
+                .icon_tick{
+                    display: inline-block;
+                    width: 50px;
+                    height:35px;
+                    background: url("../images/common_icons.png") no-repeat;
+                    background-size: 50px auto !important;
+                    background-position:0 -314px;
+                }
+            </pre>
+        </div>
+        <div class="tubiao_content_2">
+            <div class="p_15">
+                <i class="icon_msg icon_success"></i>
+                <i class="icon_msg icon_tips"></i>
+                <i class="icon_msg icon_wait"></i>
+                <i class="icon_msg icon_warn"></i>
+                <i class="icon_msg icon_tips2"></i>
+                <div class="tick_box">
+                    <i class="icon_tick"></i>
+                </div>
+            </div>
+        </div>
+        <!-- 图标 结束 -->
+        <!-- page_result 开始 -->
+        <div class="yemianjieguo_content_1">
+            <div class="title">
+                <div>
+                    Page_result
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                如果需要其他的页面反馈，具体的图标和文字请自行配置
+                请参考【常用图标模块】
+
+                <div class="page_result">
+                    <div class="page_result_inner">
+                        <div class="icon_box">
+                            <i class="icon_msg icon_success"></i>
+                        </div>
+                        <p class="tit">任务领取成功</p>
+                        <p class="content">领取任务后，可在【我的任务】-【未完成】模块进行任务的查看和处理</p>
+                        <a class="btn primary">查看领取任务</a>
+                        <div class="h_15px"></div>
+                        <a class="btn sub">返回</a>
+                    </div>
+                </div>
+            </pre>
+            <pre class="brush:js;">
+                .page_result {
+                    .p_15;
+                    .page_result_inner {
+                        .white_bg;
+                        .boder_bg;
+                        .p_25;
+                        padding-bottom: 40px;
+                        text-align: center;
+                        .icon_box {
+                            .mar_b_10;
+                            .iconfont {
+                                font-size: 70px;
+                            }
+                        }
+                        .tit {
+                            .t_center;
+                            .f_18;
+                            .mar_b_10;
+                            color: @c_000;
+                        }
+                        .content {
+                            .mar_b_30;
+                            color: @c_888;
+                            line-height: 1.6;
+                        }
+                    }
+                }
+                
+            </pre>
+        </div>
+        <div class="yemianjieguo_content_2">
+            <div class="page_result">
+                <div class="page_result_inner">
+                    <div class="icon_box">
+                        <i class="icon_msg icon_success"></i>
+                    </div>
+                    <p class="tit">任务领取成功</p>
+                    <p class="content">领取任务后，可在【我的任务】-【未完成】模块进行任务的查看和处理</p>
+                    <a class="btn primary">查看领取任务</a>
+                    <div class="h_15px"></div>
+                    <a class="btn sub">返回</a>
+                </div>
+            </div>
+        </div>
+        <!-- page_result 结束 -->
+        <!-- 九宫格布局 开始 -->
+        <div class="jiugongge_content_1">
+            <div class="title">
+                <div>
+                    九宫格
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="h_15px"></div>
+                <p class="form_title">4列布局</p>
+                <div class="column_4">
+                    <a class="column_item">
+                        <i class="iconfont icon-zhangdan bg_c_blue3"></i>
+                        <p>简易案件</p>
+                    </a>
+                    <a class="column_item">
+                        <i class="iconfont icon-zhangdan bg_c_blue4"></i>
+                        <p>简易案件</p>
+                    </a>
+                    <a class="column_item">
+                        <i class="iconfont icon-zhangdan bg_c_orange3"></i>
+                        <p>简易案件</p>
+                    </a>
+                    <a class="column_item">
+                        <i class="iconfont icon-zhangdan bg_c_green2"></i>
+                        <p>简易案件</p>
+                    </a>
+                </div>
+                <div class="h_15px"></div>
+
+
+                <p class="form_title">3列布局</p>
+                <div class="column_3">
+                    <a class="column_item">
+                        <i class="iconfont icon-zhangdan bg_c_red3"></i>
+                        <p>简易案件</p>
+                    </a>
+                    <a class="column_item">
+                        <i class="iconfont icon-zhangdan bg_c_blue4"></i>
+                        <p>简易案件</p>
+                    </a>
+                    <a class="column_item">
+                        <i class="iconfont icon-zhangdan bg_c_green2"></i>
+                        <p>简易案件</p>
+                    </a>
+                    <a class="column_item">
+                        <i class="iconfont icon-zhangdan bg_c_blue3"></i>
+                        <p>简易案件</p>
+                    </a>
+                    <a class="column_item">
+                        <i class="iconfont icon-zhangdan bg_c_orange3"></i>
+                        <p>简易案件</p>
+                    </a>
+                </div>
+            </pre>
+            <pre class="brush:js;">
+                .clos_3 {
+                    width: 33.333333%;
+                }
+
+                .cols_4 {
+                    width: 25%;
+                }
+
+                .column_3 {
+                    .column_4;
+                    .column_item {
+                        .clos_3;
+                    }
+                }
+
+                .column_4 {
+                    .flexbox;
+                    .line;
+                    .white_bg;
+                    flex-wrap: wrap;
+                    padding: 10px 0;
+                    .column_item {
+                        .form_active;
+                        .cols_4;
+                        text-align: center;
+                        padding: 12px 0;
+                        .iconfont {
+                            display: inline-block;
+                            width: 45px;
+                            height: 45px;
+                            line-height: 45px;
+                            text-align: center;
+                            border-radius: 30px; // background: @c_blue;
+                            color: @c_fff;
+                            font-size: 25px;
+                        }
+                        p {
+                            .f_14;
+                            color: @c_333;
+                            .mar_t_5;
+                        }
+                    }
+                    a.column_item {
+                        display: block;
+                    }
+                }
+            </pre>
+        </div>
+        <div class="jiugongge_content_2">
+            <div class="h_15px"></div>
+            <p class="form_title">4列布局</p>
+            <div class="column_4">
+                <a class="column_item">
+                    <i class="iconfont icon-zhangdan bg_c_blue3"></i>
+                    <p>简易案件</p>
+                </a>
+                <a class="column_item">
+                    <i class="iconfont icon-zhangdan bg_c_blue4"></i>
+                    <p>简易案件</p>
+                </a>
+                <a class="column_item">
+                    <i class="iconfont icon-zhangdan bg_c_orange3"></i>
+                    <p>简易案件</p>
+                </a>
+                <a class="column_item">
+                    <i class="iconfont icon-zhangdan bg_c_green2"></i>
+                    <p>简易案件</p>
+                </a>
+            </div>
+            <div class="h_15px"></div>
+            <p class="form_title">3列布局</p>
+            <div class="column_3">
+                <a class="column_item">
+                    <i class="iconfont icon-zhangdan bg_c_red3"></i>
+                    <p>简易案件</p>
+                </a>
+                <a class="column_item">
+                    <i class="iconfont icon-zhangdan bg_c_blue4"></i>
+                    <p>简易案件</p>
+                </a>
+                <a class="column_item">
+                    <i class="iconfont icon-zhangdan bg_c_green2"></i>
+                    <p>简易案件</p>
+                </a>
+                <a class="column_item">
+                    <i class="iconfont icon-zhangdan bg_c_blue3"></i>
+                    <p>简易案件</p>
+                </a>
+                <a class="column_item">
+                    <i class="iconfont icon-zhangdan bg_c_orange3"></i>
+                    <p>简易案件</p>
+                </a>
+            </div>
+        </div>
+        <!-- 九宫格布局 结束 -->
+        <!-- 特殊字体 开始 -->
+        <div class="special_font_content_1">
+            <div class="title">
+                <div>
+                    特殊字体的使用
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>依赖font_family.less</p>
+                <p>特殊字体没有集成在公用的less中，需要使用的时候请自行添加</p>
+                <p>具体的使用方法下面会做具体的说明，以下的例子仅供参考，这里只介绍方法，具体使用时候，请灵活配置使用</p>
+            </div>
+            <div class="t_right">
+                <a class="btn warn btn_small" href="less/font_family.less" download>font_family.less下载</a>
+            </div>
+            <pre class="brush:js;">
+                <p class="font-num1">123,456,789.00</p>
+                <p class="font-num2">123,456,789.00</p>
+
+                .font-num1 {
+                    font-family: font-num1;
+                }
+                .font-num2 {
+                    font-family: font-num2;
+                }
+                @font-face {
+                    font-family: font-num1;
+                    src: url("data:font/ttf;base64,AAEAAAALAI……AAAA=")
+                }
+
+                使用方法
+                1、准备ttf文件
+                2、将ttf转换成base64
+                    https://www.css-js.com/tools/base64.html
+                3、将base64编码拷贝到这里
+                    @font-face {
+                        font-family: font-num1;
+                        src: url(“base64编码拷贝到这里”)
+                    }
+                4、将data的内容补充为—data:font/ttf;就可以正常使用字体了
+            </pre>
+        </div>
+        <div class="special_font_content_2">
+            <div class="p_15">
+                <p class="f_20 font-num1">123,456,789.00</p>
+                <p class="f_20 font-num2">123,456,789.00</p>
+            </div>
+        </div>
+        <!-- 特殊字体 结束 -->
+        <!-- 带说明的列表项 开始-->
+        <div class="common_list1_content_1">
+            <div class="title">
+                <div>
+                    带说明的列表项
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="h_15px"></div>
+                <p class="form_title">带说明的列表项</p>
+                <div class="line">
+                    <div class="form_list line_bottom_15">
+                        <div class="form_label">
+                            不带说明
+                        </div>
+                    </div>
+                    <div class="form_list line_bottom_15">
+                        <div class="form_label">
+                            标题文字带说明
+                        </div>
+                        <div class="form_info">
+                            说明信息
+                        </div>
+                    </div>
+                    <div class="form_list line_bottom_15 form_active">
+                        <div class="form_label">
+                            带跳转
+                        </div>
+                        <div class="form_info">
+                            说明信息
+                        </div>
+                        <div class="arrow_box">
+                            <i class="icon_arrow"></i>
+                        </div>
+                    </div>
+                    <div class="form_list line_bottom_15 form_active">
+                        <div class="form_icon_28">
+                            <i class="iconfont icon-zhangdan bg_c_blue3"></i>
+                        </div>
+                        <div class="form_label">
+                            带图标
+                        </div>
+                        <div class="form_info">
+                            说明信息
+                        </div>
+                        <div class="arrow_box">
+                            <i class="icon_arrow"></i>
+                        </div>
+                    </div>
+                    <div class="form_list line_bottom_15 form_active">
+                        <div class="form_icon_28">
+                            <i class="iconfont icon-zhangdan bg_c_blue4"></i>
+                        </div>
+                        <div class="form_label">
+                            带图标
+                        </div>
+                        <div class="form_info">
+                            说明信息
+                        </div>
+                        <div class="arrow_box">
+                            <i class="icon_arrow"></i>
+                        </div>
+                    </div>
+                    <div class="form_list line_bottom_15 form_active">
+                        <div class="form_icon_28">
+                            <i class="iconfont icon-zhangdan bg_c_orange3"></i>
+                        </div>
+                        <div class="form_label">
+                            带图标
+                        </div>
+                        <div class="form_info">
+                            说明信息
+                        </div>
+                        <div class="arrow_box">
+                            <i class="icon_arrow"></i>
+                        </div>
+                    </div>
+                    <div class="form_list line_bottom_15 form_active">
+                        <div class="form_icon_28">
+                            <i class="iconfont icon-zhangdan bg_c_green2"></i>
+                        </div>
+                        <div class="form_label">
+                            带图标
+                        </div>
+                        <div class="form_info">
+                            说明信息
+                        </div>
+                        <div class="arrow_box">
+                            <i class="icon_arrow"></i>
+                        </div>
+                    </div>
+                    <div class="form_list line_bottom_15 form_active">
+                        <div class="form_icon_28">
+                            <i class="iconfont icon-zhangdan bg_c_red3"></i>
+                        </div>
+                        <div class="form_label">
+                            带图标
+                        </div>
+                        <div class="form_info">
+                            说明信息
+                        </div>
+                        <div class="arrow_box">
+                            <i class="icon_arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </pre>
+        </div>
+        <div class="common_list1_content_2">
+            <div class="h_15px"></div>
+            <p class="form_title">带说明的列表项</p>
+            <div class="line">
+                <div class="form_list line_bottom_15">
+                    <div class="form_label">
+                        不带说明
+                    </div>
+                </div>
+                <div class="form_list line_bottom_15">
+                    <div class="form_label">
+                        标题文字带说明
+                    </div>
+                    <div class="form_info">
+                        说明信息
+                    </div>
+                </div>
+                <div class="form_list line_bottom_15 form_active">
+                    <div class="form_label">
+                        带跳转
+                    </div>
+                    <div class="form_info">
+                        说明信息
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+                <div class="form_list line_bottom_15 form_active">
+                    <div class="form_icon_28">
+                        <i class="iconfont icon-zhangdan bg_c_blue3"></i>
+                    </div>
+                    <div class="form_label">
+                        带图标
+                    </div>
+                    <div class="form_info">
+                        说明信息
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+                <div class="form_list line_bottom_15 form_active">
+                    <div class="form_icon_28">
+                        <i class="iconfont icon-zhangdan bg_c_blue4"></i>
+                    </div>
+                    <div class="form_label">
+                        带图标
+                    </div>
+                    <div class="form_info">
+                        说明信息
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+                <div class="form_list line_bottom_15 form_active">
+                    <div class="form_icon_28">
+                        <i class="iconfont icon-zhangdan bg_c_orange3"></i>
+                    </div>
+                    <div class="form_label">
+                        带图标
+                    </div>
+                    <div class="form_info">
+                        说明信息
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+                <div class="form_list line_bottom_15 form_active">
+                    <div class="form_icon_28">
+                        <i class="iconfont icon-zhangdan bg_c_green2"></i>
+                    </div>
+                    <div class="form_label">
+                        带图标
+                    </div>
+                    <div class="form_info">
+                        说明信息
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+                <div class="form_list line_bottom_15 form_active">
+                    <div class="form_icon_28">
+                        <i class="iconfont icon-zhangdan bg_c_red3"></i>
+                    </div>
+                    <div class="form_label">
+                        带图标
+                    </div>
+                    <div class="form_info">
+                        说明信息
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 带说明的列表项 结束-->
+        <!-- 用户头像 开始-->
+        <div class="common_list2_content_1">
+            <div class="title">
+                <div>
+                    列表-用户头像
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <p class="form_title">用户头像-用户iconfont版本</p>
+                <div class="form_list line_bottom form_active">
+                    <div class="form_icon_60">
+                        <i class="iconfont icon-zhangdan bg_c_blue4"></i>
+                    </div>
+                    <div class="form_label flexbox_item">
+                        <p class="p_1">Jenny</p>
+                        <p class="p_2">更换头像</p>
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+
+                <p class="form_title">用户头像-图片版本</p>
+                <div class="form_list line_bottom form_active">
+                    <div class="form_icon_60">
+                        <img src="images/user_photo_default.png">
+                    </div>
+                    <div class="form_label flexbox_item">
+                        <p class="p_1">Jenny</p>
+                        <p class="p_2">更换头像</p>
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+            </pre>
+        </div>
+        <div class="common_list2_content_2">
+            <div class="h_15px"></div>
+            <p class="form_title">用户头像-用户iconfont版本</p>
+            <div class="form_list line_bottom form_active">
+                <div class="form_icon_60">
+                    <i class="iconfont icon-zhangdan bg_c_blue4"></i>
+                </div>
+                <div class="form_label flexbox_item">
+                    <p class="p_1">Jenny</p>
+                    <p class="p_2">更换头像</p>
+                </div>
+                <div class="arrow_box">
+                    <i class="icon_arrow"></i>
+                </div>
+            </div>
+            <div class="h_15px"></div>
+            <p class="form_title">用户头像-图片版本</p>
+            <div class="form_list line_bottom form_active">
+                <div class="form_icon_60">
+                    <img src="images/user_photo_default.png">
+                </div>
+                <div class="form_label flexbox_item">
+                    <p class="p_1">Jenny</p>
+                    <p class="p_2">更换头像</p>
+                </div>
+                <div class="arrow_box">
+                    <i class="icon_arrow"></i>
+                </div>
+            </div>
+        </div>
+        <!-- 用户头像 结束-->
+        <!-- 列表 常用列表1--类似案卷列表类型的  开始-->
+        <div class="common_list3_content_1">
+            <div class="title">
+                <div>
+                    列表-常用列表1
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="form_list form_active mar_b_15 line">
+                    <div class="form_icon_85">
+                        <img src="images/example_img.png">
+                    </div>
+                    <div class="form_label flexbox_item">
+                        <p class="p_title">编号：20180519135417</p>
+                        <p class="p_subtitle"><b>类型</b>垃圾分类 | 上城区</p>
+                        <p class="p_subtitle"><b>问题描述</b>宣传单页满地都是宣传单页满地都是宣传单页满地都是</p>
+                        <p class="p_subtitle"><b>上报时间</b>2018-05-19 14：35</p>
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+            </pre>
+        </div>
+        <div class="common_list3_content_2">
+            <div class="h_15px"></div>
+            <div class="form_list form_active mar_b_15 line">
+                <div class="form_icon_85">
+                    <img src="images/example_img.png">
+                </div>
+                <div class="form_label flexbox_item">
+                    <p class="p_title">编号：20180519135417</p>
+                    <p class="p_subtitle"><b>类型</b>垃圾分类 | 上城区</p>
+                    <p class="p_subtitle"><b>问题描述</b>宣传单页满地都是宣传单页满地都是宣传单页满地都是</p>
+                    <p class="p_subtitle"><b>上报时间</b>2018-05-19 14：35</p>
+                </div>
+                <div class="arrow_box">
+                    <i class="icon_arrow"></i>
+                </div>
+            </div>
+            <div class="form_list form_active mar_b_15 line">
+                <div class="form_icon_85">
+                    <img src="images/example_img.png">
+                </div>
+                <div class="form_label flexbox_item">
+                    <p class="p_title">编号：20180519135417</p>
+                    <p class="p_subtitle"><b>类型</b>垃圾分类 | 上城区</p>
+                    <p class="p_subtitle"><b>问题描述</b>宣传单页满地都是宣传单页满地都是宣传单页满地都是</p>
+                    <p class="p_subtitle"><b>上报时间</b>2018-05-19 14：35</p>
+                </div>
+                <div class="arrow_box">
+                    <i class="icon_arrow"></i>
+                </div>
+            </div>
+            <div class="form_list form_active mar_b_15 line">
+                <div class="form_icon_85">
+                    <img src="images/example_img.png">
+                </div>
+                <div class="form_label flexbox_item">
+                    <p class="p_title">编号：20180519135417</p>
+                    <p class="p_subtitle"><b>类型</b>垃圾分类 | 上城区</p>
+                    <p class="p_subtitle"><b>问题描述</b>宣传单页满地都是宣传单页满地都是宣传单页满地都是</p>
+                    <p class="p_subtitle"><b>上报时间</b>2018-05-19 14：35</p>
+                </div>
+                <div class="arrow_box">
+                    <i class="icon_arrow"></i>
+                </div>
+            </div>
+        </div>
+        <!-- 列表 常用列表1--类似案卷列表类型的  结束-->
+        <!-- 列表 常用列表2 开始-->
+        <div class="common_list4_content_1">
+            <div class="title">
+                <div>
+                    列表-常用列表2
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <!-- 常用列表-2img-->
+                <p class="form_title">常用列表-2img</p>
+                <div class="form_list notice_list">
+                    <div class="form_icon_30">
+                        <img src="images/read.svg">
+                    </div>
+                    <div class="form_label">
+                        <p class="p_title2">关于在全市持续开展“最美建设人（集体）”选树活动的通知关于在全市持续开展“最美建设人（集体）”选树活动的通知关于在全市持续开展“最美建设人（集体）”选树活动的通知</p>
+                        <p class="p_subtitle">收文管理 05-12</p>
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+                <div class="form_list notice_list">
+                    <div class="form_icon_30">
+                        <img src="images/unread.svg">
+                    </div>
+                    <div class="form_label">
+                        <p class="p_title2">关于反馈第二十批群众和企业反映问题清单的通知关于反馈第二十批群众和企业反映问题清单的通知关于反馈第二十批群众和企业反映问题清单的通知</p>
+                        <p class="p_subtitle">收文管理 09-07</p>
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+
+
+                <!-- 常用列表-2iconfont-->
+                <p class="form_title">常用列表-2iconfont</p>
+                <div class="form_list notice_list">
+                    <div class="form_icon_30">
+                        <i class="iconfont icon-shouru c_blue2"></i>
+                    </div>
+                    <div class="form_label">
+                        <p class="p_title2">关于在全市持续开展“最美建设人（集体）”选树活动的通知关于在全市持续开展“最美建设人（集体）”选树活动的通知关于在全市持续开展“最美建设人（集体）”选树活动的通知</p>
+                        <p class="p_subtitle">收文管理 05-12</p>
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+                <div class="form_list notice_list">
+                    <div class="form_icon_30">
+                        <i class="iconfont icon-shouru c_blue2"></i>
+                    </div>
+                    <div class="form_label">
+                        <p class="p_title2">关于反馈第二十批群众和企业反映问题清单的通知关于反馈第二十批群众和企业反映问题清单的通知关于反馈第二十批群众和企业反映问题清单的通知</p>
+                        <p class="p_subtitle">收文管理 09-07</p>
+                    </div>
+                    <div class="arrow_box">
+                        <i class="icon_arrow"></i>
+                    </div>
+                </div>
+            </pre>
+        </div>
+        <div class="common_list4_content_2">
+            <div class="h_15px"></div>
+            <!-- 常用列表-2img-->
+            <p class="form_title">常用列表-2img</p>
+            <div class="form_list notice_list">
+                <div class="form_icon_30">
+                    <img src="images/read.svg">
+                </div>
+                <div class="form_label">
+                    <p class="p_title2">关于在全市持续开展“最美建设人（集体）”选树活动的通知关于在全市持续开展“最美建设人（集体）”选树活动的通知关于在全市持续开展“最美建设人（集体）”选树活动的通知</p>
+                    <p class="p_subtitle">收文管理 05-12</p>
+                </div>
+                <div class="arrow_box">
+                    <i class="icon_arrow"></i>
+                </div>
+            </div>
+            <div class="form_list notice_list">
+                <div class="form_icon_30">
+                    <img src="images/unread.svg">
+                </div>
+                <div class="form_label">
+                    <p class="p_title2">关于反馈第二十批群众和企业反映问题清单的通知关于反馈第二十批群众和企业反映问题清单的通知关于反馈第二十批群众和企业反映问题清单的通知</p>
+                    <p class="p_subtitle">收文管理 09-07</p>
+                </div>
+                <div class="arrow_box">
+                    <i class="icon_arrow"></i>
+                </div>
+            </div>
+            <!-- 常用列表-2iconfont-->
+            <p class="form_title">常用列表-2iconfont</p>
+            <div class="form_list notice_list">
+                <div class="form_icon_30">
+                    <i class="iconfont icon-shouru c_blue2"></i>
+                </div>
+                <div class="form_label">
+                    <p class="p_title2">关于在全市持续开展“最美建设人（集体）”选树活动的通知关于在全市持续开展“最美建设人（集体）”选树活动的通知关于在全市持续开展“最美建设人（集体）”选树活动的通知</p>
+                    <p class="p_subtitle">收文管理 05-12</p>
+                </div>
+                <div class="arrow_box">
+                    <i class="icon_arrow"></i>
+                </div>
+            </div>
+            <div class="form_list notice_list">
+                <div class="form_icon_30">
+                    <i class="iconfont icon-shouru c_blue2"></i>
+                </div>
+                <div class="form_label">
+                    <p class="p_title2">关于反馈第二十批群众和企业反映问题清单的通知关于反馈第二十批群众和企业反映问题清单的通知关于反馈第二十批群众和企业反映问题清单的通知</p>
+                    <p class="p_subtitle">收文管理 09-07</p>
+                </div>
+                <div class="arrow_box">
+                    <i class="icon_arrow"></i>
+                </div>
+            </div>
+        </div>
+        <!-- 列表 常用列表2 结束-->
+        <!-- 列表 常用列表3(聊天) 开始 -->
+        <div class="common_list5_content_1">
+            <div class="title">
+                <div>
+                    列表-常用列表3
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <p class="form_title">常用列表-3(聊天列表)</p>
+                <div class="form_list form_list_3">
+                    <div class="form_icon_50">
+                        <img src="images/user.png">
+                    </div>
+                    <div class="form_label">
+                        <p class="p_title3">牛琳琳</p>
+                        <p class="p_subtitle">[比心]</p>
+                    </div>
+                    <div class="form_time">
+                        2018-05-23
+                    </div>
+                </div>
+                <div class="form_list form_list_3">
+                    <div class="form_icon_50">
+                        <img src="images/user.png">
+                    </div>
+                    <div class="form_label">
+                        <p class="p_title3">牛琳琳</p>
+                        <p class="p_subtitle">[比心]</p>
+                    </div>
+                    <div class="form_time">
+                        2018-05-23
+                    </div>
+                </div>
+            </pre>
+        </div>
+        <div class="common_list5_content_2">
+            <div class="h_15px"></div>
+            <p class="form_title">常用列表-3(聊天列表)</p>
+            <div class="form_list form_list_3">
+                <div class="form_icon_50">
+                    <img src="images/user.png">
+                </div>
+                <div class="form_label">
+                    <p class="p_title3">牛琳琳</p>
+                    <p class="p_subtitle">[比心]</p>
+                </div>
+                <div class="form_time">
+                    2018-05-23
+                </div>
+            </div>
+            <div class="form_list form_list_3">
+                <div class="form_icon_50">
+                    <img src="images/user.png">
+                </div>
+                <div class="form_label">
+                    <p class="p_title3">牛琳琳</p>
+                    <p class="p_subtitle">[比心]</p>
+                </div>
+                <div class="form_time">
+                    2018-05-23
+                </div>
+            </div>
+            <div class="form_list form_list_3">
+                <div class="form_icon_50">
+                    <img src="images/user.png">
+                </div>
+                <div class="form_label">
+                    <p class="p_title3">唯品会</p>
+                    <p class="p_subtitle">送你1000万红包买约会新装，最高享折上8折</p>
+                </div>
+                <div class="form_time">
+                    2018-05-23
+                </div>
+            </div>
+            <div class="form_list form_list_3">
+                <div class="form_icon_50">
+                    <img src="images/user.png">
+                </div>
+                <div class="form_label">
+                    <p class="p_title3">HelloWorld</p>
+                    <p class="p_subtitle">我通过了你的好友请求</p>
+                </div>
+                <div class="form_time">
+                    2018-05-23
+                </div>
+            </div>
+        </div>
+        <!-- 列表 常用列表3(聊天) 结束 -->
+        <!-- 列表 常用列表4(新闻) 开始 -->
+        <div class="common_list6_content_1">
+            <div class="title">
+                <div>
+                    列表-常用列表4(新闻)
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="form_list news_list">
+                    <div class="form_label">
+                        <p class="p_title2">杭州市城镇环境卫生协会八届二次会议召开</p>
+                        <p class="p_subtitle">2017-06-27</p>
+                    </div>
+                    <div class="form_icon">
+                        <img src="images/news_img.png">
+                    </div>
+                </div>
+                <div class="form_list news_list">
+                    <div class="form_label">
+                        <p class="p_title2">市人大常委会副主任郑荣胜带队指导我委代表建议办理工作</p>
+                        <p class="p_subtitle">2017-06-27</p>
+                    </div>
+                    <div class="form_icon">
+                        <img src="images/news_img.png">
+                    </div>
+                </div>
+                <div class="form_list news_list">
+                    <div class="form_label">
+                        <p class="p_title2">杭州市城镇环境卫生协会八届二次会议召开</p>
+                        <p class="p_subtitle">2017-06-27</p>
+                    </div>
+                    <div class="form_icon">
+                        <img src="images/news_img.png">
+                    </div>
+                </div>
+            </pre>
+        </div>
+        <div class="common_list6_content_2">
+            <div class="h_15px"></div>
+            <div class="form_list news_list">
+                <div class="form_label">
+                    <p class="p_title2">杭州市城镇环境卫生协会八届二次会议召开</p>
+                    <p class="p_subtitle">2017-06-27</p>
+                </div>
+                <div class="form_icon">
+                    <img src="images/news_img.png">
+                </div>
+            </div>
+            <div class="form_list news_list">
+                <div class="form_label">
+                    <p class="p_title2">市人大常委会副主任郑荣胜带队指导我委代表建议办理工作</p>
+                    <p class="p_subtitle">2017-06-27</p>
+                </div>
+                <div class="form_icon">
+                    <img src="images/news_img.png">
+                </div>
+            </div>
+            <div class="form_list news_list">
+                <div class="form_label">
+                    <p class="p_title2">杭州市城镇环境卫生协会八届二次会议召开</p>
+                    <p class="p_subtitle">2017-06-27</p>
+                </div>
+                <div class="form_icon">
+                    <img src="images/news_img.png">
+                </div>
+            </div>
+        </div>
+        <!-- 列表 常用列表4(新闻) 结束 -->
+        <!-- 列表 常用列表5(消息) 开始 -->
+        <div class="common_list7_content_1">
+            <div class="title">
+                <div>
+                    列表-常用列表5(消息)
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <p class="form_title">常用消息列表</p>
+                <div class="form_list line mar_b_10">
+                    <div class="form_label">
+                        <p class="news_title">新任务提醒</p>
+                        <p class="news_content">出现大量新的任务，请同志们踊跃领取任务。请移步【任务池】功能进行查看和领用任务。</p>
+                        <p class="news_time">2018-05-19 12：01</p>
+                    </div>
+                </div>
+
+                <div class="form_list line mar_b_10">
+                    <div class="form_label">
+                        <p class="news_title">201803081120反馈信息</p>
+                        <p class="news_content">您上报的案卷编号为201803081120的案卷已经派人处理，请至【我的任务】-【已完成】查看处理的具体结果。</p>
+                        <p class="news_time">2017-05-08 09：45</p>
+                    </div>
+                </div>
+            </pre>
+        </div>
+        <div class="common_list7_content_2">
+            <div class="h_15px"></div>
+            <p class="form_title">常用消息列表</p>
+            <div class="form_list line mar_b_10">
+                <div class="form_label">
+                    <p class="news_title">新任务提醒</p>
+                    <p class="news_content">出现大量新的任务，请同志们踊跃领取任务。请移步【任务池】功能进行查看和领用任务。</p>
+                    <p class="news_time">2018-05-19 12：01</p>
+                </div>
+            </div>
+            <div class="form_list line mar_b_10">
+                <div class="form_label">
+                    <p class="news_title">201803081120反馈信息</p>
+                    <p class="news_content">您上报的案卷编号为201803081120的案卷已经派人处理，请至【我的任务】-【已完成】查看处理的具体结果。</p>
+                    <p class="news_time">2017-05-08 09：45</p>
+                </div>
+            </div>
+        </div>
+        <!-- 列表 常用列表5(消息) 结束 -->
+        <!-- form表单 开始 -->
+        <div class="formbiaodan_content_1">
+            <div class="title">
+                <div>
+                    Form表单
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <!-- 单行 -->
+
+                <p class="form_title">单行</p>
+                <div class="line">
+                    <div class="form_list">
+                        <div class="form_label">
+                            标签文本
+                        </div>
+                        <div class="form_input">
+                            <input type="text" placeholder="内容" />
+                        </div>
+                    </div>
+                </div>
+                
+            </pre>
+            <pre class="brush:js;">
+                <!-- 多行+提示 -->
+
+                <p class="form_title">多行</p>
+                <div class="line">
+                    <div class="form_list line_bottom_15">
+                        <div class="form_label">
+                            标签文本
+                        </div>
+                        <div class="form_input">
+                            <input type="text" placeholder="内容" />
+                        </div>
+                    </div>
+                    <div class="form_list line_bottom_15">
+                        <div class="form_label">
+                            标签
+                        </div>
+                        <div class="form_input">
+                            <input type="text" value="哈哈" />
+                        </div>
+                    </div>
+                    <div class="form_list">
+                        <div class="form_label">
+                            标签文本
+                        </div>
+                        <div class="form_input">
+                            <input type="text" placeholder="内容" />
+                        </div>
+                    </div>
+                </div>
+                <div class="h_15px"></div>
+                <p class="form_tips">
+                    注意：表单出错时，首次自动出toast提示错误信息，2s后toast消失；点击右边icon再次toast提示。
+                </p>
+            </pre>
+            <pre class="brush:js;">
+                <!-- 文本域 -->
+
+                <p class="form_title">文本域</p>
+                <div class="line">
+                    <div class="form_list">
+                        <div class="textarea_box">
+                            <textarea rows="4" placeholder="请输入具体的描述信息"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </pre>
+            <pre class="brush:js;">
+                <!-- 单选样式 -->
+                <div class="form_title">单选样式</div>
+                <div class="line">
+                    <label class="form_label_box">
+                        <div class="form_label">
+                            我是单选
+                        </div>
+                        <div class="input_box">
+                            <input type="radio" name="ipt_a" checked>
+                            <i class="icon_radio"></i>
+                        </div>
+                    </label>
+                    <label class="form_label_box">
+                        <div class="form_label">
+                            我是单选
+                        </div>
+                        <div class="input_box">
+                            <input type="radio" name="ipt_a">
+                            <i class="icon_radio"></i>
+                        </div>
+                    </label>
+                    <label class="form_label_box">
+                        <div class="form_label">
+                            我是单选
+                        </div>
+                        <div class="input_box">
+                            <input type="radio" name="ipt_a">
+                            <i class="icon_radio"></i>
+                        </div>
+                    </label>
+                </div>
+            </pre>
+            <pre class="brush:js;">
+                <!-- 复选样式 -->
+                <div class="form_title">复选样式</div>
+                <div class="line">
+                    <label class="form_label_box">
+                        <div class="input_box">
+                            <input type="checkbox" name="ipt_a" checked>
+                            <i class="icon_checkbox"></i>
+                        </div>
+                        <div class="form_content">
+                            我是复选
+                        </div>
+                    </label>
+                    <label class="form_label_box">
+                        <div class="input_box">
+                            <input type="checkbox" name="ipt_a">
+                            <i class="icon_checkbox"></i>
+                        </div>
+                        <div class="form_content">
+                            我是复选
+                        </div>
+                    </label>
+                    <label class="form_label_box">
+                        <div class="input_box">
+                            <input type="checkbox" name="ipt_a">
+                            <i class="icon_checkbox"></i>
+                        </div>
+                        <div class="form_content">
+                            我是复选
+                        </div>
+                    </label>
+                </div>
+            </pre>
+            <pre class="brush:js;">
+                <!-- switch开关 -->
+
+                <div class="form_title">switch开关</div>
+                <div class="line">
+                    <div class="form_list line_bottom_15">
+                        <div class="form_label">
+                            未选中状态
+                        </div>
+                        <div class="switch_box">
+                            <div class="switch">
+                                <input type="checkbox">
+                                <label></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_list">
+                        <div class="form_label">
+                            选中状态
+                        </div>
+                        <div class="switch_box">
+                            <div class="switch">
+                                <input type="checkbox" checked>
+                                <label></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </pre>
+        </div>
+        <div class="formbiaodan_content_2">
+            <div class="h_15px"></div>
+            <p class="form_title">单行</p>
+            <div class="line">
+                <div class="form_list">
+                    <div class="form_label">
+                        标签文本
+                    </div>
+                    <div class="form_input">
+                        <input type="text" placeholder="内容" />
+                    </div>
+                </div>
+            </div>
+            <div class="h_15px"></div>
+            <p class="form_title">多行</p>
+            <div class="line">
+                <div class="form_list line_bottom_15">
+                    <div class="form_label">
+                        标签文本
+                    </div>
+                    <div class="form_input">
+                        <input type="text" placeholder="内容" />
+                    </div>
+                </div>
+                <div class="form_list line_bottom_15">
+                    <div class="form_label">
+                        标签
+                    </div>
+                    <div class="form_input">
+                        <input type="text" value="哈哈" />
+                    </div>
+                </div>
+                <div class="form_list">
+                    <div class="form_label">
+                        标签文本
+                    </div>
+                    <div class="form_input">
+                        <input type="text" placeholder="内容" />
+                    </div>
+                </div>
+            </div>
+            <div class="h_15px"></div>
+            <p class="form_tips">
+                注意：表单出错时，首次自动出toast提示错误信息，2s后toast消失；点击右边icon再次toast提示。
+            </p>
+            <div class="h_15px"></div>
+            <p class="form_title">文本域</p>
+            <div class="line">
+                <div class="form_list">
+                    <div class="textarea_box">
+                        <textarea rows="4" placeholder="请输入具体的描述信息"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="h_15px"></div>
+            <!-- 单选复选开始 -->
+            <div class="form_title">单选样式</div>
+            <div class="line">
+                <label class="form_label_box">
+                    <div class="form_label">
+                        我是单选
+                    </div>
+                    <div class="input_box">
+                        <input type="radio" name="ipt_a" checked>
+                        <i class="icon_radio"></i>
+                    </div>
+                </label>
+                <label class="form_label_box">
+                    <div class="form_label">
+                        我是单选
+                    </div>
+                    <div class="input_box">
+                        <input type="radio" name="ipt_a">
+                        <i class="icon_radio"></i>
+                    </div>
+                </label>
+                <label class="form_label_box">
+                    <div class="form_label">
+                        我是单选
+                    </div>
+                    <div class="input_box">
+                        <input type="radio" name="ipt_a">
+                        <i class="icon_radio"></i>
+                    </div>
+                </label>
+            </div>
+            <div class="h_15px"></div>
+            <div class="form_title">复选样式</div>
+            <div class="line">
+                <label class="form_label_box">
+                    <div class="input_box">
+                        <input type="checkbox" name="ipt_a" checked>
+                        <i class="icon_checkbox"></i>
+                    </div>
+                    <div class="form_content">
+                        我是复选
+                    </div>
+                </label>
+                <label class="form_label_box">
+                    <div class="input_box">
+                        <input type="checkbox" name="ipt_a">
+                        <i class="icon_checkbox"></i>
+                    </div>
+                    <div class="form_content">
+                        我是复选
+                    </div>
+                </label>
+                <label class="form_label_box">
+                    <div class="input_box">
+                        <input type="checkbox" name="ipt_a">
+                        <i class="icon_checkbox"></i>
+                    </div>
+                    <div class="form_content">
+                        我是复选
+                    </div>
+                </label>
+            </div>
+            <div class="h_15px"></div>
+            <!-- 单选复选结束 -->
+            <div class="form_title">switch开关</div>
+            <div class="line">
+                <div class="form_list line_bottom_15">
+                    <div class="form_label">
+                        未选中状态
+                    </div>
+                    <div class="switch_box">
+                        <div class="switch">
+                            <input type="checkbox">
+                            <label></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_list">
+                    <div class="form_label">
+                        选中状态
+                    </div>
+                    <div class="switch_box">
+                        <div class="switch">
+                            <input type="checkbox" checked>
+                            <label></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="h_15px"></div>
+        </div>
+        <!-- form表单 结束 -->
+        <!-- tab 开始 -->
+        <div class="tabqiehuan_content_1">
+            <div class="title">
+                <div>
+                    Tab切换
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>tab的样式集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <!-- 调用方法 -->
+                require(["tab"], function(tab) {
+                    tab.t();
+                });
+
+                <div class="tab_wrap">
+                    <div class="tab tab_1">
+                        <a class="tab_active">标签1</a>
+                        <a>标签2标签2</a>
+                        <a>标签3</a>
+                    </div>
+                    <div class="tab_content">
+                        <div>tab选项卡 tab_1</div>
+                        <div>22222222</div>
+                        <div>33333333</div>
+                    </div>
+                </div>
+
+                <div class="tab_wrap">
+                    <div class="tab tab_2">
+                        <a class="tab_active">标签1</a>
+                        <a>标签2</a>
+                        <a>标签3</a>
+                    </div>
+                    <div class="tab_content">
+                        <div>tab选项卡 tab_2</div>
+                        <div>22222222</div>
+                        <div>33333333</div>
+                    </div>
+                </div>
+            </pre>
+            <pre class="brush:js;">
+                // tab_1开始
+                .tab_1 {
+                    overflow: hidden;
+                    box-shadow: 0 0 12px rgba(0, 0, 0, .12);
+                    border-bottom: 1px solid #d9d9d9;
+                    .flexbox;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0px;
+                        height: 0;
+                        border-bottom: 2px solid transparent;
+                    }
+                    >a.tab_active {
+                        color: @c_blue;
+                        position: relative;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            height: 0;
+                            border-bottom: 3px solid @c_blue;
+                            border-radius: 3px;
+                            .animated;
+                            .zoomIn;
+                            animation-duration: .1s;
+                        }
+                    }
+                    >a {
+                        display: block;
+                        .flexbox_item;
+                        background: #FBFAF8;
+                        height: 45px;
+                        line-height: 45px;
+                        text-align: center;
+                        position: relative;
+                        margin-left: 0;
+                        &:hover {
+                            color: @c_blue;
+                        }
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            top: 13px;
+                            bottom: 13px;
+                            right: 0;
+                            border-right: 1px solid #ddd;
+                        }
+                    }
+                    >a:last-child {
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+
+                // tab_1结束
+                .animated {
+                    -webkit-animation-duration: .2s;
+                    animation-duration: .2s;
+                    -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+                }
+
+                @-webkit-keyframes zoomIn {
+                    from {
+                        opacity: 0;
+                        -webkit-transform: scale3d(.3, .3, .3);
+                        transform: scale3d(.3, .3, .3);
+                    }
+
+                    50% {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes zoomIn {
+                    from {
+                        opacity: 0;
+                        -webkit-transform: scale3d(.3, .3, .3);
+                        transform: scale3d(.3, .3, .3);
+                    }
+
+                    50% {
+                        opacity: 1;
+                    }
+                }
+
+                .zoomIn {
+                    -webkit-animation-name: zoomIn;
+                    animation-name: zoomIn;
+                }
+
+                .tab_2 {
+                    // padding: 20px 30px;
+                    overflow: hidden;
+                    box-shadow: 0 0 12px rgba(0, 0, 0, .12);
+                    border-bottom: 1px solid #d9d9d9;
+                    .flexbox;
+                    >a {
+                        border: 1px solid @c_blue;
+                        color: @c_blue;
+                        display: block;
+                        .flexbox_item;
+                        background: #FBFAF8;
+                        height: 35px;
+                        line-height: 35px;
+                        text-align: center;
+                        position: relative;
+                        margin-left: -1px;
+                        &:active {
+                            color: @c_blue;
+                        }
+                    }
+                    >a.tab_active {
+                        .zoomIn;
+                        .animated;
+                        background: @c_blue;
+                        color: #fff;
+                        position: relative;
+                    }
+                    >a:first-child {
+                        margin-left: 0;
+                        border-radius: 3px 0 0 3px;
+                    }
+                    >a:last-child {
+                        border-radius: 0 3px 3px 0;
+                    }
+                }
+            </pre>
+        </div>
+        <div class="tabqiehuan_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/tab调用.html"></iframe>
+        </div>
+        <!-- tab 结束 -->
+        <!-- 调用相机 开始 -->
+        <div class="paizhao_content_1">
+            <div class="title">
+                <div>
+                    调用相机
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>样式take_photo.less，已经集成在共有的less中</p>
+                <p>需要在页面中进行调用 takePhoto("dom id/class", num);</p>
+                <p>其中num为拍照的最大数量</p>
+            </div>
+            <div class="t_right">
+                <a class="btn warn btn_small" href="less/take_photo.less" download>take_photo.less 下载</a>
+                <a class="btn warn btn_small" href="js/take_photo.js" download>take_photo.js 下载</a>
+            </div>
+            <pre class="brush:js;">
+                <!-- 调用方法 take_photo.js的位置请自行设置-->
+                <!-- 前一个参数表示要拍照的元素 ，后一个表示最大张数 -->
+
+                require(["../js/take_photo"], function(photo) {
+                    photo.takePhoto("#photo_1", 3);
+                });
+
+
+                <!-- take_photo 负责样式，拍照的事件尽量给到id上面-->
+
+                <div class="take_photo" id="photo_1"></div>
+               
+            </pre>
+        </div>
+        <div class="paizhao_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/take_photo调用.html"></iframe>
+        </div>
+        <!-- 调用相机 结束 -->
+        <!-- 图片放大预览 开始 -->
+        <div class="imgyulan_content_1">
+            <div class="title">
+                <div>
+                    图片放大预览
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>样式集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                调用方法
+
+                require(["jquery.min", "../js/swiper.min", "../js/img_zoom"], function($, Swiper, Zoom) {
+                    Zoom.imgZoom(".img_box");
+                });
+
+                <!-- img_zoom 这个class是必须的 -->
+
+                <p class="form_title">图片放大预览</p>
+                （div class="form_list mar_b_15 line img_box"）
+                    （div class="form_icon_85 img_zoom"）
+                        （img src="../images/example_img.png"）
+                    （/div）
+                    （div class="form_icon_85 img_zoom"）
+                        （img src="../images/news_img.png"）
+                    （/div）
+                    （div class="form_icon_85 img_zoom"）
+                        （img src="../images/user_photo_default.png"）
+                    （/div）
+                （/div）
+            </pre>
+        </div>
+        <div class="imgyulan_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/图片放大预览.html"></iframe>
+        </div>
+        <!-- 图片放大预览 结束 -->
+        <!-- 轮播图 开始 -->
+        <div class="lunbotu_content_1">
+            <div class="title">
+                <div>
+                    轮播图、幻灯片
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>没有什么样式依赖</p>
+                <p>依赖插件swiper</p>
+            </div>
+            <pre class="brush:js;">
+                
+                调用方法
+
+                require(["../js/jquery.min", "../js/swiper.min"], function(jq, Swiper) {
+                    var mySwiper = new Swiper('.swiper_box .swiper-container', {
+                        autoplay: 5000, //可选选项，自动滑动
+                        pagination: '.swiper-pagination',
+                        loop: true
+                    });
+                    $(".swiper_box").css({
+                        "position": "relative",
+                        "z-index": "0"
+                    });
+                    $(".swiper_box .swiper-container").css({
+                        "background": "pink"
+                    });
+                    // 幻灯片高度自适应 手机上默认高度这里设置为200，以200为基准，适应不同屏幕大小，防止图片变形
+                    var slideW = $(".swiper_box .swiper-container").outerWidth();
+                    $(".swiper_box .swiper-container").css("height", slideW * 200 / 375 + "px");
+                });
+
+                <div class="swiper_box">
+                    <div class="swiper_1 swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">Slide 1</div>
+                            <div class="swiper-slide">Slide 2</div>
+                            <div class="swiper-slide">Slide 3</div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </pre>
+        </div>
+        <div class="lunbotu_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/图片轮播.html"></iframe>
+        </div>
+        <!-- 轮播图 结束 -->
+        <!-- form 下拉选择 开始 -->
+        <div class="formxiala_content_1">
+            <div class="title">
+                <div>
+                    下拉选择--Form
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                picker官网
+                http://ustbhuangyi.github.io/picker/
+                 
+                picker的github地址
+                https://github.com/ustbhuangyi/picker
+
+                require(["../js/jquery.min", "../js/picker.min"], function(jq, Picker) {
+                    // picker的调用
+                    function picker_1(dom) {
+                        var data1 = [{
+                            text: '垃圾收集器不规范',
+                            value: 1
+                        }, {
+                            text: '垃圾满溢',
+                            value: 2
+                        }, {
+                            text: '分类正确率',
+                            value: 3
+                        }];
+                        var picker = new Picker({
+                            data: [data1],
+                            selectedIndex: [2],
+                            title: '上报分类'
+                        });
+                        picker.on('picker.select', function(selectedVal, selectedIndex) {
+                            $(dom).text(data1[selectedIndex[0]].text);
+                        });
+                        $(dom).bind("click select", function() {
+                            picker.show();
+                        });
+                        // console.log(picker.selectedIndex + "--------")
+                    }
+
+                    function picker_2(dom) {
+                        var data1 = [{
+                            text: '上城区',
+                            value: 1
+                        }, {
+                            text: '下城区',
+                            value: 2
+                        }, {
+                            text: '江干区',
+                            value: 3
+                        }, {
+                            text: '拱墅区',
+                            value: 4
+                        }, {
+                            text: '西湖区',
+                            value: 5
+                        }, {
+                            text: '滨江区',
+                            value: 6
+                        }, {
+                            text: '萧山区',
+                            value: 7
+                        }, {
+                            text: '萧山区',
+                            value: 8
+                        }, {
+                            text: '余杭区',
+                            value: 9
+                        }];
+
+                        var data2 = [{
+                                text: '北山街道',
+                                value: 1
+                            },
+                            {
+                                text: '西溪街道',
+                                value: 2
+                            },
+                            {
+                                text: '翠苑街道',
+                                value: 3
+                            },
+                            {
+                                text: '古荡街道',
+                                value: 4
+                            },
+                            {
+                                text: '西湖街道',
+                                value: 5
+                            },
+                            {
+                                text: '留下街道',
+                                value: 6
+                            },
+                            {
+                                text: '转塘街道',
+                                value: 7
+                            },
+                            {
+                                text: '蒋村街道',
+                                value: 8
+                            }
+                        ];
+                        var picker = new Picker({
+                            data: [data1, data2],
+                            selectedIndex: [4, 0],
+                            title: '请选择 行政区域、小区'
+                        });
+
+                        picker.on('picker.select', function(selectedVal, selectedIndex) {
+                            $(dom).text(data1[selectedIndex[0]].text + ' ' + data2[selectedIndex[1]].text)
+                        })
+
+                        $(dom).bind("click", function() {
+                            picker.show();
+                        })
+                    }
+
+                    function picker_3(dom) {
+                        var data1 = [{
+                            text: '小美',
+                            value: 1
+                        }, {
+                            text: '猪猪',
+                            value: 2
+                        }];
+
+                        var data2 = [{
+                                text: '张三',
+                                value: 1
+                            },
+                            {
+                                text: '李四',
+                                value: 2
+                            },
+                            {
+                                text: '王五',
+                                value: 3
+                            },
+                            {
+                                text: '赵六',
+                                value: 4
+                            },
+                            {
+                                text: '吴七',
+                                value: 5
+                            },
+                            {
+                                text: '陈八',
+                                value: 6
+                            },
+                            {
+                                text: '杜九',
+                                value: 7
+                            },
+                            {
+                                text: '黄十',
+                                value: 8
+                            },
+                            {
+                                text: '呵呵',
+                                value: 9
+                            },
+                            {
+                                text: '哈哈',
+                                value: 10
+                            },
+                            {
+                                text: '嘿嘿',
+                                value: 11
+                            },
+                            {
+                                text: '啦啦',
+                                value: 12
+                            }
+                        ];
+
+                        var data3 = [{
+                                text: '开心',
+                                value: 1
+                            }, {
+                                text: '生气',
+                                value: 2
+                            },
+                            {
+                                text: '搞笑',
+                                value: 3
+                            }, {
+                                text: '难过',
+                                value: 4
+                            }
+                        ];
+
+                        var picker = new Picker({
+                            data: [data1, data2, data3],
+                            selectedIndex: [0, 0, 0],
+                            title: '我们都是小学生'
+                        });
+
+                        picker.on('picker.select', function(selectedVal, selectedIndex) {
+                            $(dom).text(data1[selectedIndex[0]].text + ' ' + data2[selectedIndex[1]].text + ' ' + data3[selectedIndex[2]].text)
+                        })
+
+                        $(dom).bind("click", function() {
+                            picker.show();
+                        })
+
+                    }
+                    picker_1("#name1");
+                    picker_2("#name2");
+                    picker_3("#name3");
+                });
+
+
+                
+                <p class="form_title">带下拉的</p>
+                <div class="line">
+                    <div class="form_list line_bottom_15 form_active">
+                        <div class="form_label">
+                            一列下拉
+                        </div>
+                        <div class="picker_box" id="name">
+                            请选择
+                        </div>
+                        <div class="arrow_box">
+                            <i class="icon_arrow"></i>
+                        </div>
+                    </div>
+                    <div class="form_list line_bottom_15 form_active">
+                        <div class="form_label">
+                            两列
+                        </div>
+                        <div class="picker_box" id="name2">
+                            请选择
+                        </div>
+                        <div class="arrow_box">
+                            <i class="icon_arrow"></i>
+                        </div>
+                    </div>
+                    <div class="form_list form_active">
+                        <div class="form_label">
+                            三列
+                        </div>
+                        <div class="picker_box" id="name3">
+                            请选择
+                        </div>
+                        <div class="arrow_box">
+                            <i class="icon_arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </pre>
+        </div>
+        <div class="formxiala_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/下拉选择.html"></iframe>
+        </div>
+        <!-- form 下拉选择 结束 -->
+        <!-- 弹框 开始 -->
+        <div class="tankuang_content_1">
+            <div class="title">
+                <div>
+                    弹框
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <!-- 无标题的弹框 -->
+                <div class="popup">
+                    <div class="popup_body">
+                        <p class="popup_info">说明当前状态、提示用户解决方案，最好不要超过两行。</p>
+                    </div>
+                    <div class="popup_btns">
+                        <a class="popup_btn">取消</a>
+                        <a class="popup_btn">确认</a>
+                    </div>
+                </div>
+
+                <!-- 有标题 -->
+                <div class="popup">
+                    <div class="popup_header">
+                        <h3>标题</h3>
+                    </div>
+                    <div class="popup_body">
+                        <p class="popup_info">说明当前状态、提示用户解决方案，最好不要超过两行。</p>
+                    </div>
+                    <div class="popup_btns">
+                        <a class="popup_btn">取消</a>
+                        <a class="popup_btn">确认</a>
+                    </div>
+                </div>
+
+                <!-- 提示、不做操作 -->
+                <div class="popup">
+                    <div class="popup_header">
+                        <h3>标题</h3>
+                    </div>
+                    <div class="popup_body">
+                        <p class="popup_info">告知当前状态、信息和解决方法</p>
+                    </div>
+                    <div class="popup_btns">
+                        <a class="popup_btn">确认</a>
+                    </div>
+                </div>
+
+            </pre>
+        </div>
+        <div class="tankuang_content_2">
+            <div class="h_30px"></div>
+            <div class="popup_box">
+                <p class="tit">无标题的弹框</p>
+                <div class="popup">
+                    <div class="popup_body">
+                        <p class="popup_info">说明当前状态、提示用户解决方案，最好不要超过两行。</p>
+                    </div>
+                    <div class="popup_btns">
+                        <a class="popup_btn">取消</a>
+                        <a class="popup_btn">确认</a>
+                    </div>
+                </div>
+                <p class="tit">有标题</p>
+                <div class="popup">
+                    <div class="popup_header">
+                        <h3>标题</h3>
+                    </div>
+                    <div class="popup_body">
+                        <p class="popup_info">说明当前状态、提示用户解决方案，最好不要超过两行。</p>
+                    </div>
+                    <div class="popup_btns">
+                        <a class="popup_btn">取消</a>
+                        <a class="popup_btn">确认</a>
+                    </div>
+                </div>
+                <p class="tit">提示、不做操作</p>
+                <div class="popup">
+                    <div class="popup_header">
+                        <h3>标题</h3>
+                    </div>
+                    <div class="popup_body">
+                        <p class="popup_info">告知当前状态、信息和解决方法</p>
+                    </div>
+                    <div class="popup_btns">
+                        <a class="popup_btn">确认</a>
+                    </div>
+                </div>
+            </div>
+            <div class="h_30px"></div>
+        </div>
+        <!-- 弹框 结束 -->
+        <!-- 弹框的调用 开始 -->
+        <div class="tankuangdiaoyong_content_1">
+            <div class="title">
+                <div>
+                    弹框的调用
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <a class="btn primary" id="btn_1">无标题的弹框</a>
+                <a class="btn primary" id="btn_2">有标题</a>
+                <a class="btn primary" id="btn_3">有标题、提示、不做操作</a>
+                <a class="btn primary" id="btn_4">无标题、提示、不做操作</a>
+
+                require(["../js/popup"], function(p) {
+                    $("#btn_1").bind("click", function() {
+                        p.dialogue({
+                            dom: "#popup_1",
+                            cancel: function(dom) {
+                                alert("取消1");
+                                p.dialogueHide(dom);
+                            },
+                            confirm: function(dom) {
+                                alert("确定1");
+                                p.dialogueHide(dom);
+                            },
+                            options: {
+                                content: "说明当前状态、提示用户解决方案，最好不要超过两行。", //弹框内容
+                                cancelT: "取消1", //取消 文字设置
+                                confirmT: "确定1", //确认 文字设置
+                                titleHide: true, //标题隐藏
+                            }
+                        });
+                    });
+                    $("#btn_2").bind("click", function() {
+                        p.dialogue({
+                            dom: "#popup_1",
+                            cancel: function(dom) {
+                                alert("取消2");
+                                p.dialogueHide(dom);
+                            },
+                            confirm: function(dom) {
+                                alert("确定2");
+                                p.dialogueHide(dom);
+                            },
+                            options: {
+                                title: "有标题的弹框", //弹框标题
+                                content: "说明当前状态、提示用户解决方案，最好不要超过两行。", //弹框内容
+                                cancelT: "取消2", //取消 文字设置
+                                confirmT: "确定2", //确认 文字设置
+                                titleHide: false, //标题隐藏
+                            }
+                        });
+                    });
+                    $("#btn_3").bind("click", function() {
+                        p.dialogue({
+                            dom: "#popup_1",
+                            confirm: function(dom) {
+                                alert("确定3的执行");
+                                p.dialogueHide(dom);
+                            },
+                            options: {
+                                title: "有标题、不做操作", //弹框标题
+                                content: "说明当前状态、提示用户解决方案，最好不要超过两行。", //弹框内容
+                                confirmT: "确定3", //确认 文字设置
+                                titleHide: false, //标题隐藏
+                                btnNum: 1 //只显示一个按钮
+                            }
+                        });
+                    });
+                    $("#btn_4").bind("click", function() {
+                        p.dialogue({
+                            dom: "#popup_1",
+                            confirm: function(dom) {
+                                alert("确定4的执行");
+                                p.dialogueHide(dom);
+                            },
+                            options: {
+                                content: "说明当前状态、提示用户解决方案，最好不要超过两行。", //弹框内容
+                                confirmT: "确定4", //确认 文字设置
+                                titleHide: true, //标题隐藏
+                                btnNum: 1 //只显示一个按钮
+                            }
+                        });
+                    });
+                });
+            </pre>
+            <pre class="brush:js;">
+                .mask {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: #000;
+                    opacity: .5;
+                    filter: alpha(opacity=50);
+                    display: none;
+                    z-index: 0;
+                }
+
+                .popup {
+                    overflow: hidden;
+                    padding-top: 22px;
+                    max-width: 270px;
+                    margin: 0 auto;
+                    border-radius: 2px;
+                    -webkit-background-clip: padding-box;
+                    background-color: #fff;
+                    line-height: 21px;
+                    .popup_header {
+                        h3 {
+                            font-size: 18px;
+                            line-height: 21px;
+                            text-align: center;
+                            color: #333;
+                            font-weight: 600;
+                            padding: 4px 16px 8px;
+                        }
+                    }
+                    .popup_body {
+                        padding: 0 16px;
+                        line-height: 20px;
+                        .popup_info {
+                            padding: 0 6px;
+                            display: block;
+                            font-size: 14px;
+                            text-align: center;
+                            color: #333;
+                        }
+                    }
+
+                    .popup_btns {
+                        .flexbox;
+                        position: relative;
+                        margin-top: 16px;
+                        &:before {
+                            content: ' ';
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 1px;
+                            background: -webkit-linear-gradient(to bottom, #ddd, #ddd 33%, transparent 33%) left top no-repeat;
+                            background: linear-gradient(to bottom, #ddd, #ddd 33%, transparent 33%) left top no-repeat;
+                        }
+                        .popup_btn {
+                            .form_active;
+                            .flexbox_item;
+                            display: block;
+                            width: 100%;
+                            height: 50px;
+                            line-height: 25px;
+                            padding: 12px 0 13px;
+                            font-size: 18px;
+                            color: #999;
+                            text-align: center;
+                            &:before {
+                                content: ' ';
+                                display: block;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                width: 1px;
+                                height: 100%;
+                                background: -webkit-linear-gradient(to left, #ddd, #ddd 33%, transparent 33%) right bottom no-repeat;
+                                background: linear-gradient(to left, #ddd, #ddd 33%, transparent 33%) right bottom no-repeat;
+                            }
+                        }
+                        .popup_btn:last-child {
+                            border-bottom-right-radius: 2px;
+                            color: #108ee9;
+                        }
+                    }
+                }
+            </pre>
+        </div>
+        <div class="tankuangdiaoyong_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/弹框的调用.html"></iframe>
+        </div>
+        <!-- 弹框的调用 结束 -->
+        <!-- toast 开始 -->
+        <div class="toastt_content_1">
+            <div class="title">
+                <div>
+                    toast
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="toast">
+                    <div class="loading-indicator white">
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                    </div>
+                    <p class="txt">加载中</p>
+                </div>
+
+
+                <div class="toast">
+                    <div class="loading-gray"></div>
+                    <p class="txt">加载中</p>
+                </div>
+
+
+                <div class="toast">
+                    <div class="icon_tick"></div>
+                    <p class="txt">已完成</p>
+                </div>
+
+
+                <div class="toast_txt">
+                    自定义业务文案最多14个字符
+                </div>
+            </pre>
+        </div>
+        <div class="toastt_content_2">
+            <div class="toast_box">
+                <div class="toast">
+                    <div class="loading-indicator white">
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                        <div class="loading-item"></div>
+                    </div>
+                    <p class="txt">加载中</p>
+                </div>
+                <div class="h_15px"> </div>
+                <div class="toast">
+                    <div class="loading-gray"></div>
+                    <p class="txt">加载中</p>
+                </div>
+                <div class="h_15px"> </div>
+                <div class="toast">
+                    <div class="icon_tick"></div>
+                    <p class="txt">已完成</p>
+                </div>
+                <div class="h_15px"> </div>
+                <div class="toast_txt">
+                    自定义业务文案最多14个字符
+                </div>
+            </div>
+        </div>
+        <!-- toast 结束 -->
+        <!-- toast调用 开始 -->
+        <div class="toastdiaoyong_content_1">
+            <div class="title">
+                <div>
+                    toast调用
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <a class="btn primary2 mar_l_5" id="btn_5">1-出现</a>
+                <a class="btn warn" id="btn_5a">1-隐藏</a>
+
+                <a class="btn primary2 mar_l_5" id="btn_6">2-出现</a>
+                <a class="btn warn" id="btn_6a">2-隐藏</a>
+
+                <a class="btn primary2 mar_l_5" id="btn_7">3-出现</a>
+                <a class="btn warn" id="btn_7a">3-隐藏</a>
+
+                <a class="btn primary2" id="btn_8">自动关闭</a>
+
+                require(["../js/popup"], function(p) {
+                    $("#btn_5").bind("click", function() {
+                        p.toast({
+                            dom: "#toast_1",
+                            options: {
+                                txt: "加载中1",
+                                type: 1,
+                                selfClose: true
+                            }
+                        });
+                    });
+                    $("#btn_5a").bind("click", function() {
+                        p.toastHide("#toast_1");
+                    });
+                    $("#btn_6").bind("click", function() {
+                        p.toast({
+                            dom: "#toast_2",
+                            options: {
+                                txt: "加载中2",
+                                type: 2,
+                                selfClose: true
+                            }
+                        });
+                    });
+                    $("#btn_6a").bind("click", function() {
+                        p.toastHide("#toast_2");
+                    });
+                    $("#btn_7").bind("click", function() {
+                        p.toast({
+                            dom: "#toast_3",
+                            options: {
+                                txt: "已完成",
+                                type: 3,
+                                selfClose: true
+                            }
+                        });
+                    });
+                    $("#btn_7a").bind("click", function() {
+                        p.toastHide("#toast_3");
+                    });
+                    // 自动关闭
+                    $("#btn_8").bind("click", function() {
+                        p.toast({
+                            dom: "#toast_1",
+                            options: {
+                                txt: "已完成",
+                                type: 1,
+                                selfClose: false,
+                                time: 2000
+                            }
+                        });
+                    });
+                });
+            </pre>
+        </div>
+        <div class="toastdiaoyong_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/toast调用.html"></iframe>
+        </div>
+        <!-- toast调用 结束 -->
+        <!-- 文件下载  开始 -->
+        <div class="wenjian_download_content_1">
+            <div class="title">
+                <div>
+                    文件下载
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>提供各种js、less文件的下载</p>
+            </div>
+            <div class="download_box">
+                <p class="title">js下载</p>
+                <a class="btn primary btn_small" href="js/require.js" download>require.js</a>
+                <a class="btn primary btn_small" href="js/fivefu.js" download>fivefu.js</a>
+                <a class="btn primary btn_small" href="js/jquery.min.js" download>jquery.min.js</a>
+                <a class="btn primary btn_small" href="js/img_zoom.js" download>img_zoom.js</a>
+                <a class="btn primary btn_small" href="js/picker.min.js" download>picker.min.js</a>
+                <a class="btn primary btn_small" href="js/popup.js" download>popup.js</a>
+                <a class="btn primary btn_small" href="js/require.js" download>require.js</a>
+                <a class="btn primary btn_small" href="js/swiper.min.js" download>swiper.min.js</a>
+                <a class="btn primary btn_small" href="js/tab.js" download>tab.js</a>
+                <a class="btn primary btn_small" href="js/take_photo.js" download>take_photo.js</a>
+                <p class="title">css下载</p>
+                <a class="btn primary btn_small" href="js/swiper.min.css" download>swiper.min.css</a>
+                <p class="title">less文件下载</p>
+                <a class="btn primary btn_small" href="less/fivefu_phone.less" download>fivefu_phone.less</a>
+                <a class="btn primary btn_small" href="less/btn.less" download>btn.less</a>
+                <a class="btn primary btn_small" href="less/reset.less" download>reset.less</a>
+                <a class="btn primary btn_small" href="less/take_photo.less" download>take_photo.less</a>
+                <a class="btn primary btn_small" href="less/my_animate.less" download>my_animate.less</a>
+                <a class="btn primary btn_small" href="less/font_family.less" download>font_family.less</a>
+                <a class="btn primary btn_small" href="less/other_pages.less" download>other_pages.less</a>
+            </div>
+        </div>
+        <div class="wenjian_download_content_2">
+        </div>
+        <!-- 文件下载  结束 -->
+        <!-- 新闻详情开始 -->
+        <div class="xinwenxiangqing_content_1">
+            <div class="title">
+                <div>
+                    新闻详情页面
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在reset.less中</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="article">
+                    <p class="article_title">市城管委召开2017年第一次会议市</p>
+                    <p class="article_time">时间：2018-04-13</p>
+                    <div class="article_body">
+                        <p> 为总结经验，剖析问题、明确任务、部署工作，2月17日上午，市城管委召开2017年第一次会议。市常务副市长杨建新，市政府副秘书长忻忠华参加了会议。</p>
+                        （img class="article_img" src="images/news_1.png"）
+                        <p>会议上首先举行了市综合执法局的授牌仪式。随后，市政府副秘书长忻忠华对2016年示范街巷、网格化管理、数字城管工作考核情况进行了通报。吴兴区政府、开发区管委会及太湖旅游度假区管委会等部门作表态发言。</p>
+                          <p>会议上首先举行了市综合执法局的授牌仪式。随后，市政府副秘书长忻忠华对2016年示范街巷、网格化管理、数字城管工作考核情况进行了通报。吴兴区政府、开发区管委会及太湖旅游度假区管委会等部门作表态发言。</p>
+                    </div>
+                </div>
+            </pre>
+            <pre class="brush:js;">
+                // 新闻详情
+                .article {
+                    padding: 20px;
+                    padding-bottom: 40px;
+                    .article_title {
+                        .f_20;
+                        .t_center;
+                        color: @c_000;
+                        line-height: 2;
+                        width: 95%;
+                        margin: 0 auto;
+                    }
+                    .article_time {
+                        .t_center;
+                        margin: 0 auto;
+                        .mar_b_15;
+                        color: @c_888;
+                        line-height: 2;
+                        width: 95%;
+                    }
+                    .article_body {
+                        p {
+                            .mar_b_15;
+                            text-align: justify;
+                            text-indent: 2em;
+                            line-height: 2;
+                            color: @c_333;
+                        }
+                    }
+                    .article_img {
+                        display: block;
+                        max-width: 95%;
+                        margin: 15px auto;
+                    }
+                }
+            </pre>
+        </div>
+        <div class="xinwenxiangqing_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/新闻详情.html"></iframe>
+        </div>
+        <!-- 新闻详情结束 -->
+        <!-- 意见反馈 开始 -->
+        <div class="yijianfankui_content_1">
+            <div class="title">
+                <div>
+                    意见反馈页面
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>样式集成在other_pages.less</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="feedback_page">
+                    <div class="h_20px"></div>
+                    <p class="form_title">反馈类型</p>
+                    <div class="line">
+                        <div class="form_list">
+                            <ul class="ul_1">
+                                <li><a>界面不美观</a></li>
+                                <li><a>功能不好用</a></li>
+                                <li><a>反应速度慢</a></li>
+                                <li><a>积分统计有误</a></li>
+                                <li><a>事件处理不及时</a></li>
+                                <li class="active"><a>其他类型</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="h_15px"></div>
+                    <p class="form_title">反馈内容</p>
+                    <div class="line">
+                        <div class="form_list">
+                            <div class="textarea_box">
+                                <textarea rows="4" placeholder="欢迎提出宝贵的意见和建议"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p_15">
+                        <a class="btn primary">提交反馈</a>
+                    </div>
+                </div>
+                
+                require(["../js/jquery.min"], function(jq) {
+                    $(".feedback_page .ul_1>li").each(function() {
+                        $(this).bind("click", function() {
+                            $(this).addClass("active").siblings("li").removeClass('active');
+                        });
+                    })
+                });
+            </pre>
+            <pre class="brush:js;">
+                // 意见反馈
+                .feedback_page {
+                    .ul_1 {
+                        .flexbox;
+                        padding: 10px;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        >li {
+                            width: 46%;
+                            border: 1px solid #CACACA;
+                            text-align: center;
+                            margin: 2%;
+                            border-radius: 3px;
+                            font-size: 14px;
+                            >a {
+                                display: block;
+                                padding: 8px 0;
+                            }
+                        }
+                        >li.active {
+                            border: 1px solid #FD6700;
+                            position: relative;
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                width: 0;
+                                height: 0;
+                                border: 12px solid transparent;
+                                border-top: 12px solid #FD6700;
+                                border-right: 12px solid #FD6700;
+                            }
+                            &:after {
+                                content: '\edc5';
+                                font-family: "iconfont" !important;
+                                font-size: 10px !important;
+                                color: #fff;
+                                font-style: normal;
+                                -webkit-font-smoothing: antialiased;
+                                -moz-osx-font-smoothing: grayscale;
+                                position: absolute;
+                                right: 1px;
+                                top: 1px;
+                            }
+                        }
+                    }
+                }   
+            </pre>
+        </div>
+        <div class="yijianfankui_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/意见反馈.html"></iframe>
+        </div>
+        <!-- 意见反馈 结束 -->
+        <!-- 流程 开始 -->
+        <div class="liucheng_content_1">
+            <div class="title">
+                <div>
+                    流程process
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>样式集成在other_pages.less</p>
+            </div>
+            <pre class="brush:js;">
+                <div class="h_20px"></div>
+                <p class="form_title">案卷流程</p>
+                <div class="process">
+                    <div class="process_item processed">
+                        <div class="process_icon">
+                            <i class="iconfont icon-xingxing"></i>
+                        </div>
+                        <div class="process_content">
+                            <div class="title">
+                                上报<span class="time">2018-06-27 13：30：20</span>
+                            </div>
+                            <div class="brief">
+                                <p>您在2017年03月01日 13事20分20秒，通过”案卷拍拍“上报了市容环境问题，案卷上报成功，案卷号：201703100021，等待审核。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="process_item processed">
+                        <div class="process_icon">
+                            <i class="iconfont icon-xingxing"></i>
+                        </div>
+                        <div class="process_content">
+                            <div class="title">
+                                处理<span class="time">2018-06-27 13：30：20</span>
+                            </div>
+                            <div class="brief">
+                                <p>您在2017年03月01日 13事20分20秒，通过”案卷拍拍“上报了市容环境问题，案卷上报成功，案卷号：201703100021，等待审核。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="process_item unprocessed">
+                        <div class="process_icon">
+                            <i class="iconfont icon-xingxing"></i>
+                        </div>
+                        <div class="process_content">
+                            <div class="title">
+                                转入成功<span class="time">2018-06-27 13：30：20</span>
+                            </div>
+                            <div class="brief">
+                                <p>转入成功啦啦啦啦阿拉拉了</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="process_item unprocessed">
+                        <div class="process_icon">
+                            <i class="iconfont icon-xingxing"></i>
+                        </div>
+                        <div class="process_content">
+                            <div class="title">
+                                未处理<span class="time">2018-06-27 13：30：20</span>
+                            </div>
+                            <div class="brief">
+                                <p>感谢您的参与！祝您生活愉快</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </pre>
+            <pre class="brush:js;">
+                // 流程 peocess
+                .process {
+                    .white_bg;
+                    .line;
+                    .p_12_15;
+                    >.process_item {
+                        >.process_icon {
+                            position: absolute;
+                            z-index: 1;
+                            .iconfont {
+                                .t_center;
+                                .f_14;
+                                display: inline-block;
+                                width: 24px;
+                                height: 24px;
+                                line-height: 24px;
+                                border-radius: 12px;
+                                color: @c_fff;
+                            }
+                        }
+                        >.process_content {
+                            margin-left: 34px;
+                            position: relative;
+                            padding-bottom: 30px;
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: -23px;
+                                bottom: 0;
+                                width: 2px;
+                            }
+                            .title {
+                                .f_17;
+                                color: @c_000;
+                                margin-bottom: 8px;
+                                .time{
+                                    .f_14;
+                                    .c_888;
+                                    .f_right;
+                                }
+                            }
+                            .brief {
+                                p{
+                                    .c_666;
+                                    line-height: 1.5;
+                                    text-align: justify;
+                                }
+                                
+                            }
+                        }
+                    }
+                    >.process_item:last-child {
+                        >.process_content {
+                            padding-bottom: 0;
+                            &:before {
+                                display: none;
+                            }
+                        }
+                    }
+                    >.processed {
+                        >.process_content {
+                            &:before {
+                                background: @c_blue;
+                            }
+                        }
+                        .iconfont {
+                            background: @c_blue;
+                        }
+                    }
+                    >.unprocessed {
+                        >.process_content {
+                            &:before {
+                                background: @c_ccc;
+                            }
+                        }
+                        .iconfont {
+                            background: @c_ccc;
+                        }
+                    }
+                }
+            </pre>
+        </div>
+        <div class="liucheng_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/流程process.html"></iframe>
+        </div>
+        <!-- 流程 结束 -->
+        <!-- demo 开始 -->
+        <div class="dom_content_1">
+            <div class="title">
+                <div>
+                    dom标题
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <div class="tips">
+                <p>集成在other_pages.less</p>
+            </div>
+            <pre class="brush:js;">
+                
+            </pre>
+        </div>
+        <div class="dom_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/toast调用.html"></iframe>
+        </div>
+        <!-- demo 结束 -->
+        <!-- 写在使用前  开始 -->
+        <div class="shiyongqian_content_1">
+            <div class="title">
+                <div>
+                    写在使用前
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <p class="form_title">使用方法</p>
+            <pre class="brush:js;">
+                    简单来说引入fivefu_phone.css和require.js就可以了
+
+                    <link rel="stylesheet" type="text/css" href="css/fivefu_phone.css">
+                    <script src="js/require.js" data-main="js/fivefu"></script>
+
+                    require的入口页面是js/fivefu.js
+                    关于require.js的使用方法这里不做具体说明，请自行学习
+            </pre>
+            <div class="h_20px"></div>
+            <table class="tbl_1">
+                <tbody>
+                    <tr>
+                        <td colspan="4">fivefu_phone.less模块说明</td>
+                    </tr>
+                    <tr class="title_tr">
+                        <td>模块名称</td>
+                        <td>是否已集成？</td>
+                        <td colspan="2">备注说明</td>
+                    </tr>
+                    <tr>
+                        <td>reset.less</td>
+                        <td>是</td>
+                        <td colspan="2">reset里面基本集成了绝大部分的基础样式，包含颜色、布局、字体大小、列表等等</td>
+                    </tr>
+                    <tr>
+                        <td>btn.less</td>
+                        <td>是</td>
+                        <td colspan="2">按钮的样式集成，依赖reset.css,主要是一些颜色的依赖</td>
+                    </tr>
+                    <tr>
+                        <td>take_photo.less</td>
+                        <td>是</td>
+                        <td colspan="2">拍照组件的一些样式</td>
+                    </tr>
+                    <tr>
+                        <td>my_animate.less</td>
+                        <td>是</td>
+                        <td colspan="2">动画效果，主要用于弹框，toast的显示隐藏动画</td>
+                    </tr>
+                    <tr>
+                        <td>other_pages.less</td>
+                        <td>是</td>
+                        <td colspan="2">一些常用页面的样式集成，主要包括新闻详情、意见反馈、流程、报错页面等等，以后可能还会有所补充</td>
+                    </tr>
+                    <tr>
+                        <td>font_family.less</td>
+                        <td>否</td>
+                        <td colspan="2">这个模块并未集成，因为用到的不太多，并且这里只是提供一些具体的使用方法，不做具体的介绍</td>
+                    </tr>
+                    <tr>
+                        <td>swiper.min.css</td>
+                        <td>否</td>
+                        <td colspan="2">swiper所使用的css并未集成在less中，这个主要是用于幻灯片、图片预览，如果有用到这个部分，请自行引用即可</td>
+                    </tr>
+                    <tr>
+                        <td>iconfont.css</td>
+                        <td>否</td>
+                        <td colspan="2">用到的字体图标在项目中未引用，只是在展示页面、实力页面用到了部分，这里用的是项目【APP规范整理图标】这个项目的图标，这个不同项目建议使用不同的图标</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">js模块的集成</td>
+                    </tr>
+                    <tr class="title_tr">
+                        <td>模块名称</td>
+                        <td>是否已集成？</td>
+                        <td>备注说明</td>
+                        <td>使用方法</td>
+                    </tr>
+                    <tr>
+                        <td>jquery.min.js</td>
+                        <td>是</td>
+                        <td></td>
+                        <td> require(["/js/jquery.min"], function(jq) { 具体内容 });
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>take_photo.js</td>
+                        <td>是</td>
+                        <td>拍照组件</td>
+                        <td> require(["../js/take_photo"], function(photo) { photo.takePhoto("#photo_1", 3); });
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>swiper.min.js</td>
+                        <td>是</td>
+                        <td>用于图片放大预览和幻灯片的使用</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>img_zoom.js</td>
+                        <td>是</td>
+                        <td>图片放大预览</td>
+                        <td>
+                            require(["jquery.min", "../js/swiper.min", "../js/img_zoom"], function($, Swiper, Zoom) { Zoom.imgZoom(".img_box"); });
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>picker.min.js</td>
+                        <td>是</td>
+                        <td>用于下拉滑动选择组件</td>
+                        <td>require(["../js/jquery.min", "../js/picker.min"], function(jq, Picker) { 内容}); </td>
+                    </tr>
+                    <tr>
+                        <td>popup.js</td>
+                        <td>是</td>
+                        <td>用于弹框和toast的封装</td>
+                        <td>require(["../js/popup"], function(p) { 内容 });</td>
+                    </tr>
+                    <tr>
+                        <td>tab.js</td>
+                        <td>是</td>
+                        <td>用于tab菜单切换</td>
+                        <td> require(["../js/tab"], function(tab) { tab.t(); });
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>fastclick.min.js</td>
+                        <td>是</td>
+                        <td>用于消除手机端300ms延迟的解决</td>
+                        <td>require(["jquery","fastclick"], function(jq,F) { F.attach(document.body );});</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="shiyongqian_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/update_logs.html"></iframe>
+        </div>
+        <!-- 写在使用前  结束 -->
+        <!-- modify_password 开始 -->
+        <div class="modify_password_content_1">
+            <div class="title">
+                <div>
+                    修改密码
+                </div>
+                <div>
+                    <div class="h_2px"></div>
+                </div>
+            </div>
+            <pre class="brush:js;">
+                详见页面 examples/修改密码.html   
+
+
+                <div class="h_20px"></div>
+                <p class="form_title">修改密码</p>
+                <div class="line">
+                    <div class="form_list line_bottom_15">
+                        <div class="form_label">
+                            旧密码
+                        </div>
+                        <div class="form_input">
+                            <input type="password" placeholder="请输入旧密码">
+                        </div>
+                    </div>
+                    <div class="form_list line_bottom_15">
+                        <div class="form_label">
+                            新密码
+                        </div>
+                        <div class="form_input">
+                            <input type="text" placeholder="请输入新密码">
+                        </div>
+                    </div>
+                    <div class="form_list">
+                        <div class="form_label">
+                            新密码
+                        </div>
+                        <div class="form_input">
+                            <input type="text" placeholder="请再次输入新密码">
+                        </div>
+                    </div>
+                </div>
+                <div class="p_15">
+                    <a class="btn primary" id="btn_1">确定修改</a>
+                </div>
+            </pre>
+            <pre class="brush:js;">
+                require(["../js/popup"], function(p) {
+                    $("#btn_1").bind("click", function() {
+                        p.dialogue({
+                            dom: "#popup_1",
+                            cancel: function(dom) {
+                                p.dialogueHide(dom);
+                            },
+                            confirm: function(dom) {
+                                alert("确定");
+                                p.dialogueHide(dom);
+                            },
+                            options: {
+                                title: "修改成功", //弹框标题
+                                content: "您的密码已经修改成功，是否要重新登录？", //弹框内容
+                                cancelT: "取消", //取消 文字设置
+                                confirmT: "确定", //确认 文字设置
+                                titleHide: false, //标题隐藏
+                            }
+                        });
+                    });
+                });
+            </pre>
+        </div>
+        <div class="modify_password_content_2">
+            <iframe class="ifra_1" frameborder="0" src="examples/修改密码.html"></iframe>
+        </div>
+        <!-- modify_password 结束 -->
+
+    </div>
+    <!-- 页面加载的具体内容结束 -->
+    <script>
+    // 左侧菜单的点击样式
+    $(".ul_list>li").bind("click", function() {
+        $(this).addClass("active").siblings("li").removeClass("active");
+    });
+    var winH = $(window).height();
+    var topH = $(".fivefu_phone >.top").outerHeight();
+    var bannerH = $(".fivefu_phone >.banner").outerHeight() + 15;
+    // $(".fivefu_phone .ul_list").css({
+    //     "height": winH - topH - bannerH - 20 + "px",
+    //     "overflow-y": "auto"
+    // });
+    $(".ul_list>li").bind("click", function() {
+        $("html, body").animate({
+            scrollTop: topH + bannerH - bannerH * .8 + "px"
+        }, {
+            duration: 100,
+            easing: "swing"
+        });
+        return false;
+    });
+    // 默认显示的信息
+    $(".middle_content").html($(".shiyongqian_content_1").html());
+    $(".phone_box").html($(".shiyongqian_content_2").html());
+    // 关于各个模块的展示信息
+    var display_content = function(dom) {
+        $(dom).click(function() {
+            $(".middle_content").html($(dom + "_content_1").html());
+            $(".phone_box").html($(dom + "_content_2").html());
+        });
+    }
+    display_content(".fudong");
+    display_content(".flex_buju");
+    display_content(".text_align");
+    display_content(".fontsize");
+    display_content(".color");
+    display_content(".shenglue");
+    display_content(".liubai_h");
+    display_content(".liubai_m");
+    display_content(".btns");
+    display_content(".jiazaizhong");
+    display_content(".kaiguan");
+    display_content(".baocuo_404");
+    display_content(".baocuo_500");
+    display_content(".tubiao");
+    display_content(".yemianjieguo");
+    display_content(".jiugongge"); //九宫格
+    display_content(".special_font"); //特殊字体
+    display_content(".common_list1"); //带说明的列表项
+    display_content(".common_list2"); //用户头像
+    display_content(".common_list3"); //常用列表1--类似案卷列表类型的
+    display_content(".common_list4"); //常用列表2
+    display_content(".common_list5"); //常用列表3--聊天
+    display_content(".common_list6"); //常用列表4--新闻
+    display_content(".common_list7"); //常用列表5--消息
+    display_content(".formbiaodan"); //form表单
+    display_content(".tabqiehuan"); //tab切换
+    display_content(".paizhao"); //调用相机
+    display_content(".imgyulan"); //图片放大预览
+    display_content(".lunbotu"); //图片轮播、幻灯片
+    display_content(".formxiala"); //form下拉选择
+    display_content(".tankuang"); //弹框
+    display_content(".tankuangdiaoyong"); //弹框调用
+    display_content(".toastt"); //toast
+    display_content(".toastdiaoyong"); //toast调用
+    display_content(".wenjian_download"); //文件下载
+    display_content(".xinwenxiangqing"); //新闻详情
+    display_content(".yijianfankui"); //意见反馈
+    display_content(".liucheng"); //流程 process
+    display_content(".shiyongqian"); //写在使用前
+    display_content(".modify_password");//修改密码
+    
+    // 写在使用前，隐掉右侧部分
+    // $(".update_process").parent(".middle_content").siblings(".right_display").hide();
+    </script>
+</body>
+
+</html>

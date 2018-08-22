@@ -1,0 +1,196 @@
+// 新闻详情
+.article {
+    padding: 20px;
+    padding-bottom: 40px;
+    .article_title {
+        .f_20;
+        .t_center;
+        color: @c_000;
+        line-height: 2;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .article_time {
+        .t_center;
+        margin: 0 auto;
+        .mar_b_15;
+        color: @c_888;
+        line-height: 2;
+        width: 95%;
+    }
+    .article_body {
+        p {
+            .mar_b_15;
+            text-align: justify;
+            text-indent: 2em;
+            line-height: 2;
+            color: @c_333;
+        }
+    }
+    .article_img {
+        display: block;
+        max-width: 95%;
+        margin: 15px auto;
+    }
+}
+
+// 意见反馈
+.feedback_page {
+    .ul_1 {
+        .flexbox;
+        padding: 10px;
+        flex-wrap: wrap;
+        width: 100%;
+        >li {
+            width: 46%;
+            border: 1px solid #CACACA;
+            text-align: center;
+            margin: 2%;
+            border-radius: 3px;
+            font-size: 14px;
+            >a {
+                display: block;
+                padding: 8px 0;
+            }
+        }
+        >li.active {
+            border: 1px solid #FD6700;
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 0;
+                height: 0;
+                border: 12px solid transparent;
+                border-top: 12px solid #FD6700;
+                border-right: 12px solid #FD6700;
+            }
+            &:after {
+                content: '\edc5';
+                font-family: "iconfont" !important;
+                font-size: 10px !important;
+                color: #fff;
+                font-style: normal;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                position: absolute;
+                right: 1px;
+                top: 1px;
+            }
+        }
+    }
+}
+
+// 流程 peocess
+.process {
+    .white_bg;
+    .line;
+    .p_12_15;
+    >.process_item {
+        >.process_icon {
+            position: absolute;
+            z-index: 1;
+            .iconfont {
+                .t_center;
+                .f_14;
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                border-radius: 12px;
+                color: @c_fff;
+            }
+        }
+        >.process_content {
+            margin-left: 34px;
+            position: relative;
+            padding-bottom: 30px;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -23px;
+                bottom: 0;
+                width: 2px;
+            }
+            .title {
+            	.f_17;
+            	color: @c_000;
+            	margin-bottom: 8px;
+            	.time{
+            		.f_14;
+            		.c_888;
+            		.f_right;
+            	}
+            }
+            .brief {
+            	p{
+            		.c_666;
+            		line-height: 1.5;
+            		text-align: justify;
+            	}
+            	
+            }
+        }
+    }
+    >.process_item:last-child {
+        >.process_content {
+            padding-bottom: 0;
+            &:before {
+                display: none;
+            }
+        }
+    }
+    >.processed {
+        >.process_content {
+            &:before {
+                background: @c_blue;
+            }
+        }
+        .iconfont {
+            background: @c_blue;
+        }
+    }
+    >.unprocessed {
+        >.process_content {
+            &:before {
+                background: @c_ccc;
+            }
+        }
+        .iconfont {
+            background: @c_ccc;
+        }
+    }
+}
+// 报错页面
+.error_page {
+    .error_img {
+        img {
+            width: 100%;
+        }
+    }
+    .error_title {
+        .t_center;
+        .f_20;
+        .mar_b_15;
+        color: @c_000;
+        font-weight: bold;
+        margin-top: -30px;
+    }
+    .error_tips {
+        .t_center;
+        color: @c_666;
+    }
+    .error_btn {
+        .t_center;
+        white-space: nowrap;
+        display: block;
+        width: 30%;
+        margin: 15px auto;
+        border-radius: 22px;
+        background: @c_blue5;
+        color: @c_fff;
+    }
+}

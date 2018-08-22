@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>tab调用</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../css/fivefu_phone.css">
+</head>
+
+<body>
+    <div class="tab_wrap">
+        <div class="tab tab_1">
+            <a class="tab_active">标签1</a>
+            <a>标签2标签2</a>
+            <a>标签3</a>
+        </div>
+        <div class="tab_content">
+            <div>tab选项卡 tab_1</div>
+            <div>22222222</div>
+            <div>33333333</div>
+        </div>
+    </div>
+    <div class="tab_wrap">
+        <div class="tab tab_2">
+            <a class="tab_active">标签1</a>
+            <a>标签2</a>
+            <a>标签3</a>
+        </div>
+        <div class="tab_content">
+            <div>tab选项卡 tab_2</div>
+            <div>22222222</div>
+            <div>33333333</div>
+        </div>
+    </div>
+    <script src="../js/require.js" data-main="../js/fivefu"></script>
+    <script>
+    require(["../js/tab"], function(tab) {
+        tab.t();
+    });
+    </script>
+</body>
+
+</html>
