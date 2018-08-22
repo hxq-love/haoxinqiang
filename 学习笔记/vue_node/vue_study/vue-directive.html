@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>全局API---vue-directive</title>
+    <style type="text/css">
+    [v-cloak] {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box_two" v-cloak>
+        <div v-hxq>{{num}}</div>
+        <button @click="add()">+</button>
+    </div>
+
+    <div onclick="del()">解绑</div>
+</body>
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript">
+    function del(){
+        bb.$destroy();  //解绑了整个vue构造器
+    }
+Vue.directive('hxq', {
+    bind: function() {
+        //被绑定
+        console.info("1.v-bind");
+    },
+    inserted: function() {
+        //绑定到节点
+        console.info("2.v-inserted");
+    },
+    update: function(el) {
+        //组件更新
+        console.info("3.v-updat");
+        el.style="color:blue"
+    },
+    componentUpdated: function() {
+        //更新完成
+        console.info("4.v-componentUpdated");
+    },
+    unbind: function() {
+        //解绑
+        console.info("5.v-unbind");
+    }
+});
+var bb = new Vue({
+    el: "#box_two",
+    data: {
+        num: 1
+
+    },
+    methods:{
+        add:function(){
+            this.num++
+        }
+    }
+});
+</script>
+
+</html>

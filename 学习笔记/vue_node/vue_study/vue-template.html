@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello Word</title>
+</head>
+<body>
+	
+
+	<div class="box">
+		{{message}}
+		<!--2.模板写在template标签里面 -->
+		
+	</div>
+
+
+	<div class="boxtwo">
+		<template id="title_info">
+			<h1>模板内容</h1>
+		</template>
+	</div>
+
+	<div class="boxthree">
+		{{message}}
+	</div>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+
+	<script type="x-template"  id="ttile">
+		<h1>外部js模板内容</h1>
+	</script>
+	<script type="text/javascript">
+		new Vue({
+			el:".box",
+			data:{
+				message:"Hello Word"
+			},
+			//1.这个写法是写在template选项里
+			template:`<h1>这个是模板内容</h1>`
+		});
+
+		new Vue({
+			el:".boxtwo",
+			data:{
+				message:"Hello Word"
+			},
+
+			template:`#title_info`
+		});
+
+		new Vue({
+			el:".boxthree",
+			data:{
+				message:"Hello Word"
+			},
+
+			template:`#ttile`
+		});
+	</script>
+</body>
+</html>

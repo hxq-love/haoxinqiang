@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+    <style type="text/css">
+    [v-cloak] {
+        display: none;
+    }
+
+    .colorA {
+        color: red;
+    }
+
+    .colorB {
+        font-size: 25px;
+    }
+
+    .colorC {
+        background: yellow;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box_two" v-cloak>
+        <div :class="colorBind">
+            样式一
+        </div>
+        <div :class="{colorB:status}">
+            样式判断
+        </div>
+        <div :class="colorGroup">
+            多样式绑定,绑定class中的数组
+        </div>
+        <div :class="status?colorBind:colorBingB">
+            样式条件判断(三元表达式)
+        </div>
+        <div :class="[{colorB:status},{colorC:statusTwo},colorBind]">普通的样式判断</div>
+        <hr>
+        <div :style="{color:pink,fontSize:font}">
+            Style样式绑定
+        </div>
+         <div :style="styleArray">
+            Style样式绑定Json数组
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript">
+var bb = new Vue({
+    el: "#box_two",
+    data: {
+        colorBind: "colorA",
+        colorBingB: "colorB",
+        status: true,
+        statusTwo: true,
+        colorGroup: ['colorA', 'colorB'],
+        pink: "pink",
+        font: "30px",
+        styleArray:{
+        	fontSize:"23px",
+        	background:"green",
+        	color:"white"
+        }
+
+    }
+});
+</script>
+
+</html>

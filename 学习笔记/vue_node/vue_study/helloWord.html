@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello Word</title>
+</head>
+<body>
+	<div class="box">
+		{{message}}
+	</div>
+
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:".box",
+			data:{
+				message:"Hello Word"
+			}
+		});
+	</script>
+</body>
+</html>

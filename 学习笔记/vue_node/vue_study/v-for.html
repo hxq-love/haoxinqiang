@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    [v-cloak] {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+  
+    <div id="box" v-cloak>
+        <ol>
+            <li v-for="item in list">
+                {{item.name}}
+            </li>
+        </ol>
+    </div>
+   
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+
+    <script type="text/javascript">
+        new Vue({
+            el:"#box",
+            data:{
+                list:[
+                    {name:"小强强"},
+                    {name:"郝志文"},
+                    {name:"邱淑芬"},
+                    {name:"李嘉欣"}
+                ]
+            }
+        });
+    </script>
+</body>
+
+</html>

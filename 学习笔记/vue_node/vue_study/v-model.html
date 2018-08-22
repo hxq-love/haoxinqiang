@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-text v-html</title>
+	<style type="text/css">
+		 [v-cloak] {
+		 	display: none;
+	     }
+	</style>
+</head>
+<body>
+	 <div id="box_two" v-cloak>
+	 	<div>{{datas}}</div>
+		<input v-model="datas">
+	 	<div>
+	 		<input id="ipt" value="单选按钮" type="checkbox" v-model="ipt_zhi">
+	 		<label for="ipt" >单选按钮</label>
+
+	 		<input id="ipt2" value="单选按钮2" type="checkbox" v-model="ipt_zhi">
+	 		<label for="ipt2" >单选按钮2</label>
+
+	 		<input id="ipt3" value="单选按钮3" type="checkbox" v-model="ipt_zhi">
+	 		<label for="ipt3" >单选按钮3</label>
+			<br>
+			{{ipt_zhi}}
+
+			<br>
+			<input id="radio1" value="单选按钮4" type="radio" v-model="raido">
+	 		<label for="radio1" >单选按钮4</label>
+	 		<input id="radio2" value="单选按钮5" type="radio" v-model="raido">
+	 		<label for="radio2" >单选按钮5</label>
+
+	 		{{raido}}
+	 	</div>
+    </div>
+    
+    	
+    
+
+   
+</body>
+
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript">
+	var bb=new Vue({
+		el:"#box_two",
+		data:{
+			datas:"input绑定",
+			ipt_zhi:[],
+			raido:""
+		}
+	});
+
+
+	
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue-component组件  component标签</title>
+</head>
+<body>
+	<div class="box">
+		
+
+
+	
+		
+		<div><component v-bind:is="status"></component></div>
+	</div>
+
+	<script type="text/javascript" src="../js/vue/vue.js"></script>
+	
+	<script type="text/javascript">
+
+		
+		var conone={
+			template:'<div>我们是A内容{{context}}</div>',
+			data:function(){
+				return {
+					context:"2"
+				}
+			}
+		}
+		var contwo={
+			template:'<div>我们是B组件</div>'
+		}
+		var conthree={
+			template:'<div>我们是C组件</div>'
+		}
+		var confour={
+			template:'<div>我们是D组件</div>'
+		}
+		
+
+		new Vue({
+			el:".box",
+			data:{
+				status:conone
+			},
+			components:{
+				'conone':conone,
+				'contwo':contwo,
+				'conthree':conthree,
+				'confour':confour
+			}
+
+		});
+
+
+
+		
+	</script>
+</body>
+</html>

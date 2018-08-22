@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 其他选项</title>
+</head>
+
+<body>
+    <div class="box">
+        <hello v-bind:name="222"></hello>
+        <news></news>
+    </div>
+    <script type="text/javascript" src="../js/vue/vue.js"></script>
+    <script type="text/javascript">
+    Vue.component('hello', {
+        template: '<div>这个是全局注册的组件{{name}},获取构造器的值是{{this.$parent.num}}</div>',
+        props: ['name'],
+        name:"hello"
+    })
+
+    var news={
+    	template:'<div>这个是子组件  {{this.$parent.num}}</div>',
+    	name:"news"
+    }
+    new Vue({
+        el: '.box',
+        data: {
+            num: 520
+        },
+        components:{
+        	'news':news
+        }
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-set</title>
+</head>
+<body>
+	<div class="box">
+		<div v-for="item in message">
+			{{item}}
+		</div>
+		 总计:{{num}}个
+
+
+		<button>
+			vue修改
+		</button>
+	</div>
+	<button onclick="update()">更改</button>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript">
+		var vus=new Vue({
+			el:".box",
+			data:{
+				num:20,
+				message:[
+					"苹果","梨子","桃子","香蕉"
+				]
+			}
+		});
+		function update(){
+			
+			/**当数组是以简单的键值存在，直接给数组通过索引赋值是无效的，必须通过下列三种方法  **/
+
+			vus.$set(vus.message,0,"芒果");  //对这个Vue的实例修改数组
+
+			//Vue.set(vus.message,0,"芒果");//对全局Vue的实例这个数组进行修改
+
+			//vus.message.splice(0,1,"芒果"); //使用js方法修改数组Vue可以自动渲染
+		}
+	</script>
+</body>
+</html>

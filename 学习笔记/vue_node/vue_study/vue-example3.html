@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue example  实例事件</title>
+</head>
+
+<body>
+    <div class="box">
+       这个数是{{num}}
+
+       <button @click="add">+</button>
+    </div>
+    <button onclick="del()">－</button>
+
+    <button onclick="off()">off</button>
+    <script type="text/javascript" src="../js/vue/vue.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript">
+      var vm=new Vue({
+        el:'.box',
+        data:{
+            num:1
+        },
+        methods:{
+            add:function(){
+                this.num++
+            }
+        }
+      })
+
+      vm.$on('del',function(num){    //通过实例给构造器添加方法
+         this.num -=num;
+
+      })
+      function del(){
+        vm.$emit('del',2);   //实例调用构造器中的方法
+      }
+
+      function off(){
+        vm.$off('del');  //关闭del()方法
+      }
+
+    </script>
+</body>
+
+</html>

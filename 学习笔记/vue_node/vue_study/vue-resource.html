@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-resource</title>
+</head>
+
+<body>
+    <div class="box">
+        <div v-for="item in datas">
+            <div>值：{{item.name}}</div>
+        </div>
+        <button @click="get">点击获取</button>
+    </div>
+    <script type="text/javascript" src="../js/vue/vue.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="../js/vue/vue-resource.js"></script>
+    <script type="text/javascript">
+    var vm = new Vue({
+        el: '.box',
+        data: {
+            datas: []
+        },
+        methods: {
+            get: function() {
+                this.$http.get('http://hblt114.cn/hbshopapp/market/findAllByName', {
+                    name: "",
+                    areaid: '0318'
+
+                }).then(function(res) {
+                    var zhi=res.data.obj;
+                    zhi=$.parseJSON(zhi);
+                    this.datas=zhi.obj
+                  
+                }, function(res) {
+                    console.info(res.status);
+
+                });
+            }
+        }
+    })
+    </script>
+</body>
+
+</html>

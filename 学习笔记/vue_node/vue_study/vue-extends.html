@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue-extends 扩展</title>
+</head>
+<body>
+	<div class="box">	
+		这个是{{num}}
+
+		<button @click="add">+</button>1<button @click="bb">-</button>
+	</div>
+	
+	<script type="text/javascript" src="../js/vue/vue.js"></script>
+	
+	<script type="text/javascript">
+	var aaa={
+		created:function(){
+			console.info("这个是混入的");  //声明周期的选项可以执行，有优先顺序
+		},
+		methods:{
+			bb:function(){
+				console.info("混入的方法");    //和混入一样，扩展中的方法如果与构造器重名会被覆盖
+			},
+			del:function(){
+				
+			}
+		},
+	}
+
+	var bbb={
+		created:function(){
+			console.info("这个是扩展的");
+		},
+	}
+	var vm=new Vue({
+		el:".box",
+		data:{
+			num:1
+		},
+		methods:{
+			add:function(){
+				console.info("构造器方法");
+			},
+			del:function(){
+				
+			}
+		},
+		created:function(){
+			console.info("这个是构造器里面的");
+		},
+		mixins:[aaa],
+		extends:bbb
+		// watch:{
+		// 	num:function(newdata,olddata){
+		// 		if(newdata<1){
+		// 			this.num=1
+		// 		}
+		// 	}
+		// }
+	})
+
+	//使用实例化对象调用属性
+	vm.$watch('num',function(newdata){
+		if(newdata<1){
+			vm.num=1
+		}
+	})
+		
+	</script>
+</body>
+</html>

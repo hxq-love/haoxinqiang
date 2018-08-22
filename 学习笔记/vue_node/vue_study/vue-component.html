@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue-component 全局组件  </title>
+</head>
+<body>
+	<div class="box">
+		{{message}}
+
+
+		<hello></hello>
+		
+		<Hell-Word></Hell-Word>
+	</div>
+
+	<script type="text/javascript" src="../js/vue/vue.js"></script>
+	<script type="text/javascript" src="../js/vue/component.js"></script>
+	<script type="text/javascript">
+
+		//下面这个是全局注册组件
+		/*Vue.component('hello',{
+			template:"<div>这个是hello组件</div>"
+		})*/
+
+		var sontemplate={
+			template:"<div>这个是hello 局部组件</div>"
+		}
+		new Vue({
+			el:".box",
+			data:{
+				message:"Hello Word"
+			},
+			components:{
+				'HellWord':sontemplate  //如果使用驼峰命名法，使用组件时必须用“ kebab-case”写法
+			}
+
+		});
+	</script>
+</body>
+</html>

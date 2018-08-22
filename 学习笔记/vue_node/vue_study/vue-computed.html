@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue-computed</title>
+</head>
+<body>
+	<div class="box">		
+		<div>这个是原价：{{price}}</div>
+		<div>这个是折扣：{{discount}}</div>
+		<div>这个是现价：{{nowpirce}}</div>
+
+		<button @click="add">+</button>
+	</div>
+
+	<script type="text/javascript" src="../js/vue/vue.js"></script>
+	
+	<script type="text/javascript">
+
+		new Vue({
+			el:".box",
+			data:{
+				price:10,
+				discount:0.85
+
+			},
+			computed:{
+				nowpirce:function(){
+					return this.price*this.discount+"元"
+				}
+			},
+			methods:{
+				add:function(){
+					this.price++
+				}
+			}
+
+
+		});
+
+
+
+		
+	</script>
+</body>
+</html>

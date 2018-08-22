@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue-Methods</title>
+</head>
+<body>
+	<div class="box">	
+		{{num}}	
+		<button @click="add()">内部点击事件</button>
+		<addnum @click.native="add"></addnum>
+
+
+		<button onclick="adds()">调用外部事件</button>
+	</div>
+	<button onclick="vm.add()">外部元素调用本地事件</button>
+	<script type="text/javascript" src="../js/vue/vue.js"></script>
+	
+	<script type="text/javascript">
+		function adds(){
+			vm.num++
+		}
+		var addnum={
+			template:`<button>外部组件调用本地事件</button>`
+		}
+		var vm=new Vue({
+			el:".box",
+			data:{
+				num:1
+			},
+			components:{
+				'addnum':addnum
+			},
+			methods:{
+				add:function(){
+					this.num++
+				}
+			}
+
+
+		});
+
+
+
+		
+	</script>
+</body>
+</html>

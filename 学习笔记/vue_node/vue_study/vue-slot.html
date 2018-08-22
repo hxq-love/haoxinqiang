@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue slot件</title>
+</head>
+
+<body>
+    <div class="box">
+        <word v-for="item in datas">
+            <span slot="names">{{item.name}}</span>   <!-- 使用slot属性传递参数 -->
+            <span slot="ages">{{item.age}}</span>
+        </word>
+    </div>
+    <template id="ban">
+        <div>
+            姓名是:
+            <slot name='names'></slot>  <!--  使用slot标签接收参数 -->
+            数量是:
+            <slot name='ages'></slot>
+        </div>
+    </template>
+    <script type="text/javascript" src="../js/vue/vue.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript">
+    var word = {
+        template: '#ban'
+    }
+    var vm = new Vue({
+        el: '.box',
+        data: {
+            datas: [
+                { name: "郝志文", age: 12 },
+                { name: "郝新强", age: 13 },
+                { name: "王志远", age: 14 }
+            ]
+        },
+        components: {
+            'word': word
+        }
+    })
+    </script>
+</body>
+
+</html>

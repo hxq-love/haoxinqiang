@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue life  声明周期</title>
+	<style type="text/css">
+		[v-bloak]{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" v-bloak>
+		{{num}}
+
+		<button @click="add()">+</button>
+	</div>
+	<button onclick="del()">销毁</button>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript">
+		var vues=new Vue({
+			el:".box",
+			data:{
+				num:1
+			},
+			methods:{
+				add:function(){
+					this.num++
+				}
+			},
+			beforeCreate:function(){
+				console.info("1--beforeCreate  初始化之后");
+			},
+			created:function(){
+				console.info("2--created  创建完成");
+			},
+			beforeMount:function(){
+				console.info("3--beforeMount 挂载之前");
+			},
+			mounted:function(){
+				console.info("4--mounted 被创建");
+
+			},
+			beforeUpdate:function(){
+				console.info("5--beforeUpdate 数据更新前");
+			},
+			updated:function(){
+				console.info("6--updated 被更新后");
+			},
+			activated:function(){
+				console.info("7--activated  activated ");
+			},
+			dactivated:function(){
+				console.info("8--dactivated  dactivated ");
+			},
+			beforeDestroy:function(){
+				console.info("9--beforeDestroy  销毁之前");
+			},
+			destroyed:function(){
+				console.info("10--destroyed  销毁之后");
+			}
+		});
+
+		function del(){
+			vues.$destroy();
+		}
+	</script>
+</body>
+</html>

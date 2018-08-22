@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>extent</title>
+    <style type="text/css">
+    [v-cloak] {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box_two" v-cloak>
+        
+    </div>
+
+
+</body>
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript">
+
+//不可以传参数，一般适用于固定的结构样式，不需要传参
+
+var bb =Vue.extend({
+    template:"<p>{{message}}</p>",
+    data: function(){
+        return{
+            message:"vue的extent扩展"
+        }
+    }
+});
+
+new bb().$mount("#box_two");
+</script>
+
+</html>

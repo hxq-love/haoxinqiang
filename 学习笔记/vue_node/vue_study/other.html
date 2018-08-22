@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>other</title>
+    <style type="text/css">
+    [v-cloak] {
+        display: none;
+    }
+
+    .colorA {
+   
+    </style>
+</head>
+
+<body>
+    <div id="box_two" v-cloak>
+        <div v-pre>{{name }}</div>
+
+        <div v-once>{{name }}</div>
+        <input type="text" value="" V-model="name">
+    </div>
+</body>
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript">
+var bb = new Vue({
+    el: "#box_two",
+    data: {
+        name:"郝志文"
+
+    }
+});
+</script>
+
+</html>

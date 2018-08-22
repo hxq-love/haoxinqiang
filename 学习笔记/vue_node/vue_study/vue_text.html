@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-text v-html</title>
+	<style type="text/css">
+		 [v-cloak] {
+		 	display: none;
+	     }
+	</style>
+</head>
+<body>
+	 <div id="box_two" v-cloak>
+	 	<div v-text="student">
+	 		
+	 	</div>
+	 	<div v-html="student_info">
+	 		
+	 	</div>
+
+	 	<div>
+	 		<input id="ipt" value="单选按钮" type="checkbox" v-model="ipt_zhi">
+	 		<label for="ipt" >单选按钮</label>
+
+	 		<input id="ipt2" value="单选按钮2" type="checkbox" v-model="ipt_zhi">
+	 		<label for="ipt2" >单选按钮2</label>
+
+	 		<input id="ipt3" value="单选按钮3" type="checkbox" v-model="ipt_zhi">
+	 		<label for="ipt3" >单选按钮3</label>
+			<br>
+			{{ipt_zhi}}
+
+			<br>
+			<input id="radio1" value="单选按钮4" type="radio" v-model="raido">
+	 		<label for="radio1" >单选按钮4</label>
+	 		<input id="radio2" value="单选按钮5" type="radio" v-model="raido">
+	 		<label for="radio2" >单选按钮5</label>
+
+	 		{{raido}}
+	 	</div>
+    </div>
+    
+    	
+    
+
+   <textarea style="border:1px solid red" cols="50" rows="3"></textarea>
+</body>
+
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript">
+	var bb=new Vue({
+		el:"#box_two",
+		data:{
+			student:'<h1>这个内容时v-text</h1>',
+			student_info:'<h1>这个内容是v-html</h1>',
+			ipt_zhi:[],
+			raido:""
+		}
+	});
+
+
+	
+</script>
+</html>

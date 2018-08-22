@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue-watch</title>
+</head>
+<body>
+	<div class="box">	
+		这个是{{num}}
+
+		<button @click="add">+</button>1<button @click="del">-</button>
+	</div>
+	
+	<script type="text/javascript" src="../js/vue/vue.js"></script>
+	
+	<script type="text/javascript">
+		
+	var vm=new Vue({
+		el:".box",
+		data:{
+			num:1
+		},
+		methods:{
+			add:function(){
+				this.num++
+			},
+			del:function(){
+				this.num--
+			}
+		}
+		// watch:{
+		// 	num:function(newdata,olddata){
+		// 		if(newdata<1){
+		// 			this.num=1
+		// 		}
+		// 	}
+		// }
+	})
+
+	//使用实例化对象调用属性
+	vm.$watch('num',function(newdata){
+		if(newdata<1){
+			vm.num=1
+		}
+	})
+		
+	</script>
+</body>
+</html>

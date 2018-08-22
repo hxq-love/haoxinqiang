@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue example  实例属性</title>
+</head>
+
+<body>
+    <div class="box">
+        <hello v-bind:name="222"></hello>
+        <news></news>
+        <button class="btn" @click="add">点击</button>
+    </div>
+    <script type="text/javascript" src="../js/vue/vue.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript">
+    Vue.component('hello', {
+        template: '<div>这个是全局注册的组件{{name}},获取构造器的值是{{this.$parent.num}}</div>',
+        props: ['name'],
+        name:"hello"
+    })
+
+    var news={
+    	template:'<div>这个是子组件  {{this.$parent.num}}</div>',
+    	name:"news",
+    }
+   var example= new Vue({
+        el: '.box',
+        data: {
+            num: 520
+        },
+        methods:{
+            add:function(){
+                $(".btn").css("color","red");
+            }
+        },
+        components:{
+        	'news':news
+        }
+    })
+    //调用构造器实例的属性
+     example.add()  //调用属性方法
+     example.$el //调用el选项
+     example.num  //调用data属性里面的对象
+    </script>
+</body>
+
+</html>

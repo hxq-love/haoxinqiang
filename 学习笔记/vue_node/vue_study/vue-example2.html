@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue example  实例方法</title>
+</head>
+
+<body>
+    <div class="box">
+       
+    </div>
+    <button onclick="del()">销毁</button>
+    <button onclick="refresh()">刷新</button>
+    <button onclick="update()">修改</button>
+    <script type="text/javascript" src="../js/vue/vue.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript">
+        var extend=Vue.extend({
+            template:'<div>扩展的内容  标题是：{{message}}</div>',
+            data:function(){
+                return {
+                    message:"郝志文"
+                }
+            },
+            destroyed:function(){
+                console.info("10--destroyed  被销毁了");
+            },
+            updated:function(){
+                console.info("6--updated 被更新后");
+            },
+        });
+
+
+        var vm=new extend().$mount('.box');
+
+
+        function del(){
+            vm.$destroy();   //销毁实例，调用后，Vue 实例相关的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。
+        }
+
+
+        function refresh(){
+            vm.$forceUpdate();  //迫使Vue实例重新渲染
+        }
+
+        function update(){
+            vm.message="郝新强";
+            vm.$nextTick(function(){
+                console.info("修改后");
+            });
+            
+        }
+    </script>
+</body>
+
+</html>

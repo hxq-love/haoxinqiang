@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue请求学习</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    [v-cloak] {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="tables" v-cloak>
+        <div class="ipts">
+            <input type="text" placeholder="请输入内容" v-model="iptData" @keyup="get()">
+        </div>
+        <ul>
+            <li v-for="item in datas">
+                <span>
+                     用户名:{{item.name}}
+                </span>
+                <span>营业时间:{{item.businesshours}}</span>
+            </li>
+            <li v-show="">暂无数据</li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+    <script type="text/javascript" src="../js/vue/vue-resource.js"></script>
+    <script type="text/javascript">
+    $(function() {
+
+        // $.ajax({
+        //     url:'http://hblt114.cn/hbshopapp/market/findAllByName?name=&areaid=0318'
+
+        // }).done(function(data){
+        //     var zhi=$.parseJSON(data.obj);
+        //    console.info(zhi.obj);
+
+        // })
+
+       
+
+
+
+
+        var b = new Vue({
+                el: "#tables",
+                data: {
+                    datas: [""],
+                    iptData: "1",
+                    a: false
+
+                },
+               methods:{
+                 get: function() {
+                    var this_=this;
+                    this.$http.get('http://hblt114.cn/hbshopapp/market/findAllByName', {
+
+                        name: this.iptData,
+                        areaid: '0318'
+
+                    }).then(function(res) {
+                        //var zhi=JSON.stringify(res.data.obj.obj);
+
+
+                         var zhi=$.parseJSON(res.data.obj);
+          
+                 
+                        this_.datas=zhi.obj;
+                    }, function(res) {
+                        
+                    });
+                }
+               }
+            
+        });
+
+
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue-component组件  props父子组件</title>
+</head>
+<body>
+	<div class="box">
+		
+
+
+	
+		
+		<helloword></helloword>
+	</div>
+
+	<script type="text/javascript" src="../js/vue/vue.js"></script>
+	
+	<script type="text/javascript">
+
+		//声明孙子级组件
+		var bb={
+			template:'<div>我们是子组件</div>'
+		}
+		var sontemplate={
+			template:`<div>
+			<div>我们去{{href}}</div><div><bb></bb></div>
+			</div>`,
+			props:['href'],
+			components:{
+				'bb':bb  //这个是孙子级组件
+			}
+		}
+		new Vue({
+			el:".box",
+			data:{
+				message:"美国"
+			},
+			components:{
+				'helloword':sontemplate  //如果使用驼峰命名法，使用组件时必须用“ kebab-case”写法
+			}
+
+		});
+
+
+
+		
+	</script>
+</body>
+</html>

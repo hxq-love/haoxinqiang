@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-start</title>
+	<style type="text/css">
+		.title{
+			color: red;
+		}
+		[v-bloak]{
+			display: none;
+		}
+		img{
+			vertical-align: middle;
+			width: 100px;
+		}
+		span{
+			vertical-align: middle;
+		}
+		#vue_start{
+			text-align: center;
+		}
+		a{
+			display: block;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="vue_start" v-bloak>
+		<div>
+			<img :src="imgSrc"><span :class="title">学习笔记</span>
+		</div>
+		<h3 :class="title">指令</h3>
+		<div>
+			<a v-for="(item,index) in list" :href="item.src">{{index+1}}.{{item.name}}</a>
+		</div>
+		<hr>
+		<h3 :class="title">全局API设置</h3>
+		<div>
+			<a v-for="(item,index) in listApi" :href="item.src">{{index+1}}.{{item.name}}</a>
+		</div>
+		<h3 :class="title">模板</h3>
+		<div>
+			<a v-for="(item,index) in template" :href="item.src">{{index+1}}.{{item.name}}</a>
+		</div>
+
+		<h3 :class="title">选项</h3>
+		<div>
+			<a v-for="(item,index) in selects" :href="item.src">{{index+1}}.{{item.name}}</a>
+		</div>
+
+
+
+		<h3 :class="title">杂项</h3>
+		<div>
+			<a v-for="(item,index) in sundry" :href="item.src">{{index+1}}.{{item.name}}</a>
+		</div>
+
+		<h3 :class="title">实例</h3>
+		<div>
+			<a v-for="(item,index) in example" :href="item.src">{{index+1}}.{{item.name}}</a>
+		</div>
+
+		<h3 :class="title">通过标签给模板传值</h3>
+		<div>
+			<a v-for="(item,index) in label" :href="item.src">{{index+1}}.{{item.name}}</a>
+		</div>
+
+		<h3 :class="title">ajax请求</h3>
+		<div>
+			<a v-for="(item,index) in ajaxs" :href="item.src">{{index+1}}.{{item.name}}</a>
+		</div>
+
+
+		
+	</div>
+
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#vue_start",
+			data:{
+				title:"title",
+				imgSrc:"https://cn.vuejs.org/images/logo.png",
+				list:[
+					{name:"Hello Word 案例",src:"helloWord.html"},
+					{name:"v-if & v-else",src:"vue_if.html"},
+					{name:"v-for",src:"v-for.html"},
+					{name:"v-text & v-html",src:"vue_text.html"},
+					{name:"v-on以及配合v-show",src:"vue_one.html"},
+
+
+					{name:"v-model",src:"v-model.html"},
+					{name:"v-bind",src:"v-bind.html"},
+					{name:"other其他指令",src:"other.html"},
+				],
+				listApi:[
+					{name:"Vue-directive 自定义指令",src:"vue-directive.html"},
+					{name:"Vue-extend构造器扩展",src:"vue-extent.html"},
+					{name:"Vue-set全局操作",src:"vue-set.html"},
+					{name:"Vue生命周期",src:"vue_life.html"}
+			
+				],
+				template:[
+					{name:"template",src:"vue-template.html"},
+					{name:"Vue-component 组件  全局组件",src:"vue-component.html"},
+					{name:"Vue-component 组件  props",src:"vue-component2.html"},
+					{name:"Vue-component 组件  父子组件",src:"vue-component3.html"},
+					{name:"Vue-component 组件  component标签",src:"vue-component4.html"}
+					
+			
+				],
+				selects:[
+					{name:"computed  ",src:"vue-computed.html"},
+					{name:"Methods  ",src:"vue-methods.html"},
+					{name:"watch  ",src:"vue-watch.html"},
+					{name:"mixins  ",src:"vue-mixins.html"},
+					{name:"extends  ",src:"vue-extends.html"}
+				],
+				sundry:[
+					{name:"sundry ",src:"vue-computed.html"},
+			
+				],
+				example:[
+					{name:"example  实例属性 ",src:"vue-example.html"},
+					{name:"example  实例方法 ",src:"vue-example2.html"},
+					{name:"example  实例事件 ",src:"vue-example3.html"}
+				],
+				label:[
+					{name:"slot ",src:"vue-slot.html"}
+				],
+				ajaxs:[
+					{name:"vue-resource ",src:"vue-resource.html"}
+				]
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>if else</title>
+	<style type="text/css">
+		 [v-cloak] {
+		 	display: none;
+	        	    }
+	</style>
+</head>
+<body>
+	 <div id="box" v-cloak>
+	 	<div v-if="ok">内容为true</div>
+	 	<div v-else>内容为false</div>
+    </div>
+
+
+    <div id="box_two" v-cloak>
+    	<div v-for="item in students">{{item}}</div>
+
+    	<ul>
+    		<li v-for="items in students_info">
+    			{{items.name}}  年龄：{{items.age}}
+    		</li>
+    	</ul>
+    </div>
+</body>
+
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript">
+	var Vues=new Vue({
+		el:"#box",
+		data:{
+			ok:false
+		}
+	});
+
+	var bb=new Vue({
+		el:"#box_two",
+		data:{
+			student:[23,45,84,86,71,48,13,3],
+			student_info:[
+				{"name":"郝新强","age":12},
+				{"name":"王爱文","age":38},
+				{"name":"王梓璇","age":22},
+				{"name":"倪明","age":2},
+			]
+		},
+		computed:{
+			students:function(){
+				return this.student.sort(bijiao);
+				//return this.student.reverse();  //对数组倒序
+			},
+			students_info:function(){
+				return this.student_info.sort(bijiaotwo('age')).reverse();
+			}
+		}
+	});
+
+
+	function bijiao(a,b){
+		return a-b;
+	}
+
+	function bijiaotwo(age){
+		return function(a,b){
+			var a=a[age];
+			var b=b[age];
+			return a-b;
+		}
+	}
+</script>
+</html>

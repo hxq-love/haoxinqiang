@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v-on</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../js/layui/css/layui.css">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    [v-cloak] {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="tables" v-cloak>
+        <div class="layui-form" style="padding:10px;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                    <input v-model="username" type="text" name="title" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">年龄</label>
+                <div class="layui-input-block">
+                    <input type="text" v-model="age" name="title" required lay-verify="required" placeholder="请输入年龄" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-from-item" style="text-align: center;" >
+                <button class="layui-btn layui-btn-normal layui-btn-sm" v-on:click.stop="add()">新增</button>
+            </div>
+            
+        </div>
+        <div style="padding:10px" id="">
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>名字</th>
+                        <th>年龄</th>
+                        <th>头像</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item,index) in datas">
+                        <td>{{index+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.age}}</td>
+                        <td><img :src="item.urls"></td>
+                        <td>
+                            <button class="layui-btn layui-btn-danger layui-btn-sm" v-on:click="del(index)">删除</button>
+                        </td>
+                    </tr>
+                    <tr v-show="datas.length>0">
+                        <td colspan="5" align="center">
+                            <button class="layui-btn layui-btn-sm" v-on:click="delAll()">删除全部</button>
+                        </td>
+                    </tr>
+                    <tr v-show="datas.length==0">
+                        <td colspan="5" align="center">暂无数据</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="del_alert" v-show="a">是否删除该条信息？</div>
+
+        <button class="layui-btn layui-btn-normal layui-btn-sm" @contextmenu.prevent="rightClick()">阻止右键默认事件</button>
+
+
+         
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+    <script type="text/javascript" src="../js/layui/layui.all.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        layui.use('layer', function() {
+            var layer = layui.layer;
+
+           var b= new Vue({
+                el: "#tables",
+                data: {
+                    datas: [
+                        { age: 15, name: "郝新强",urls:"../images/hf1.jpg" }
+
+                    ],
+                    username: "",
+                    age: "",
+                    a:false
+              
+
+                },
+
+                methods: {
+                    
+                    add: function() {
+
+             
+                        this.datas.push({
+                            name: this.username,
+                            age: this.age
+                        });
+                        this.username = "";
+                        this.age = "";
+                    },
+                    del: function(index) {
+                        var indexs=index;
+                        var datas=this.datas;
+                        layer.open({
+                            type: 1,
+                            area: '500px',
+                            content: $("#del_alert") //这里content是一个普通的String
+                                ,
+                            btn: ['确定'],
+                            yes: function(index, layero) {
+                                layer.close(index)
+                                datas.splice(indexs,1);
+                                $("#del_alert").hide();
+                                //do something
+                            },
+                            cancel: function(index, layero) {
+                                 $("#del_alert").hide();
+                            }
+                        });
+                    },
+                    delAll:function(){
+                        this.datas=[];
+                    },
+                    rightClick:function(){
+                        
+                        alert("触发了右键");
+                    }
+                }
+            });
+        });
+
+    })
+    </script>
+</body>
+
+</html>
