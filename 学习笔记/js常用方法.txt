@@ -1,0 +1,15 @@
+1.var a=window.confirm("询问框")   ---通过true判断事件
+2.var b=window.prompt("内容","默认文本框的值")  ---以a的值也就是文本框的值为判断条件
+3.js 数组排序  使用array.sort(function(a,b){a-b}) 使用reverse() 可以降序   或者使用冒泡排序
+4.indexOf(值，开始检索的位置)    显示某个字段在字符串中显示的位置
+5.localStorage 与 sessionStorage  本地存储使用  .setItem("key","value") 存储或修改 .getItem("key")  .removeItem("key) 
+.clear()  清空所有   只能存储字符串，不能存储对象和数组
+6.Data    getMonth()获取月份 要加一  getFullYear()获取四位数年份  getDate() 获取几号  getDay()得到周几
+	 getHours() 获取小时  getMinuts() 获取分钟 getSeconds()获取秒
+7 min(),max()方法，返回两个数最大值和最小值
+8 apply与call方法
+9 reverse() 颠倒数组中顺序
+10 slice splice split
+   substr() substring charAt
+11 document.location.reload()
+12 
