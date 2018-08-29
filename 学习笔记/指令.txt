@@ -1,4 +1,4 @@
-Vue 指令：
++Vue 指令：
 安装：cnpm install vue
 
 安装vue-cli脚手架
@@ -29,3 +29,22 @@ git remote add origin 远程仓库地址
 将本地代码提交到仓库
 git push -u origin master
 
+
+vue.js 
+父组件给子组件传值：通过属性
+<v-li :name="123" :add="add" :obj="this"></v-li>---子组件
+子组件：通过props:["name","add","obj"]  来获取值、方法、整个this对象
+
+父组件主动获取子组件值和方法
+<v-li ref="aa"></v-li>---子组件
+this.$refs.aa.值  this.$refs.aa.方法
+
+this.$parent.值 this.$parent.方法
+
+兄弟组件互相获取值和方法
+新建公用JS，声明全局Vue实例，在个组件中通过import引用
+获取值、方法：import 名称 from '../model/VueSiblings'
+名称.$emit('v-value',123)
+名称.$on('v-value',(data)=>){
+	
+}
