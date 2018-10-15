@@ -50,6 +50,16 @@ this.$parent.值 this.$parent.方法
 }
 
 
+vue router路由
+普通路由：<router-link to="/one"></router-link>  routes:[{path:'/one',component:组件名}]
+动态路由 <router-link to="/one/123"></router-link> routes:[{path:'/one/:id',component:组件名}]  this.$route.params.id
+	<router-link to="/one/123/234"></router-link> routes:[{path:'/one/:id/:name',component:组件名}]
+动态路由get传值 <router-link :to="'/one?id='+id"></router-link>  routes:[{path:'/one',component:组件名}]  this.$route.query.id
+编程时路由  routes:[{path:'/one/:id',component:组件名}]  方法：this.$router.push({path:'/one/123'})
+	    通过name动态路由 this.$router.push({name:'one',params:{id:123}})  routes:[{path:'/one',component:组件名},name:'one']
+
+
+
 Vue生命周期：
 Vue实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、销毁等一系列过程，我们称这是Vue的生命周期。通俗说就是Vue实例从创建到销毁的过程，就是生命周期。
 
@@ -71,3 +81,117 @@ Vue实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom、渲
 
     组件的数据绑定、监听...去掉后只剩下dom空壳，这个时候，执行destroyed，在这里做善后工作也可以
 
+
+Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式
+
+
+    1.vuex解决了组件之间同一状态的共享问题  （解决了不同组件之间的数据共享）
+
+    2.组件里面数据的持久化。                
+
+   小项目不部建议用vuex   
+/*1.state在vuex中用于存储数据*/
+			var state={
+
+			    count:1
+			}
+定义方法	 mutations里面放的是方法，方法主要用于改变state里面的数据
+
+		var mutations={
+
+		    incCount(){
+
+			++state.count;
+		    }
+		}
+暴露
+
+		const store = new Vuex.Store({
+		    state,
+		    mutations
+		})
+		
+		export default store;
+
+1.引入 store
+
+			 import store from '../vuex/store.js';
+
+
+		2、注册
+
+			 export default{
+				data(){
+				    return {               
+				       msg:'我是一个home组件',
+					value1: null,
+				     
+				    }
+				},
+				store,
+				methods:{
+				    incCount(){
+				      
+					this.$store.commit('incCount');   /*触发 state里面的数据*/
+				    }
+
+				}
+			    }
+		3、获取state里面的数据  
+
+			this.$store.state.数据
+
+
+
+		4、触发 mutations 改变 state里面的数据
+			
+			this.$store.commit('incCount');
+		5.优点类似计算属性   ，  改变state里面的count数据的时候会触发 getters里面的方法 获取新的值 (基本用不到)
+
+
+		var getters= {
+		   
+		    computedCount: (state) => {
+			return state.count*2
+		    }
+		}
+this.$store.getters.computedCount
+
+		6、 Action 基本没有用
+
+		Action 类似于 mutation，不同在于：
+
+		Action 提交的是 mutation，而不是直接变更状态。
+		Action 可以包含任意异步操作。
+		
+
+
+		var actions= {
+		    incMutationsCount(context) {    /*因此你可以调用 context.commit 提交一个 mutation*/
+		      
+		      
+			context.commit('incCount');    /*执行 mutations 里面的incCount方法 改变state里面的数据*/
+
+
+		    }
+		}
+this.$store.dispatch('incMutationsCount')
+
+// 注册一个全局自定义指令 `v-focus`
+Vue.directive('focus', {
+  // 当被绑定的元素插入到 DOM 中时……
+  inserted: function (el) {
+    // 聚焦元素
+    el.focus()
+  }
+})
+如果想注册局部指令，组件中也接受一个 directives 的选项：
+
+directives: {
+  focus: {
+    // 指令的定义
+    inserted: function (el) {
+      el.focus()
+    }
+  }
+}

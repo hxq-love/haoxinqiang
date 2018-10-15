@@ -47,5 +47,6 @@
     因为function声明需要一个名字。
 
 16 请指出和和.fn的区别，或者说出$.fn的用途
-   $.extend(obj);给JQUERY对象添加方法。
-   $.fn.extend(obj)；对prototype进行扩展，为jquery类添加成员函数，jquery类的实例可以使用这个成员函数。
+ jQuery.extend()是为jQuery类添加类方法（静态方法），需要通过jQuery类来调用（直接使用 $.xxx 调用）；
+
+jQuery.fn.extend()是为jQuery类添加成员函数（实例方法），所有jQuery实例都可以直接调用（需要使用 $().xxx 调用）。
