@@ -1,11 +1,11 @@
-+Vue 指令：
+Vue 指令：
 安装：cnpm install vue
 
 安装vue-cli脚手架
 cnpm install --global vue-cli
 
 创建一个webpack模板
-vue init -webpack 项目名
+vue init webpack 项目名
 
 
 git 指令
