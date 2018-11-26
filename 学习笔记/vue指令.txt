@@ -10,3 +10,4 @@ vue init webpack 项目名
 
 安装less依赖，npm install less less-loader --save
 
+安装axios npm install axios

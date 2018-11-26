@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>聊天</title>
+    <link rel="stylesheet" type="text/css" href="web/css/hxq.css">
+    <style type="text/css">
+    /*.tuichu{
+            background-image:linear-gradient(-180deg, #5484cf 0%, #67a3e3 54%, #5484cf 100%);
+            box-shadow:inset 0 1px 3px 0 #77afee, inset -1px 1px 5px 0 #2968b9;
+            border-radius:3px;
+            width:118px;
+            height:30px;
+        }
+        .tuichu:active{
+            background-image:linear-gradient(-180deg, #2660bb 2%, #3974d1 55%, #2660bb 100%);
+            box-shadow:inset 0 1px 3px 0 #77afee, inset -1px 1px 5px 0 #2968b9;
+            border-radius:3px;
+            width:118px;
+            height:30px;
+        }*/
+    </style>
+</head>
+
+<body>
+    <article class="all_liaotian">
+        <header class="title">
+            聊天室
+        </header>
+        <section>
+            <ul style="height: calc(100% - 70px);" class="chart_con">
+                <li class="flexbox other_people">
+                    <div class="imgs">
+                        <img src="web/images/2.png" alt="">
+                    </div>
+                    <div class="con flexbox_item">
+                        <div class="people_info">
+                            <cite class="name">纸飞机</cite>
+                            <time class="time">2018-11-13 16:42:22</time>
+                        </div>
+                        <br/>
+                        <div class="con_txt">
+                            <p>1</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="flexbox">
+                    <div class="con flexbox_item">
+                        <div class="people_info">
+                            <time class="time">2018-11-13 16:42:22</time>
+                            <cite class="name">纸飞机</cite>
+                        </div>
+                        <div class="con_txt">
+                            <p>构建工具和规划局高建国后</p>
+                        </div>
+                    </div>
+                    <div class="imgs">
+                        <img src="web/images/1.png" alt="">
+                    </div>
+                </li>
+                <li class="flexbox">
+                    <div class="con flexbox_item">
+                        <div class="people_info">
+                            <time class="time">2018-11-13 16:42:22</time>
+                            <cite class="name">纸飞机</cite>
+                        </div>
+                        <br />
+                        <div class="con_txt">
+                            <p>构建工具和规划局高建国后</p>
+                        </div>
+                    </div>
+                    <div class="imgs">
+                        <img src="web/images/1.png" alt="">
+                    </div>
+                </li>
+                <li class="flexbox">
+                    <div class="con flexbox_item">
+                        <div class="people_info">
+                            <time class="time">2018-11-13 16:42:22</time>
+                            <cite class="name">纸飞机</cite>
+                        </div>
+                        <div class="con_txt">
+                            <p>构建工具和规划局高建国后11111111111111111111111111111111111111111111</p>
+                        </div>
+                    </div>
+                    <div class="imgs">
+                        <img src="web/images/1.png" alt="">
+                    </div>
+                </li>
+            </ul>
+            <section class="tool">
+                <div class="icons"><span class="select_biaoqing"><i class="layui-icon " title="选择表情">&#xe6af;</i></span><span class="select_img"><i class="layui-icon" >&#xe60d;</i><input type="file" id="" title="上传图片" onchange="xmTanUploadImg(this)" accept="image/*" /></span><span class="select_file"><i class="layui-icon" title="选择文件">&#xe621;</i><input type="file" accept="*/*" onchange="Files(this)"></span></div>
+                <div class="tool_box biaoqing">
+                    <ul class="">
+                        
+                    </ul>
+                </div>
+            </section>
+            <footer class="flexbox">
+                <input type="text" placeholder="请输入内容....." onblur="posCursor()">
+                <button id="fasong">发送</button>
+            </footer>
+        </section>
+    </article>
+    <script type="text/javascript" src="web/js/jquery.min.js"></script>
+    <script type="text/javascript">
+    var arrays = ["[微笑]", "[嘻嘻]", "[哈哈]", "[可爱]", "[可怜]", "[挖鼻]", "[吃惊]", "[害羞]", "[挤眼]", "[闭嘴]", "[鄙视]", "[爱你]", "[泪]", "[偷笑]", "[亲亲]", "[生病]", "[太开心]", "[白眼]", "[右哼哼]", "[左哼哼]", "[嘘]", "[衰]", "[委屈]", "[吐]", "[哈欠]", "[抱抱]", "[怒]", "[疑问]", "[馋嘴]", "[拜拜]", "[思考]", "[汗]", "[困]", "[睡]", "[钱]", "[失望]", "[酷]", "[色]", "[哼]", "[鼓掌]", "[晕]", "[悲伤]", "[抓狂]", "[黑线]", "[阴险]", "[怒骂]", "[互粉]", "[心]", "[伤心]", "[猪头]", "[熊猫]", "[兔子]", "[ok]", "[耶]", "[good]", "[NO]", "[赞]", "[来]", "[弱]", "[草泥马]", "[神马]", "[囧]", "[浮云]", "[给力]", "[围观]", "[威武]", "[奥特曼]", "[礼物]", "[钟]", "[话筒]", "[蜡烛]", "[蛋糕]"]
+
+
+     arrays.forEach(function(values, index) {
+                $(".tool .biaoqing ul").append('<li><img  title="'+values+'" onclick="emiog(this)" src="web/layui/images/face/'+index+'.gif" /></li>')
+               
+            })
+
+
+
+    //点击发送
+    $("#fasong").click(function() {
+      
+        
+        var scllTop = $("ul")[0].scrollHeight;
+
+        var zhi = $(this).siblings('input').val();
+
+        var regExp = /\[(.+?)\]/g;
+        var con = zhi.match(regExp);
+        var indexArray = [];
+
+        if(con!=null){
+            con.forEach(function(value) {
+                arrays.forEach(function(values, index) {
+                   
+                    if (value == values) {
+                        indexArray.push(index);
+                    }
+                })
+            })
+        }
+        zhi = zhi.replace(/face\[(.+?)\]/g, "<img class='icon_face' />");
+
+        if (zhi != "") {
+            $(".all_liaotian .chart_con").append('<li class="flexbox">' +
+                '<div class="con flexbox_item">' +
+                '<div class="people_info">' +
+                '<time class="time">2018-11-13 16:42:22</time><cite class="name">纸飞机</cite>' +
+                '</div>' +
+                ' <br /><div class="con_txt">' +
+                '<p>' + zhi + '</p>' +
+                '</div>' +
+                '</div>' +
+                ' <div class="imgs">' +
+                '<img src="web/images/1.png" alt="">' +
+                '</div>' +
+                '</li>');
+            $("ul")[0].scrollTop = scllTop;
+            $(this).siblings('input').val("");
+
+            indexArray.forEach(function(value,index) {
+                    $(".all_liaotian .chart_con li:last-child .icon_face")[index].src="web/layui/images/face/"+value+".gif"
+            })
+        }
+        $(this).siblings('input').focus();
+
+    })
+   
+    //选择表情图片
+    function emiog(el){
+        var strImg="face"+$(el).attr("title");
+        var text;
+
+        if(start==0){
+             text=$("footer input").val().substring(start)+strImg
+        }else{
+            text=$("footer input").val().substring(0,start)+strImg+$("footer input").val().substring(start)
+        }
+        
+
+        $("footer input").val(text);
+        if(start!==0){
+             //oTextarea.select();  
+            oTextarea.selectionStart=start;  
+             oTextarea.selectionEnd=end;  
+        }
+
+    }
+
+    //点击任何地方表情框消失
+    $(document).click(function(){
+       $(".tool .biaoqing").hide();
+    })
+     //点击选择表情的工具栏
+    $(".tool .icons .select_biaoqing").click(function(e){
+        e.stopPropagation();
+        $(".tool .tool_box.biaoqing").fadeToggle();
+    })
+  
+    //工具栏弹框阻止冒泡事件
+    $(".tool .biaoqing").on("click",function(e){
+        e.stopPropagation();
+    })
+
+    var start=0,end=0;   
+    var oTextarea = $("footer input")[0];  
+    //文本框失去焦点
+    function posCursor(){
+       
+        start = oTextarea.selectionStart;  
+        end = oTextarea.selectionEnd;
+
+
+    }
+
+
+    //选择图片，马上预览
+    function xmTanUploadImg(obj) {
+               
+                var file = obj.files[0];
+                
+                console.log(obj);console.log(file);
+                console.log("file.size = " + file.size);  //file.size 单位为byte
+
+                var reader = new FileReader();
+
+                //读取文件过程方法
+                reader.onloadstart = function (e) {
+                    console.log("开始读取....");
+                }
+                reader.onprogress = function (e) {
+                    console.log("正在读取中....");
+                }
+                reader.onabort = function (e) {
+                    console.log("中断读取....");
+                }
+                reader.onerror = function (e) {
+                    console.log("读取异常....");
+                }
+                reader.onload = function (e) {
+                    console.log("成功读取....");
+                    var scllTop = $("ul")[0].scrollHeight;
+                    $(".all_liaotian .chart_con").append('<li class="flexbox">' +
+                        '<div class="con flexbox_item">' +
+                        '<div class="people_info">' +
+                        '<time class="time">2018-11-13 16:42:22</time><cite class="name">纸飞机</cite>' +
+                        '</div>' +
+                        ' <br /><div class="con_txt">' +
+                        '<p><img style="width:100%" src='+e.target.result+'></p>' +
+                        '</div>' +
+                        '</div>' +
+                        ' <div class="imgs">' +
+                        '<img src="web/images/1.png" alt="">' +
+                        '</div>' +
+                        '</li>');
+                    $("ul")[0].scrollTop = scllTop;
+                    //$("#xmTanDiv").append('<img src='+e.target.result+'>');
+                    //img.src = e.target.result;
+                    //或者 img.src = this.result;  //e.target == this
+                }
+
+                reader.readAsDataURL(file)
+    }
+
+    //选择图片，马上预览
+    function Files(obj) {
+                var scllTop = $("ul")[0].scrollHeight;
+                var file = obj.files[0];
+                $(".all_liaotian .chart_con").append('<li class="flexbox">' +
+                        '<div class="con flexbox_item">' +
+                        '<div class="people_info">' +
+                        '<time class="time">2018-11-13 16:42:22</time><cite class="name">纸飞机</cite>' +
+                        '</div>' +
+                        ' <br /><div class="con_txt">' +
+                        '<p class="p_files">'+file.name+'</p>' +
+                        '</div>' +
+                        '</div>' +
+                        ' <div class="imgs">' +
+                        '<img src="web/images/1.png" alt="">' +
+                        '</div>' +
+                        '</li>');
+                    $("ul")[0].scrollTop = scllTop;
+
+                
+    }
+    </script>
+</body>
+
+</html>
