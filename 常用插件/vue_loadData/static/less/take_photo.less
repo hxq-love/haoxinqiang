@@ -1,0 +1,95 @@
+ .take_photo {
+     overflow: hidden;
+     .line;
+     .p_12_15;
+     background: @c_fff;
+     .add_box {
+         display: inline-block;
+         position: relative;
+         width: 70px;
+         height: 70px;
+         border: 1px solid @line_bottom;
+         &:before {
+             width: 2px;
+             height: 39.5px;
+         }
+         &:after {
+             width: 39.5px;
+             height: 2px;
+         }
+     }
+
+     .add_box:before,
+     .add_box:after {
+         content: " ";
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         -webkit-transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%);
+         transform: translate(-50%, -50%);
+         background-color: @line_bottom;
+     }
+
+     .addphoto_ipt {
+         position: absolute;
+         z-index: 1;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         opacity: 0;
+         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+     }
+
+     .photo_box {
+         float: left;
+         margin-right: 10px;
+         width: 70px;
+         height: 70px;
+         background: no-repeat center center;
+         background-size: cover;
+     }
+
+     .gallery {
+         display: none;
+         position: fixed;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         left: 0;
+         background-color: @c_000;
+         z-index: 1000;
+     }
+
+     .gallery_img {
+         position: absolute;
+         top: 0;
+         right: 0;
+         bottom: 60px;
+         left: 0;
+         background: center center no-repeat;
+         background-size: contain;
+     }
+
+     .same_sty {
+         color: @c_fff;
+         font-size: 20px;
+         display: inline-block;
+         padding: 15px 30px;
+         position: absolute;
+         z-index: 1;
+         bottom: 0;
+         &:active {
+             color: @c_white_30;
+         }
+     }
+     .del {
+         .same_sty;
+         right: 0;
+     }
+     .cancel {
+         .same_sty;
+         left: 0;
+     }
+ }
